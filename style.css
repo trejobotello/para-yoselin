@@ -220,10 +220,8 @@ button {
 
 .portada h1 {
     margin: 15px 0 5px;
-
     font-size: clamp(60px, 12vw, 110px);
     line-height: 1;
-
     color: #9e3152;
 }
 
@@ -233,16 +231,13 @@ button {
 
 .portada h2 {
     margin-bottom: 20px;
-
     font-size: clamp(25px, 5vw, 40px);
     font-weight: normal;
-
     color: #633746;
 }
 
 .fecha {
     margin-bottom: 35px;
-
     font-size: 18px;
     color: #7b5360;
 }
@@ -277,9 +272,7 @@ button {
 .flecha {
     position: absolute;
     bottom: 25px;
-
     font-size: 30px;
-
     animation: flecha 1.5s infinite;
 }
 
@@ -311,7 +304,6 @@ button {
 
 .carta h2 {
     margin: 15px 0;
-
     font-size: 40px;
     color: #9e3152;
 }
@@ -323,25 +315,20 @@ button {
     margin: 20px auto 30px;
 
     border-radius: 5px;
-
     background: #d36b88;
 }
 
 .carta p:not(.etiqueta):not(.firma) {
     margin-bottom: 20px;
-
     font-size: 18px;
     line-height: 1.9;
-
     color: #68434f;
 }
 
 .te-amo {
     margin: 35px 0;
-
     font-size: 40px;
     color: #b83d61;
-
     animation: latido 1.5s infinite;
 }
 
@@ -368,24 +355,19 @@ button {
 
 .historia-titulo {
     max-width: 750px;
-
     margin: 0 auto 70px;
-
     text-align: center;
 }
 
 .historia-titulo h2 {
     margin: 18px 0;
-
     font-size: clamp(35px, 7vw, 55px);
-
     color: #9e3152;
 }
 
 .historia-titulo p:last-child {
     font-size: 18px;
     line-height: 1.8;
-
     color: #72505c;
 }
 
@@ -1096,7 +1078,7 @@ button {
 
 
 /* ==========================================================
-   GALERÍA DE RECUERDOS
+   GALERÍA
    ========================================================== */
 
 #recuerdos .galeria {
@@ -1116,7 +1098,7 @@ button {
 
 
 /* ==========================================================
-   TARJETAS
+   TARJETAS DE RECUERDOS
    ========================================================== */
 
 #recuerdos .recuerdo {
@@ -1204,7 +1186,7 @@ button {
 
 
 /* ==========================================================
-   CONTENEDOR DE LA FOTO
+   CONTENEDOR DE FOTO
    ========================================================== */
 
 .contenedor-imagen {
@@ -1249,7 +1231,7 @@ button {
 
 
 /* ==========================================================
-   IMÁGENES DE LOS RECUERDOS
+   IMÁGENES
    ========================================================== */
 
 #recuerdos .foto img {
@@ -1341,7 +1323,7 @@ button {
 
 /* ==========================================================
    MENSAJE DEBAJO DE LOS 4 RECUERDOS
-   CORREGIDO PARA QUE QUEDE CENTRADO
+   CORRECCIÓN CONSERVADA ❤️
    ========================================================== */
 
 #recuerdos .mensaje-recuerdos {
@@ -1373,9 +1355,6 @@ button {
         0 18px 50px rgba(100, 30, 50, 0.08);
 }
 
-
-/* CORAZÓN DEL MENSAJE */
-
 #recuerdos .mensaje-recuerdos .mini-corazon {
     display: block;
 
@@ -1390,9 +1369,6 @@ button {
     animation:
         latido 1.5s infinite;
 }
-
-
-/* TEXTO PEQUEÑO */
 
 #recuerdos .mensaje-recuerdos p {
     display: block;
@@ -1410,9 +1386,6 @@ button {
     color: #72505c;
 }
 
-
-/* FRASE PRINCIPAL */
-
 #recuerdos .mensaje-recuerdos h3 {
     display: block;
 
@@ -1427,6 +1400,575 @@ button {
     line-height: 1.5;
 
     color: #9e3152;
+}
+
+
+/* ==========================================================
+   NUEVA SECCIÓN ❤️
+   UNA PREGUNTA PARA TI
+   ========================================================== */
+
+.pregunta-seccion {
+    position: relative;
+
+    padding: 120px 20px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(255, 199, 217, 0.55),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255, 220, 231, 0.75),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            #fff7fa,
+            #ffe6ee
+        );
+}
+
+
+/* DETALLES DECORATIVOS */
+
+.pregunta-seccion::before {
+    content: "♡";
+
+    position: absolute;
+
+    top: 40px;
+    left: 6%;
+
+    font-size: 150px;
+
+    color:
+        rgba(184, 61, 97, 0.05);
+
+    transform: rotate(-15deg);
+
+    pointer-events: none;
+}
+
+.pregunta-seccion::after {
+    content: "♡";
+
+    position: absolute;
+
+    right: 5%;
+    bottom: 20px;
+
+    font-size: 190px;
+
+    color:
+        rgba(184, 61, 97, 0.05);
+
+    transform: rotate(15deg);
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   CONTENIDO DE LA PREGUNTA
+   ========================================================== */
+
+.pregunta-contenido {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* ==========================================================
+   CORAZÓN / SOBRE SUPERIOR
+   ========================================================== */
+
+.pregunta-corazon {
+    width: 90px;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 25px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    border:
+        1px solid rgba(184, 61, 97, 0.12);
+
+    box-shadow:
+        0 15px 40px rgba(120, 45, 70, 0.12);
+
+    font-size: 45px;
+
+    animation:
+        flotarSuave 3s ease-in-out infinite;
+}
+
+
+/* ==========================================================
+   TÍTULO DE LA PREGUNTA
+   ========================================================== */
+
+.pregunta-contenido > h2 {
+    margin: 14px 0 18px;
+
+    font-size:
+        clamp(
+            42px,
+            7vw,
+            65px
+        );
+
+    line-height: 1.1;
+
+    color: #9e3152;
+}
+
+.pregunta-introduccion {
+    max-width: 650px;
+
+    margin:
+        0 auto 45px;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    color: #72505c;
+}
+
+
+/* ==========================================================
+   TARJETA PRINCIPAL
+   ========================================================== */
+
+.pregunta-tarjeta {
+    position: relative;
+
+    max-width: 760px;
+
+    margin:
+        0 auto;
+
+    padding:
+        55px 45px;
+
+    overflow: hidden;
+
+    border-radius: 35px;
+
+    background:
+        rgba(255, 255, 255, 0.9);
+
+    border:
+        1px solid rgba(184, 61, 97, 0.14);
+
+    box-shadow:
+        0 25px 70px rgba(105, 36, 60, 0.13);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.pregunta-tarjeta:hover {
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 32px 80px rgba(105, 36, 60, 0.17);
+}
+
+
+/* CÍRCULO DECORATIVO */
+
+.pregunta-tarjeta::before {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    top: -90px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 207, 222, 0.3);
+
+    pointer-events: none;
+}
+
+.pregunta-tarjeta::after {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    left: -60px;
+    bottom: -60px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 207, 222, 0.25);
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   ICONOS DE LA PREGUNTA
+   ========================================================== */
+
+.pregunta-iconos {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 22px;
+
+    font-size: 28px;
+
+    letter-spacing: 8px;
+
+    animation:
+        flotar 2.5s ease-in-out infinite;
+}
+
+.pregunta-pequena {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 14px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: #b04c6b;
+}
+
+
+/* ==========================================================
+   PREGUNTA PRINCIPAL
+   ========================================================== */
+
+.pregunta-tarjeta > h3 {
+    position: relative;
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin:
+        0 auto 20px;
+
+    font-size:
+        clamp(
+            27px,
+            5vw,
+            39px
+        );
+
+    line-height: 1.35;
+
+    color: #9e3152;
+}
+
+.pregunta-texto {
+    position: relative;
+    z-index: 2;
+
+    max-width: 540px;
+
+    margin:
+        0 auto 32px;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    color: #72505c;
+}
+
+
+/* ==========================================================
+   BOTONES DE RESPUESTA
+   ========================================================== */
+
+.pregunta-botones {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    width: 100%;
+
+    margin:
+        10px auto 0;
+}
+
+.respuesta-boton {
+    min-width: 180px;
+
+    padding:
+        16px 27px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* BOTÓN SÍ */
+
+.respuesta-si {
+    background:
+        linear-gradient(
+            135deg,
+            #b83d61,
+            #d85d80
+        );
+
+    color: white;
+
+    box-shadow:
+        0 12px 30px rgba(184, 61, 97, 0.28);
+}
+
+.respuesta-si:hover {
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    box-shadow:
+        0 17px 38px rgba(184, 61, 97, 0.38);
+}
+
+
+/* BOTÓN CLARO QUE SÍ */
+
+.respuesta-claro {
+    background:
+        #fff0f5;
+
+    color: #a73859;
+
+    border:
+        1px solid rgba(184, 61, 97, 0.25);
+
+    box-shadow:
+        0 10px 28px rgba(120, 45, 70, 0.1);
+}
+
+.respuesta-claro:hover {
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    background:
+        #ffe4ed;
+
+    box-shadow:
+        0 15px 35px rgba(120, 45, 70, 0.15);
+}
+
+
+/* ESTADO CUANDO YA RESPONDIÓ */
+
+.respuesta-boton.respondido {
+    opacity: 0.7;
+
+    transform:
+        scale(0.96);
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   RESPUESTA OCULTA
+   ========================================================== */
+
+.respuesta-pregunta {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 620px;
+
+    max-height: 0;
+
+    margin:
+        0 auto;
+
+    padding:
+        0 30px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff8fa,
+            #ffeef4
+        );
+
+    border:
+        1px solid transparent;
+
+    transform:
+        translateY(25px)
+        scale(0.96);
+
+    transition:
+        max-height 0.9s ease,
+        margin 0.7s ease,
+        padding 0.7s ease,
+        opacity 0.6s ease,
+        transform 0.7s ease,
+        border-color 0.7s ease,
+        box-shadow 0.7s ease;
+}
+
+
+/* CUANDO JAVASCRIPT AGREGA .mostrar */
+
+.respuesta-pregunta.mostrar {
+    max-height: 550px;
+
+    margin-top: 38px;
+
+    padding:
+        38px 30px;
+
+    opacity: 1;
+
+    border-color:
+        rgba(184, 61, 97, 0.13);
+
+    box-shadow:
+        0 18px 45px rgba(100, 30, 50, 0.1);
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* ==========================================================
+   CORAZÓN DE LA RESPUESTA
+   ========================================================== */
+
+.respuesta-corazon {
+    margin-bottom: 17px;
+
+    font-size: 55px;
+
+    animation:
+        latido 1.3s infinite;
+}
+
+.respuesta-pregunta h3 {
+    max-width: 520px;
+
+    margin:
+        0 auto 17px;
+
+    font-size: 27px;
+    line-height: 1.4;
+
+    color: #9e3152;
+}
+
+.respuesta-pregunta p {
+    max-width: 520px;
+
+    margin:
+        0 auto;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #72505c;
+}
+
+.respuesta-final {
+    display: inline-block;
+
+    margin-top: 24px;
+
+    padding:
+        11px 22px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(184, 61, 97, 0.09);
+
+    color: #b83d61;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* ==========================================================
+   TEXTO INFERIOR DE LA PREGUNTA
+   ========================================================== */
+
+.pregunta-pie {
+    margin-top: 35px;
+
+    font-size: 15px;
+    font-style: italic;
+
+    color: #956273;
 }
 
 
@@ -1872,7 +2414,6 @@ p:not(.etiqueta) {
     50% {
         transform: scale(1.12);
     }
-
 }
 
 
@@ -1885,7 +2426,6 @@ p:not(.etiqueta) {
     to {
         opacity: 1;
     }
-
 }
 
 
@@ -1904,7 +2444,6 @@ p:not(.etiqueta) {
         transform:
             translateY(0);
     }
-
 }
 
 
@@ -1920,7 +2459,6 @@ p:not(.etiqueta) {
         transform:
             translateY(10px);
     }
-
 }
 
 
@@ -1936,7 +2474,25 @@ p:not(.etiqueta) {
         transform:
             translateY(-10px);
     }
+}
 
+
+/* NUEVA ANIMACIÓN */
+
+@keyframes flotarSuave {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-2deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(2deg);
+    }
 }
 
 
@@ -1955,7 +2511,6 @@ p:not(.etiqueta) {
         transform:
             scale(1);
     }
-
 }
 
 
@@ -1976,7 +2531,6 @@ p:not(.etiqueta) {
 
         opacity: 0;
     }
-
 }
 
 
@@ -2028,6 +2582,10 @@ p:not(.etiqueta) {
 
 }
 
+
+/* ==========================================================
+   TABLET PEQUEÑA
+   ========================================================== */
 
 @media (max-width: 768px) {
 
@@ -2086,6 +2644,21 @@ p:not(.etiqueta) {
         padding: 25px 20px;
     }
 
+
+    /* PREGUNTA */
+
+    .pregunta-seccion {
+        padding:
+            90px 18px;
+    }
+
+    .pregunta-tarjeta {
+        padding:
+            45px 30px;
+
+        border-radius: 30px;
+    }
+
 }
 
 
@@ -2112,12 +2685,15 @@ p:not(.etiqueta) {
     .contador-seccion,
     .razones-seccion,
     .fotos-seccion,
+    .pregunta-seccion,
     .sorpresa-final {
-        padding: 70px 15px;
+        padding:
+            70px 15px;
     }
 
     .carta {
-        padding: 35px 20px;
+        padding:
+            35px 20px;
     }
 
     .carta p:not(.etiqueta):not(.firma) {
@@ -2145,7 +2721,8 @@ p:not(.etiqueta) {
     }
 
     .tiempo {
-        padding: 20px 10px;
+        padding:
+            20px 10px;
     }
 
     .tiempo span {
@@ -2176,7 +2753,8 @@ p:not(.etiqueta) {
     }
 
     .razon-card {
-        padding: 30px 20px;
+        padding:
+            30px 20px;
     }
 
     .razon-icono {
@@ -2191,7 +2769,8 @@ p:not(.etiqueta) {
     }
 
     .razon-secreta.mostrar {
-        padding: 35px 20px;
+        padding:
+            35px 20px;
     }
 
     .razon-secreta h3 {
@@ -2202,7 +2781,8 @@ p:not(.etiqueta) {
     /* RECUERDOS */
 
     #recuerdos {
-        padding: 75px 15px;
+        padding:
+            75px 15px;
     }
 
     #recuerdos .titulo-fotos {
@@ -2242,7 +2822,8 @@ p:not(.etiqueta) {
     }
 
     #recuerdos .foto-info {
-        padding: 23px 18px 27px;
+        padding:
+            23px 18px 27px;
     }
 
     #recuerdos .foto-info h3 {
@@ -2253,11 +2834,13 @@ p:not(.etiqueta) {
     /* MENSAJE FINAL DE RECUERDOS */
 
     #recuerdos .mensaje-recuerdos {
-        width: calc(100% - 10px);
+        width:
+            calc(100% - 10px);
 
         margin-top: 50px;
 
-        padding: 35px 20px;
+        padding:
+            35px 20px;
 
         border-radius: 25px;
     }
@@ -2276,6 +2859,103 @@ p:not(.etiqueta) {
     #recuerdos
     .mensaje-recuerdos h3 {
         font-size: 22px;
+    }
+
+
+    /* ======================================================
+       NUEVA SECCIÓN - PREGUNTA
+       ====================================================== */
+
+    .pregunta-seccion::before,
+    .pregunta-seccion::after {
+        font-size: 100px;
+    }
+
+    .pregunta-corazon {
+        width: 75px;
+        height: 75px;
+
+        margin-bottom: 20px;
+
+        font-size: 38px;
+    }
+
+    .pregunta-contenido > h2 {
+        font-size: 40px;
+    }
+
+    .pregunta-introduccion {
+        margin-bottom: 35px;
+
+        font-size: 16px;
+    }
+
+    .pregunta-tarjeta {
+        padding:
+            38px 20px;
+
+        border-radius: 25px;
+    }
+
+    .pregunta-iconos {
+        font-size: 24px;
+
+        letter-spacing: 5px;
+    }
+
+    .pregunta-tarjeta > h3 {
+        font-size: 27px;
+    }
+
+    .pregunta-texto {
+        margin-bottom: 27px;
+
+        font-size: 15px;
+    }
+
+    .pregunta-botones {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .respuesta-boton {
+        width: 100%;
+        max-width: 300px;
+
+        min-width: 0;
+
+        padding:
+            15px 20px;
+    }
+
+    .respuesta-pregunta.mostrar {
+        margin-top: 30px;
+
+        padding:
+            32px 18px;
+    }
+
+    .respuesta-corazon {
+        font-size: 45px;
+    }
+
+    .respuesta-pregunta h3 {
+        font-size: 23px;
+    }
+
+    .respuesta-pregunta p {
+        font-size: 15px;
+    }
+
+    .respuesta-final {
+        font-size: 16px;
+    }
+
+    .pregunta-pie {
+        margin-top: 28px;
+
+        font-size: 14px;
     }
 
 
@@ -2303,7 +2983,8 @@ p:not(.etiqueta) {
     }
 
     .modal-texto-recuerdo {
-        padding: 28px 20px 32px;
+        padding:
+            28px 20px 32px;
     }
 
     .modal-texto-recuerdo h2 {
@@ -2336,7 +3017,8 @@ p:not(.etiqueta) {
     /* SORPRESA FINAL */
 
     .mensaje-final {
-        padding: 35px 18px;
+        padding:
+            35px 18px;
     }
 
     .mensaje-final .grande {
@@ -2377,7 +3059,8 @@ p:not(.etiqueta) {
     }
 
     .tiempo {
-        padding: 15px 5px;
+        padding:
+            15px 5px;
     }
 
     .tiempo span {
@@ -2426,12 +3109,49 @@ p:not(.etiqueta) {
 
     #recuerdos
     .mensaje-recuerdos {
-        padding: 30px 16px;
+        padding:
+            30px 16px;
     }
 
     #recuerdos
     .mensaje-recuerdos h3 {
         font-size: 20px;
+    }
+
+
+    /* PREGUNTA */
+
+    .pregunta-contenido > h2 {
+        font-size: 35px;
+    }
+
+    .pregunta-tarjeta {
+        padding:
+            32px 15px;
+    }
+
+    .pregunta-tarjeta > h3 {
+        font-size: 24px;
+    }
+
+    .pregunta-corazon {
+        width: 68px;
+        height: 68px;
+
+        font-size: 34px;
+    }
+
+    .respuesta-boton {
+        font-size: 15px;
+    }
+
+    .respuesta-pregunta.mostrar {
+        padding:
+            28px 15px;
+    }
+
+    .respuesta-pregunta h3 {
+        font-size: 21px;
     }
 
 
@@ -2446,7 +3166,8 @@ p:not(.etiqueta) {
     }
 
     .modal-texto-recuerdo {
-        padding: 24px 16px;
+        padding:
+            24px 16px;
     }
 
     .modal-texto-recuerdo h2 {
