@@ -1,11 +1,11 @@
 /* ========================================
-   ROMÁNTICA 3.ª VERSIÓN
    PARA YOSELIN ❤️
+   JAVASCRIPT PRINCIPAL
 ======================================== */
 
 
 /* ========================================
-   FECHA DE INICIO DE LA RELACIÓN
+   FECHA DE INICIO
 ======================================== */
 
 const fechaInicio = new Date("2024-10-27T00:00:00");
@@ -29,6 +29,8 @@ if (abrirPagina && bienvenida) {
         bienvenida.classList.add("ocultar");
 
         reproducirMusica();
+
+        lanzarCorazonesBienvenida();
 
     });
 
@@ -94,41 +96,28 @@ function actualizarContador() {
 
 
     if (elementoDias) {
-
-        elementoDias.textContent =
-            dias;
-
+        elementoDias.textContent = dias;
     }
 
 
     if (elementoHoras) {
-
-        elementoHoras.textContent =
-            horas;
-
+        elementoHoras.textContent = horas;
     }
 
 
     if (elementoMinutos) {
-
-        elementoMinutos.textContent =
-            minutos;
-
+        elementoMinutos.textContent = minutos;
     }
 
 
     if (elementoSegundos) {
-
-        elementoSegundos.textContent =
-            segundos;
-
+        elementoSegundos.textContent = segundos;
     }
 
 }
 
 
 actualizarContador();
-
 
 setInterval(
     actualizarContador,
@@ -137,7 +126,7 @@ setInterval(
 
 
 /* ========================================
-   BOTÓN SORPRESA
+   PRIMERA SORPRESA
 ======================================== */
 
 const botonSorpresa =
@@ -164,10 +153,72 @@ if (botonSorpresa && mensajeSorpresa) {
                 botonSorpresa.textContent =
                     "❤️ Te amo, Yoselin";
 
+                lanzarGrupoCorazones(12);
+
             } else {
 
                 botonSorpresa.textContent =
                     "💝 Tengo algo para ti";
+
+            }
+
+        }
+    );
+
+}
+
+
+/* ========================================
+   RAZÓN SECRETA
+======================================== */
+
+const botonRazonSecreta =
+    document.getElementById(
+        "botonRazonSecreta"
+    );
+
+const razonSecreta =
+    document.getElementById(
+        "razonSecreta"
+    );
+
+
+if (
+    botonRazonSecreta &&
+    razonSecreta
+) {
+
+    botonRazonSecreta.addEventListener(
+        "click",
+        function () {
+
+            const abierta =
+                razonSecreta.classList.toggle(
+                    "mostrar"
+                );
+
+
+            if (abierta) {
+
+                botonRazonSecreta.textContent =
+                    "❤️ Siempre serás especial";
+
+                lanzarGrupoCorazones(18);
+
+
+                setTimeout(function () {
+
+                    razonSecreta.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                }, 250);
+
+            } else {
+
+                botonRazonSecreta.textContent =
+                    "💝 Descubre una razón más";
 
             }
 
@@ -229,11 +280,13 @@ function reproducirMusica() {
 
 
     musicaFondo.play()
+
         .then(function () {
 
             actualizarBotonMusica();
 
         })
+
         .catch(function () {
 
             actualizarBotonMusica();
@@ -326,10 +379,52 @@ function crearCorazon() {
 }
 
 
-setInterval(
-    crearCorazon,
-    900
-);
+/* ========================================
+   CORAZONES DE FONDO
+======================================== */
+
+const intervaloCorazones =
+    setInterval(
+        crearCorazon,
+        1100
+    );
+
+
+/* ========================================
+   GRUPO DE CORAZONES
+======================================== */
+
+function lanzarGrupoCorazones(cantidad) {
+
+    for (
+        let i = 0;
+        i < cantidad;
+        i++
+    ) {
+
+        setTimeout(
+            function () {
+
+                crearCorazon();
+
+            },
+            i * 90
+        );
+
+    }
+
+}
+
+
+/* ========================================
+   CORAZONES AL ABRIR
+======================================== */
+
+function lanzarCorazonesBienvenida() {
+
+    lanzarGrupoCorazones(20);
+
+}
 
 
 /* ========================================
@@ -382,6 +477,9 @@ if (
                     "mostrar"
                 );
 
+                document.body.style.overflow =
+                    "hidden";
+
             }
         );
 
@@ -391,24 +489,44 @@ if (
 
 
 /* ========================================
-   CERRAR MODAL DE FOTOS
+   FUNCIÓN PARA CERRAR FOTO
+======================================== */
+
+function cerrarModalFoto() {
+
+    if (!modalFoto) {
+
+        return;
+
+    }
+
+    modalFoto.classList.remove(
+        "mostrar"
+    );
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/* ========================================
+   BOTÓN X DEL MODAL
 ======================================== */
 
 if (cerrarFoto && modalFoto) {
 
     cerrarFoto.addEventListener(
         "click",
-        function () {
-
-            modalFoto.classList.remove(
-                "mostrar"
-            );
-
-        }
+        cerrarModalFoto
     );
 
 }
 
+
+/* ========================================
+   CERRAR TOCANDO EL FONDO
+======================================== */
 
 if (modalFoto) {
 
@@ -420,9 +538,7 @@ if (modalFoto) {
                 evento.target === modalFoto
             ) {
 
-                modalFoto.classList.remove(
-                    "mostrar"
-                );
+                cerrarModalFoto();
 
             }
 
@@ -445,9 +561,7 @@ document.addEventListener(
             modalFoto
         ) {
 
-            modalFoto.classList.remove(
-                "mostrar"
-            );
+            cerrarModalFoto();
 
         }
 
@@ -480,22 +594,36 @@ if (
         "click",
         function () {
 
-            mensajeFinal.classList.add(
-                "mostrar"
-            );
+            const yaEstaAbierto =
+                mensajeFinal.classList.contains(
+                    "mostrar"
+                );
 
 
-            botonFinal.textContent =
-                "❤️ Siempre contigo";
+            if (!yaEstaAbierto) {
+
+                mensajeFinal.classList.add(
+                    "mostrar"
+                );
 
 
-            lanzarCorazonesFinales();
+                botonFinal.textContent =
+                    "❤️ Siempre contigo";
 
 
-            mensajeFinal.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
+                lanzarCorazonesFinales();
+
+
+                setTimeout(function () {
+
+                    mensajeFinal.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                }, 250);
+
+            }
 
         }
     );
@@ -504,27 +632,169 @@ if (
 
 
 /* ========================================
-   EXPLOSIÓN DE CORAZONES
+   EXPLOSIÓN FINAL DE CORAZONES
 ======================================== */
 
 function lanzarCorazonesFinales() {
 
-    for (
-        let i = 0;
-        i < 35;
-        i++
-    ) {
+    lanzarGrupoCorazones(35);
 
-        setTimeout(
+}
+
+
+/* ========================================
+   PEQUEÑO EFECTO EN LAS TARJETAS
+======================================== */
+
+const tarjetasRazones =
+    document.querySelectorAll(
+        ".razon-card"
+    );
+
+
+tarjetasRazones.forEach(
+    function (tarjeta) {
+
+        tarjeta.addEventListener(
+            "click",
             function () {
 
-                crearCorazon();
+                tarjeta.animate(
+                    [
+                        {
+                            transform:
+                                "scale(1)"
+                        },
 
-            },
-            i * 100
+                        {
+                            transform:
+                                "scale(1.04)"
+                        },
+
+                        {
+                            transform:
+                                "scale(1)"
+                        }
+                    ],
+
+                    {
+                        duration: 450,
+                        easing: "ease"
+                    }
+                );
+
+            }
         );
 
     }
+);
+
+
+/* ========================================
+   ANIMACIONES AL HACER SCROLL
+======================================== */
+
+const elementosAnimados =
+    document.querySelectorAll(
+        ".carta, " +
+        ".historia-titulo, " +
+        ".momento-contenido, " +
+        ".contador-contenido, " +
+        ".razones-contenido, " +
+        ".razon-card, " +
+        ".titulo-fotos, " +
+        ".foto, " +
+        ".sorpresa-contenido"
+    );
+
+
+/* Preparar los elementos */
+
+elementosAnimados.forEach(
+    function (elemento) {
+
+        elemento.style.opacity = "0";
+
+        elemento.style.transform =
+            "translateY(35px)";
+
+        elemento.style.transition =
+            "opacity 0.8s ease, " +
+            "transform 0.8s ease";
+
+    }
+);
+
+
+/* ========================================
+   OBSERVADOR DE SCROLL
+======================================== */
+
+if (
+    "IntersectionObserver" in window
+) {
+
+    const observador =
+        new IntersectionObserver(
+
+            function (entradas) {
+
+                entradas.forEach(
+                    function (entrada) {
+
+                        if (
+                            entrada.isIntersecting
+                        ) {
+
+                            entrada.target.style.opacity =
+                                "1";
+
+                            entrada.target.style.transform =
+                                "translateY(0)";
+
+                            observador.unobserve(
+                                entrada.target
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    elementosAnimados.forEach(
+        function (elemento) {
+
+            observador.observe(
+                elemento
+            );
+
+        }
+    );
+
+} else {
+
+    /* Compatibilidad con navegadores antiguos */
+
+    elementosAnimados.forEach(
+        function (elemento) {
+
+            elemento.style.opacity =
+                "1";
+
+            elemento.style.transform =
+                "translateY(0)";
+
+        }
+    );
 
 }
 
