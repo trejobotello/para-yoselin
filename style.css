@@ -1,1342 +1,386 @@
-/* ========================================
-   CONFIGURACIÓN GENERAL
-======================================== */
+/* ==========================================================
+   4 RECUERDOS, UNA HISTORIA ❤️
+   ========================================================== */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #fff7fa;
-    color: #4a2631;
-    overflow-x: hidden;
-}
-
-button,
-a {
-    font-family: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-
-/* ========================================
-   PANTALLA DE BIENVENIDA
-======================================== */
-
-.bienvenida {
-    position: fixed;
-    inset: 0;
-    z-index: 10000;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    padding: 25px;
-
-    background:
-        radial-gradient(
-            circle at top,
-            #ffdce8,
-            transparent 45%
-        ),
-        linear-gradient(
-            135deg,
-            #fff0f5,
-            #ffd5e2
-        );
-
-    transition:
-        opacity 1s ease,
-        visibility 1s ease;
-}
-
-.bienvenida.ocultar {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.bienvenida-corazon {
-    font-size: 80px;
-    animation: latido 1.4s infinite;
-}
-
-.bienvenida-pequeno {
-    margin-top: 15px;
-
-    font-size: 13px;
-    letter-spacing: 4px;
-
-    color: #a04d68;
-}
-
-.bienvenida h1 {
-    margin: 12px 0;
-
-    font-size: clamp(50px, 10vw, 90px);
-
-    color: #9e3152;
-}
-
-.bienvenida p {
-    font-size: 20px;
-    line-height: 1.7;
-
-    color: #633746;
-}
-
-.boton-abrir {
-    margin-top: 30px;
-
-    padding: 15px 38px;
-
-    border: none;
-    border-radius: 50px;
-
-    background: #b83d61;
-    color: white;
-
-    font-size: 18px;
-
-    box-shadow:
-        0 10px 30px rgba(184, 61, 97, 0.25);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.boton-abrir:hover {
-    transform: translateY(-4px) scale(1.04);
-
-    box-shadow:
-        0 15px 35px rgba(184, 61, 97, 0.35);
-}
-
-
-/* ========================================
-   BOTÓN DE MÚSICA
-======================================== */
-
-.boton-musica {
-    position: fixed;
-
-    top: 20px;
-    right: 20px;
-
-    z-index: 9000;
-
-    padding: 11px 18px;
-
-    border: none;
-    border-radius: 30px;
-
-    background: rgba(255, 255, 255, 0.9);
-
-    color: #9e3152;
-
-    font-size: 14px;
-
-    box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.12);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    transition:
-        transform 0.3s ease;
-}
-
-.boton-musica:hover {
-    transform: scale(1.05);
-}
-
-
-/* ========================================
-   PORTADA
-======================================== */
-
-.portada {
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+#recuerdos {
     position: relative;
-
-    padding: 80px 20px 50px;
-
-    text-align: center;
-
+    overflow: hidden;
+    padding: 110px 20px;
     background:
         radial-gradient(
-            circle at 20% 20%,
-            #ffe4ec,
-            transparent 30%
+            circle at 10% 10%,
+            rgba(255, 210, 225, 0.55),
+            transparent 28%
         ),
         radial-gradient(
-            circle at 80% 80%,
-            #ffd7e3,
+            circle at 90% 90%,
+            rgba(255, 225, 235, 0.65),
             transparent 30%
         ),
         linear-gradient(
             135deg,
-            #fff8fa,
-            #ffeaf1
+            #fffafb,
+            #fff0f5
         );
 }
 
-.corazones {
-    font-size: 28px;
 
-    margin-bottom: 25px;
+/* ==========================================================
+   TÍTULO DE LOS RECUERDOS
+   ========================================================== */
 
-    animation: aparecer 1.5s ease;
-}
-
-.contenido-portada {
-    max-width: 800px;
-
-    animation: subir 1.2s ease;
-}
-
-.pequeno,
-.etiqueta {
-    font-size: 13px;
-
-    letter-spacing: 4px;
-
-    color: #a04d68;
-}
-
-.portada h1 {
-    margin: 15px 0 5px;
-
-    font-size: clamp(60px, 12vw, 110px);
-
-    color: #9e3152;
-
-    line-height: 1;
-}
-
-.portada h1 span {
-    font-size: 0.65em;
-}
-
-.portada h2 {
-    margin-bottom: 20px;
-
-    font-size: clamp(25px, 5vw, 40px);
-
-    font-weight: normal;
-
-    color: #633746;
-}
-
-.fecha {
-    margin-bottom: 35px;
-
-    font-size: 18px;
-
-    color: #7b5360;
-}
-
-.boton {
-    display: inline-block;
-
-    padding: 15px 30px;
-
-    border-radius: 40px;
-
-    background: #b83d61;
-
-    color: white;
-
-    text-decoration: none;
-
-    box-shadow:
-        0 10px 25px rgba(184, 61, 97, 0.25);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.boton:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 15px 35px rgba(184, 61, 97, 0.3);
-}
-
-.flecha {
-    position: absolute;
-
-    bottom: 25px;
-
-    font-size: 30px;
-
-    animation: flecha 1.5s infinite;
-}
-
-
-/* ========================================
-   CARTA
-======================================== */
-
-.carta-seccion {
-    padding: 100px 20px;
-
-    background: #fff;
-}
-
-.carta {
+#recuerdos .titulo-fotos {
     max-width: 760px;
-
-    margin: auto;
-
-    padding: 55px;
-
-    border-radius: 25px;
-
-    background: #fff9fb;
-
-    box-shadow:
-        0 20px 60px rgba(120, 45, 70, 0.1);
-
+    margin: 0 auto 60px;
     text-align: center;
 }
 
-.carta h2 {
+#recuerdos .titulo-fotos h2 {
     margin: 15px 0;
 
-    font-size: 40px;
+    font-size: clamp(
+        38px,
+        7vw,
+        58px
+    );
 
     color: #9e3152;
 }
 
-.linea {
-    width: 70px;
-    height: 3px;
-
-    margin: 20px auto 30px;
-
-    border-radius: 5px;
-
-    background: #d36b88;
-}
-
-.carta p:not(.etiqueta):not(.firma) {
-    margin-bottom: 20px;
-
-    font-size: 18px;
-
-    line-height: 1.9;
-
-    color: #68434f;
-}
-
-.te-amo {
-    margin: 35px 0;
-
-    font-size: 40px;
-
-    color: #b83d61;
-
-    animation: latido 1.5s infinite;
-}
-
-.firma {
-    font-size: 18px;
-
-    line-height: 1.7;
-}
-
-
-/* ========================================
-   NUESTRA HISTORIA
-======================================== */
-
-.historia-seccion {
-    padding: 110px 20px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #fff7fa,
-            #ffeaf1
-        );
-}
-
-.historia-titulo {
-    max-width: 750px;
-
-    margin: 0 auto 70px;
-
-    text-align: center;
-}
-
-.historia-titulo h2 {
-    margin: 18px 0;
-
-    font-size: clamp(35px, 7vw, 55px);
-
-    color: #9e3152;
-}
-
-.historia-titulo p:last-child {
-    font-size: 18px;
-
+#recuerdos .titulo-fotos > p {
     line-height: 1.8;
-
     color: #72505c;
 }
 
+.instruccion-fotos {
+    margin-top: 18px;
 
-/* ========================================
-   LÍNEA DE TIEMPO
-======================================== */
+    font-size: 15px;
 
-.linea-tiempo {
-    position: relative;
-
-    max-width: 900px;
-
-    margin: auto;
-
-    padding: 10px 0;
-}
-
-.linea-tiempo::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    bottom: 0;
-
-    left: 50%;
-
-    width: 3px;
-
-    transform: translateX(-50%);
-
-    background:
-        linear-gradient(
-            to bottom,
-            #d36b88,
-            #f1a8bb,
-            #d36b88
-        );
-
-    border-radius: 10px;
-}
-
-
-/* ========================================
-   MOMENTOS
-======================================== */
-
-.momento {
-    position: relative;
-
-    width: 50%;
-
-    padding: 20px 50px 45px;
-}
-
-.momento:nth-child(odd) {
-    left: 0;
-
-    text-align: right;
-}
-
-.momento:nth-child(even) {
-    left: 50%;
-
-    text-align: left;
-}
-
-.momento-punto {
-    position: absolute;
-
-    top: 25px;
-
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    background: white;
-
-    border: 3px solid #d36b88;
-
-    box-shadow:
-        0 5px 20px rgba(184, 61, 97, 0.18);
-
-    font-size: 21px;
-
-    z-index: 2;
-
-    animation: latido 2s infinite;
-}
-
-.momento:nth-child(odd) .momento-punto {
-    right: -24px;
-}
-
-.momento:nth-child(even) .momento-punto {
-    left: -24px;
-}
-
-.momento-contenido {
-    padding: 30px;
-
-    border-radius: 25px;
-
-    background: rgba(255, 255, 255, 0.85);
-
-    box-shadow:
-        0 15px 40px rgba(100, 30, 50, 0.08);
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-.momento-contenido:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 20px 45px rgba(100, 30, 50, 0.14);
-}
-
-.momento-fecha {
-    display: block;
-
-    margin-bottom: 10px;
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    color: #b04c6b;
+    color: #b04c6b !important;
 
     font-weight: bold;
-}
 
-.momento-contenido h3 {
-    margin-bottom: 12px;
-
-    font-size: 25px;
-
-    color: #9e3152;
-}
-
-.momento-contenido p {
-    font-size: 16px;
-
-    line-height: 1.8;
-
-    color: #68434f;
+    letter-spacing: 0.5px;
 }
 
 
-/* ========================================
-   CONTADOR
-======================================== */
+/* ==========================================================
+   GALERÍA
+   ========================================================== */
 
-.contador-seccion {
-    padding: 100px 20px;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffe5ed,
-            #fff5f8
-        );
-}
-
-.contador-contenido {
-    max-width: 950px;
-
-    margin: auto;
-}
-
-.contador-contenido h2 {
-    margin: 15px 0;
-
-    font-size: clamp(35px, 7vw, 55px);
-
-    color: #9e3152;
-}
-
-.fecha-inicio {
-    margin-bottom: 40px;
-
-    font-size: 18px;
-
-    color: #77515e;
-}
-
-.contador {
+#recuerdos .galeria {
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(2, minmax(0, 1fr));
 
-    gap: 18px;
+    gap: 32px;
 
-    max-width: 800px;
-
-    margin: auto;
-}
-
-.tiempo {
-    padding: 25px 15px;
-
-    border-radius: 20px;
-
-    background: rgba(255, 255, 255, 0.8);
-
-    box-shadow:
-        0 10px 30px rgba(100, 30, 50, 0.08);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.tiempo:hover {
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 15px 35px rgba(100, 30, 50, 0.13);
-}
-
-.tiempo span {
-    display: block;
-
-    font-size: clamp(35px, 6vw, 55px);
-
-    font-weight: bold;
-
-    color: #b83d61;
-}
-
-.tiempo small {
-    display: block;
-
-    margin-top: 5px;
-
-    font-size: 14px;
-
-    color: #76515d;
-}
-
-.texto-contador {
-    margin: 30px 0;
-}
-
-
-/* ========================================
-   BOTÓN SORPRESA
-======================================== */
-
-.boton-sorpresa {
-    padding: 15px 28px;
-
-    border: none;
-
-    border-radius: 40px;
-
-    background: #b83d61;
-
-    color: white;
-
-    font-size: 16px;
-
-    box-shadow:
-        0 10px 25px rgba(184, 61, 97, 0.2);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.boton-sorpresa:hover {
-    transform: scale(1.05);
-
-    box-shadow:
-        0 14px 30px rgba(184, 61, 97, 0.3);
-}
-
-.mensaje-sorpresa {
-    max-width: 600px;
-    max-height: 0;
-
-    margin: 25px auto 0;
-
-    overflow: hidden;
-
-    opacity: 0;
-
-    padding: 0;
-
-    border-radius: 20px;
-
-    background: white;
-
-    transition:
-        max-height 0.8s ease,
-        opacity 0.6s ease,
-        padding 0.6s ease;
-}
-
-.mensaje-sorpresa.mostrar {
-    max-height: 500px;
-
-    padding: 30px;
-
-    opacity: 1;
-}
-
-.mensaje-sorpresa h3 {
-    margin-bottom: 15px;
-
-    font-size: 28px;
-
-    color: #b83d61;
-}
-
-.mensaje-sorpresa p {
-    margin-bottom: 12px;
-
-    line-height: 1.7;
-}
-
-
-/* ========================================
-   RAZONES POR LAS QUE ERES ESPECIAL
-======================================== */
-
-.razones-seccion {
-    position: relative;
-
-    padding: 110px 20px;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(255, 197, 216, 0.45),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 85% 80%,
-            rgba(255, 218, 229, 0.65),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #fff9fb,
-            #ffeef4
-        );
-}
-
-.razones-contenido {
     max-width: 1050px;
 
     margin: auto;
-
-    text-align: center;
 }
 
-.razones-contenido h2 {
-    max-width: 800px;
 
-    margin: 15px auto 20px;
+/* ==========================================================
+   TARJETA DE CADA RECUERDO
+   ========================================================== */
 
-    font-size: clamp(35px, 6vw, 55px);
-
-    line-height: 1.15;
-
-    color: #9e3152;
-}
-
-.razones-intro {
-    max-width: 650px;
-
-    margin: 0 auto 55px;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-
-    color: #72505c;
-}
-
-.razones-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 25px;
-
-    margin-bottom: 45px;
-}
-
-.razon-card {
+#recuerdos .recuerdo {
     position: relative;
-
-    padding: 35px 25px;
 
     overflow: hidden;
 
-    border:
-        1px solid rgba(211, 107, 136, 0.15);
+    border-radius: 28px;
 
-    border-radius: 25px;
+    border:
+        1px solid rgba(184, 61, 97, 0.12);
 
     background:
-        rgba(255, 255, 255, 0.82);
+        rgba(255, 255, 255, 0.92);
 
     box-shadow:
-        0 15px 40px rgba(120, 45, 70, 0.09);
+        0 18px 50px
+        rgba(100, 30, 50, 0.12);
 
     transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
 }
 
-.razon-card::before {
-    content: "";
+#recuerdos .recuerdo:hover {
+    transform:
+        translateY(-10px);
 
+    border-color:
+        rgba(184, 61, 97, 0.3);
+
+    box-shadow:
+        0 28px 65px
+        rgba(100, 30, 50, 0.18);
+}
+
+
+/* ==========================================================
+   NÚMERO 01, 02, 03, 04
+   ========================================================== */
+
+.numero-recuerdo {
     position: absolute;
 
-    width: 100px;
-    height: 100px;
+    top: 18px;
+    left: 18px;
 
-    top: -50px;
-    right: -50px;
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
 
     border-radius: 50%;
 
     background:
-        rgba(255, 205, 220, 0.35);
-}
+        rgba(255, 255, 255, 0.92);
 
-.razon-card:hover {
-    transform:
-        translateY(-8px)
-        scale(1.02);
+    color: #b83d61;
 
-    border-color:
-        rgba(211, 107, 136, 0.35);
+    font-size: 15px;
+
+    font-weight: bold;
 
     box-shadow:
-        0 22px 50px rgba(120, 45, 70, 0.15);
+        0 8px 25px
+        rgba(0, 0, 0, 0.15);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease;
 }
 
-.razon-icono {
+.recuerdo:hover .numero-recuerdo {
+    transform:
+        scale(1.08);
+
+    background: #b83d61;
+
+    color: white;
+}
+
+
+/* ==========================================================
+   CONTENEDOR DE LA IMAGEN
+   ========================================================== */
+
+.contenedor-imagen {
     position: relative;
 
-    width: 70px;
-    height: 70px;
+    overflow: hidden;
+
+    background: #f8e8ed;
+}
+
+.contenedor-imagen::after {
+    content: "❤️ Ver recuerdo";
+
+    position: absolute;
+
+    inset: 0;
 
     display: flex;
 
     justify-content: center;
     align-items: center;
 
-    margin: 0 auto 20px;
-
-    border-radius: 50%;
-
     background:
-        linear-gradient(
-            135deg,
-            #ffe2eb,
-            #fff
-        );
-
-    box-shadow:
-        0 8px 25px rgba(184, 61, 97, 0.12);
-
-    font-size: 34px;
-
-    transition:
-        transform 0.35s ease;
-}
-
-.razon-card:hover .razon-icono {
-    transform:
-        scale(1.1)
-        rotate(5deg);
-}
-
-.razon-card h3 {
-    position: relative;
-
-    margin-bottom: 12px;
-
-    font-size: 24px;
-
-    color: #9e3152;
-}
-
-.razon-card p {
-    position: relative;
-
-    font-size: 16px;
-
-    line-height: 1.75;
-
-    color: #72505c;
-}
-
-.razon-especial {
-    background:
-        linear-gradient(
-            145deg,
-            #fff,
-            #fff0f5
-        );
-
-    border-color:
-        rgba(184, 61, 97, 0.22);
-}
-
-
-/* ========================================
-   RAZÓN SECRETA
-======================================== */
-
-.boton-razon-secreta {
-    padding: 16px 30px;
-
-    border: none;
-
-    border-radius: 50px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #b83d61,
-            #d35d7e
-        );
+        rgba(92, 26, 48, 0.45);
 
     color: white;
 
-    font-size: 17px;
-
-    box-shadow:
-        0 10px 30px rgba(184, 61, 97, 0.25);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.boton-razon-secreta:hover {
-    transform:
-        translateY(-4px)
-        scale(1.03);
-
-    box-shadow:
-        0 15px 35px rgba(184, 61, 97, 0.35);
-}
-
-.razon-secreta {
-    max-width: 650px;
-    max-height: 0;
-
-    margin: 0 auto;
-
-    padding: 0 30px;
-
-    overflow: hidden;
-
-    opacity: 0;
-
-    border-radius: 30px;
-
-    background:
-        rgba(255, 255, 255, 0.9);
-
-    box-shadow:
-        0 20px 55px rgba(120, 45, 70, 0.12);
-
-    transform:
-        translateY(20px)
-        scale(0.96);
-
-    transition:
-        max-height 0.9s ease,
-        margin 0.6s ease,
-        padding 0.6s ease,
-        opacity 0.6s ease,
-        transform 0.6s ease;
-}
-
-.razon-secreta.mostrar {
-    max-height: 500px;
-
-    margin-top: 35px;
-
-    padding: 40px 30px;
-
-    opacity: 1;
-
-    transform:
-        translateY(0)
-        scale(1);
-}
-
-.corazon-secreto {
-    margin-bottom: 15px;
-
-    font-size: 60px;
-
-    animation:
-        latido 1.3s infinite;
-}
-
-.razon-secreta h3 {
-    margin-bottom: 15px;
-
-    font-size: 30px;
-
-    color: #9e3152;
-}
-
-.razon-secreta p {
-    margin-bottom: 12px;
-
-    font-size: 17px;
-
-    line-height: 1.8;
-
-    color: #68434f;
-}
-
-.razon-secreta .razon-destacada {
-    margin-top: 20px;
-    margin-bottom: 0;
-
-    font-size: 22px;
+    font-size: 19px;
 
     font-weight: bold;
 
-    color: #b83d61;
-}
+    letter-spacing: 1px;
 
+    opacity: 0;
 
-/* ========================================
-   GALERÍA
-======================================== */
-
-.fotos-seccion {
-    padding: 100px 20px;
-
-    background: #fff;
-}
-
-.titulo-fotos {
-    max-width: 700px;
-
-    margin:
-        0 auto 50px;
-
-    text-align: center;
-}
-
-.titulo-fotos h2 {
-    margin: 15px 0;
-
-    font-size:
-        clamp(
-            35px,
-            7vw,
-            55px
-        );
-
-    color: #9e3152;
-}
-
-.titulo-fotos > p:last-child {
-    line-height: 1.7;
-
-    color: #72505c;
-}
-
-.galeria {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 30px;
-
-    max-width: 1000px;
-
-    margin: auto;
-}
-
-.foto {
-    overflow: hidden;
-
-    border-radius: 25px;
-
-    background: white;
-
-    box-shadow:
-        0 15px 40px rgba(100, 30, 50, 0.12);
+    pointer-events: none;
 
     transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
+        opacity 0.4s ease;
 }
 
-.foto:hover {
-    transform:
-        translateY(-8px);
-
-    box-shadow:
-        0 22px 50px rgba(100, 30, 50, 0.18);
+.recuerdo:hover
+.contenedor-imagen::after {
+    opacity: 1;
 }
 
-.foto img {
+
+/* ==========================================================
+   IMÁGENES
+   ========================================================== */
+
+#recuerdos .foto img {
     display: block;
 
     width: 100%;
-    height: 350px;
+    height: 390px;
 
     object-fit: cover;
 
     cursor: pointer;
 
     transition:
-        transform 0.5s ease,
+        transform 0.6s ease,
         filter 0.5s ease;
 }
 
-.foto:hover img {
+#recuerdos .recuerdo:hover img {
     transform:
-        scale(1.04);
+        scale(1.06);
+
+    filter:
+        brightness(0.92);
 }
 
-.foto-info {
-    padding: 20px;
+
+/* ==========================================================
+   INFORMACIÓN DE CADA FOTO
+   ========================================================== */
+
+#recuerdos .foto-info {
+    position: relative;
+
+    padding: 27px 25px 30px;
 
     text-align: center;
 }
 
-.foto-info h3 {
-    margin-bottom: 8px;
+.recuerdo-etiqueta {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 11px;
+
+    letter-spacing: 2.5px;
+
+    font-weight: bold;
+
+    color: #c15a78;
+}
+
+#recuerdos .foto-info h3 {
+    margin-bottom: 10px;
+
+    font-size: 25px;
 
     color: #9e3152;
 }
 
-.foto-info p {
-    line-height: 1.6;
+#recuerdos .foto-info p {
+    max-width: 370px;
+
+    margin: auto;
+
+    font-size: 16px;
+
+    line-height: 1.7;
 
     color: #72505c;
 }
 
+.ver-recuerdo {
+    display: inline-block;
 
-/* ========================================
-   SORPRESA FINAL
-======================================== */
+    margin-top: 17px;
 
-.sorpresa-final {
-    min-height: 100vh;
+    font-size: 13px;
 
-    display: flex;
+    font-weight: bold;
 
-    justify-content: center;
-    align-items: center;
-
-    padding: 100px 20px;
-
-    text-align: center;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #ffdce7,
-            transparent 55%
-        ),
-        linear-gradient(
-            135deg,
-            #fff1f5,
-            #ffdce7
-        );
-}
-
-.sorpresa-contenido {
-    max-width: 750px;
-}
-
-.corazon-final {
-    font-size: 85px;
-
-    margin-bottom: 20px;
-
-    animation:
-        latido 1.4s infinite;
-}
-
-.sorpresa-contenido h2 {
-    margin: 20px 0;
-
-    font-size:
-        clamp(
-            35px,
-            7vw,
-            60px
-        );
-
-    color: #9e3152;
-}
-
-.sorpresa-contenido > p:not(.etiqueta) {
-    margin-bottom: 25px;
-
-    font-size: 19px;
-
-    line-height: 1.8;
-
-    color: #694450;
-}
-
-.boton-final {
-    padding: 17px 30px;
-
-    border: none;
-
-    border-radius: 50px;
-
-    background: #b83d61;
-
-    color: white;
-
-    font-size: 17px;
-
-    box-shadow:
-        0 10px 30px rgba(184, 61, 97, 0.25);
+    color: #b83d61;
 
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.3s ease;
 }
 
-.boton-final:hover {
+.recuerdo:hover .ver-recuerdo {
     transform:
-        scale(1.05);
-
-    box-shadow:
-        0 15px 35px rgba(184, 61, 97, 0.35);
+        translateY(-2px);
 }
 
-.mensaje-final {
-    display: none;
 
-    margin-top: 40px;
+/* ==========================================================
+   MENSAJE DEBAJO DE LOS 4 RECUERDOS
+   ========================================================== */
 
-    padding: 45px 25px;
+.mensaje-recuerdos {
+    max-width: 700px;
+
+    margin:
+        70px auto 0;
+
+    padding:
+        40px 30px;
+
+    text-align: center;
 
     border-radius: 30px;
 
     background:
-        rgba(255, 255, 255, 0.8);
+        rgba(255, 255, 255, 0.75);
+
+    border:
+        1px solid
+        rgba(184, 61, 97, 0.12);
 
     box-shadow:
-        0 20px 60px rgba(100, 30, 50, 0.15);
-
-    animation:
-        aparecer 1s ease;
+        0 18px 50px
+        rgba(100, 30, 50, 0.08);
 }
 
-.mensaje-final.mostrar {
-    display: block;
-}
-
-.lluvia-corazones {
-    margin-bottom: 25px;
-
-    font-size: 28px;
-
-    letter-spacing: 8px;
-
-    animation:
-        flotar 2s infinite;
-}
-
-.mensaje-final h2 {
-    margin-bottom: 20px;
-}
-
-.mensaje-final p {
+.mini-corazon {
     margin-bottom: 15px;
-
-    font-size: 20px;
-}
-
-.mensaje-final .grande {
-    font-size: 32px;
-
-    font-weight: bold;
-
-    color: #b83d61;
-}
-
-.final-amor {
-    margin: 30px 0;
 
     font-size: 45px;
 
-    font-weight: bold;
-
-    color: #b83d61;
-
     animation:
-        latido 1.4s infinite;
+        latido 1.5s infinite;
 }
 
-.firma-final {
+.mensaje-recuerdos p {
+    margin-bottom: 10px;
+
+    font-size: 17px;
+
+    color: #72505c;
+
     line-height: 1.7;
 }
 
+.mensaje-recuerdos h3 {
+    font-size: 25px;
 
-/* ========================================
-   MODAL DE FOTOS
-======================================== */
+    line-height: 1.5;
+
+    color: #9e3152;
+}
+
+
+/* ==========================================================
+   NUEVO MODAL DE RECUERDOS
+   ========================================================== */
 
 .modal-foto {
     position: fixed;
@@ -1345,7 +389,7 @@ button {
 
     z-index: 11000;
 
-    display: none;
+    display: flex;
 
     justify-content: center;
     align-items: center;
@@ -1353,537 +397,458 @@ button {
     padding: 30px;
 
     background:
-        rgba(30, 10, 20, 0.92);
+        rgba(35, 12, 22, 0.94);
 
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
+    backdrop-filter:
+        blur(10px);
 
-.modal-foto.mostrar {
-    display: flex;
-}
+    -webkit-backdrop-filter:
+        blur(10px);
 
-.modal-foto img {
-    max-width: 95%;
-    max-height: 90vh;
+    opacity: 0;
 
-    object-fit: contain;
-
-    border-radius: 15px;
-
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.4);
-
-    animation:
-        zoom 0.4s ease;
-}
-
-.cerrar-foto {
-    position: absolute;
-
-    top: 20px;
-    right: 30px;
-
-    color: white;
-
-    font-size: 45px;
-
-    cursor: pointer;
-
-    line-height: 1;
-}
-
-
-/* ========================================
-   ANIMACIONES
-======================================== */
-
-@keyframes latido {
-
-    0%,
-    100% {
-        transform:
-            scale(1);
-    }
-
-    50% {
-        transform:
-            scale(1.12);
-    }
-}
-
-
-@keyframes aparecer {
-
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-
-@keyframes subir {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-
-@keyframes flecha {
-
-    0%,
-    100% {
-        transform:
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(10px);
-    }
-}
-
-
-@keyframes flotar {
-
-    0%,
-    100% {
-        transform:
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(-10px);
-    }
-}
-
-
-@keyframes zoom {
-
-    from {
-        opacity: 0;
-
-        transform:
-            scale(0.8);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            scale(1);
-    }
-}
-
-
-/* ========================================
-   CORAZONES FLOTANTES
-======================================== */
-
-.corazon-flotante {
-    position: fixed;
-
-    bottom: -40px;
+    visibility: hidden;
 
     pointer-events: none;
 
-    z-index: 8000;
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+}
+
+.modal-foto.mostrar {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* ==========================================================
+   CAJA CENTRAL DEL MODAL
+   ========================================================== */
+
+.modal-recuerdo-contenido {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(300px, 0.85fr);
+
+    width: min(
+        1050px,
+        95vw
+    );
+
+    max-height: 88vh;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background: white;
+
+    box-shadow:
+        0 30px 90px
+        rgba(0, 0, 0, 0.4);
+
+    transform:
+        translateY(30px)
+        scale(0.94);
+
+    transition:
+        transform 0.5s
+        cubic-bezier(
+            0.2,
+            0.8,
+            0.2,
+            1
+        );
+}
+
+.modal-foto.mostrar
+.modal-recuerdo-contenido {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* ==========================================================
+   FOTO GRANDE DEL MODAL
+   ========================================================== */
+
+.modal-imagen-contenedor {
+    min-height: 550px;
+
+    background: #1c1015;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.modal-imagen-contenedor img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+    max-height: 88vh;
+
+    object-fit: contain;
+
+    border-radius: 0;
+
+    box-shadow: none;
+}
+
+
+/* ==========================================================
+   TEXTO DEL MODAL
+   ========================================================== */
+
+.modal-texto-recuerdo {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding:
+        50px 40px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #fff4f7
+        );
+}
+
+.modal-etiqueta {
+    margin-bottom: 15px;
+
+    font-size: 11px;
+
+    letter-spacing: 2.5px;
+
+    font-weight: bold;
+
+    color: #b04c6b;
+}
+
+.modal-texto-recuerdo h2 {
+    font-size:
+        clamp(
+            28px,
+            4vw,
+            40px
+        );
+
+    line-height: 1.2;
+
+    color: #9e3152;
+}
+
+.modal-linea {
+    width: 60px;
+    height: 3px;
+
+    margin:
+        20px auto;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d36b88,
+            #f2a6ba
+        );
+}
+
+.modal-texto-recuerdo p {
+    font-size: 17px;
+
+    line-height: 1.85;
+
+    color: #68434f;
+}
+
+.modal-corazon {
+    margin-top: 25px;
+
+    font-size: 40px;
 
     animation:
-        subirCorazon
-        6s linear forwards;
+        latido 1.5s infinite;
 }
 
 
-@keyframes subirCorazon {
+/* ==========================================================
+   BOTÓN X
+   ========================================================== */
 
-    0% {
-        transform:
-            translateY(0)
-            rotate(0deg);
+.cerrar-foto {
+    position: fixed;
 
-        opacity: 0.8;
-    }
+    top: 20px;
+    right: 25px;
 
-    100% {
-        transform:
-            translateY(-110vh)
-            rotate(25deg);
+    z-index: 11010;
 
-        opacity: 0;
-    }
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 35px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.cerrar-foto:hover {
+    transform:
+        rotate(90deg)
+        scale(1.08);
+
+    background:
+        rgba(255, 255, 255, 0.25);
 }
 
 
-/* ========================================
-   TABLET
-======================================== */
+/* ==========================================================
+   TABLETS
+   ========================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 850px) {
 
-    .razones-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
+    #recuerdos .galeria {
+        gap: 22px;
     }
 
-}
+    #recuerdos .foto img {
+        height: 330px;
+    }
 
+    .modal-recuerdo-contenido {
+        grid-template-columns: 1fr;
 
-@media (max-width: 768px) {
+        overflow-y: auto;
 
-    .carta {
+        max-height: 90vh;
+    }
+
+    .modal-imagen-contenedor {
+        min-height: 0;
+
+        height: 50vh;
+    }
+
+    .modal-imagen-contenedor img {
+        max-height: 50vh;
+    }
+
+    .modal-texto-recuerdo {
         padding:
-            40px 25px;
-    }
-
-
-    .contador {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-
-    .galeria {
-        grid-template-columns:
-            1fr;
-    }
-
-
-    .foto img {
-        height: 420px;
-    }
-
-
-    .boton-musica {
-        top: 12px;
-
-        right: 12px;
-
-        font-size: 12px;
-
-        padding:
-            9px 13px;
-    }
-
-
-    /* LÍNEA DE TIEMPO */
-
-    .linea-tiempo::before {
-        left: 24px;
-
-        transform: none;
-    }
-
-
-    .momento,
-    .momento:nth-child(odd),
-    .momento:nth-child(even) {
-        width: 100%;
-
-        left: 0;
-
-        text-align: left;
-
-        padding:
-            20px 0 35px 70px;
-    }
-
-
-    .momento-punto,
-    .momento:nth-child(odd) .momento-punto,
-    .momento:nth-child(even) .momento-punto {
-        left: 0;
-
-        right: auto;
-
-        top: 20px;
-    }
-
-
-    .momento-contenido {
-        padding: 25px 20px;
+            35px 30px;
     }
 
 }
 
 
-/* ========================================
+/* ==========================================================
    CELULARES
-======================================== */
+   ========================================================== */
 
 @media (max-width: 600px) {
 
-    .portada {
-        padding-top: 90px;
-    }
-
-
-    .corazones {
-        font-size: 22px;
-    }
-
-
-    .fecha {
-        font-size: 16px;
-    }
-
-
-    .carta-seccion,
-    .historia-seccion,
-    .contador-seccion,
-    .razones-seccion,
-    .fotos-seccion,
-    .sorpresa-final {
+    #recuerdos {
         padding:
-            70px 15px;
+            75px 15px;
     }
 
+    #recuerdos .titulo-fotos {
+        margin-bottom: 40px;
+    }
 
-    .carta {
+    #recuerdos .titulo-fotos h2 {
+        font-size: 36px;
+    }
+
+    #recuerdos .galeria {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    #recuerdos .recuerdo {
+        border-radius: 22px;
+    }
+
+    #recuerdos .foto img {
+        height: 360px;
+    }
+
+    .numero-recuerdo {
+        width: 46px;
+        height: 46px;
+
+        top: 14px;
+        left: 14px;
+
+        font-size: 13px;
+    }
+
+    .contenedor-imagen::after {
+        display: none;
+    }
+
+    #recuerdos .foto-info {
+        padding:
+            23px 18px 27px;
+    }
+
+    #recuerdos .foto-info h3 {
+        font-size: 23px;
+    }
+
+    .mensaje-recuerdos {
+        margin-top: 50px;
+
         padding:
             35px 20px;
     }
 
-
-    .carta p:not(.etiqueta):not(.firma) {
-        font-size: 16px;
-    }
-
-
-    .historia-titulo {
-        margin-bottom: 50px;
-    }
-
-
-    .historia-titulo h2 {
-        font-size: 35px;
-    }
-
-
-    .momento-contenido h3 {
+    .mensaje-recuerdos h3 {
         font-size: 22px;
     }
 
 
-    .momento-contenido p {
+    /* MODAL */
+
+    .modal-foto {
+        padding:
+            60px 12px 15px;
+    }
+
+    .modal-recuerdo-contenido {
+        width: 100%;
+
+        max-height: 86vh;
+
+        border-radius: 22px;
+    }
+
+    .modal-imagen-contenedor {
+        height: 46vh;
+    }
+
+    .modal-imagen-contenedor img {
+        max-height: 46vh;
+    }
+
+    .modal-texto-recuerdo {
+        padding:
+            28px 20px 32px;
+    }
+
+    .modal-texto-recuerdo h2 {
+        font-size: 28px;
+    }
+
+    .modal-texto-recuerdo p {
         font-size: 15px;
+
+        line-height: 1.7;
     }
 
+    .modal-corazon {
+        margin-top: 18px;
 
-    .contador {
-        gap: 10px;
+        font-size: 32px;
     }
 
+    .cerrar-foto {
+        top: 10px;
+        right: 12px;
 
-    .tiempo {
-        padding:
-            20px 10px;
-    }
-
-
-    .tiempo span {
-        font-size: 35px;
-    }
-
-
-    .tiempo small {
-        font-size: 12px;
-    }
-
-
-    /* RAZONES */
-
-    .razones-contenido h2 {
-        font-size: 35px;
-    }
-
-
-    .razones-intro {
-        margin-bottom: 40px;
-
-        font-size: 16px;
-    }
-
-
-    .razones-grid {
-        grid-template-columns:
-            1fr;
-
-        gap: 18px;
-    }
-
-
-    .razon-card {
-        padding:
-            30px 20px;
-    }
-
-
-    .razon-icono {
-        width: 62px;
-        height: 62px;
+        width: 42px;
+        height: 42px;
 
         font-size: 30px;
     }
 
-
-    .razon-card h3 {
-        font-size: 22px;
-    }
-
-
-    .razon-secreta.mostrar {
-        padding:
-            35px 20px;
-    }
-
-
-    .razon-secreta h3 {
-        font-size: 26px;
-    }
-
-
-    /* FOTOS */
-
-    .foto img {
-        height: 330px;
-    }
-
-
-    .mensaje-final {
-        padding:
-            35px 18px;
-    }
-
-
-    .mensaje-final .grande {
-        font-size: 27px;
-    }
-
-
-    .final-amor {
-        font-size: 35px;
-    }
-
 }
 
 
-/* ========================================
+/* ==========================================================
    CELULARES PEQUEÑOS
-======================================== */
+   ========================================================== */
 
 @media (max-width: 380px) {
 
-    .bienvenida h1 {
-        font-size: 55px;
-    }
-
-
-    .bienvenida p {
-        font-size: 17px;
-    }
-
-
-    .portada h1 {
-        font-size: 55px;
-    }
-
-
-    .portada h2 {
-        font-size: 25px;
-    }
-
-
-    .contador {
-        gap: 7px;
-    }
-
-
-    .tiempo {
-        padding:
-            15px 5px;
-    }
-
-
-    .tiempo span {
-        font-size: 28px;
-    }
-
-
-    .foto img {
-        height: 280px;
-    }
-
-
-    .momento {
-        padding-left: 62px;
-    }
-
-
-    .momento-punto {
-        width: 42px;
-
-        height: 42px;
-
-        font-size: 18px;
-    }
-
-
-    .linea-tiempo::before {
-        left: 21px;
-    }
-
-
-    .razones-contenido h2 {
+    #recuerdos .titulo-fotos h2 {
         font-size: 31px;
     }
 
-
-    .boton-razon-secreta {
-        width: 100%;
-
-        padding:
-            15px 15px;
-
-        font-size: 15px;
+    #recuerdos .foto img {
+        height: 300px;
     }
 
-}
+    .modal-imagen-contenedor {
+        height: 40vh;
+    }
 
+    .modal-imagen-contenedor img {
+        max-height: 40vh;
+    }
 
-/* ========================================
-   ACCESIBILIDAD
-   REDUCIR ANIMACIONES SI EL DISPOSITIVO
-   LO SOLICITA
-======================================== */
+    .modal-texto-recuerdo {
+        padding:
+            24px 16px;
+    }
 
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-
-        animation-duration: 0.01ms !important;
-
-        animation-iteration-count: 1 !important;
-
-        transition-duration: 0.01ms !important;
+    .modal-texto-recuerdo h2 {
+        font-size: 25px;
     }
 
 }
