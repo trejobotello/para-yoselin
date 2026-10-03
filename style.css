@@ -3230,9 +3230,14 @@ button {
 .modal-texto-recuerdo {
     display: flex;
     flex-direction: column;
+
+    /* Centrado vertical */
     justify-content: center;
 
-    padding: 50px 40px;
+    /* Centrado horizontal */
+    align-items: center;
+
+    padding: 45px 40px;
 
     text-align: center;
 
@@ -3242,6 +3247,10 @@ button {
             #fff9fb,
             #ffeef4
         );
+
+    /* Hace que ocupe toda la altura del lado derecho */
+    height: 100%;
+    min-height: 500px;
 }
 
 .modal-etiqueta {
@@ -3255,6 +3264,11 @@ button {
 }
 
 .modal-texto-recuerdo h2 {
+    width: 100%;
+    max-width: 420px;
+
+    margin: 0 auto;
+
     font-size:
         clamp(30px, 5vw, 44px);
 
@@ -3269,6 +3283,8 @@ button {
 
     margin: 22px auto;
 
+    flex-shrink: 0;
+
     background:
         linear-gradient(
             90deg,
@@ -3279,6 +3295,11 @@ button {
 }
 
 .modal-texto-recuerdo p {
+    width: 100%;
+    max-width: 420px;
+
+    margin: 0 auto;
+
     font-size: 16px;
     line-height: 1.85;
 
@@ -3293,7 +3314,6 @@ button {
     animation:
         latido 1.5s infinite;
 }
-
 
 /* =========================================================
    CORAZONES FLOTANTES
