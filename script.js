@@ -1,19 +1,19 @@
-/* ========================================
+/* ==========================================================
    PARA YOSELIN ❤️
    JAVASCRIPT PRINCIPAL
-======================================== */
+   ========================================================== */
 
 
-/* ========================================
+/* ==========================================================
    FECHA DE INICIO
-======================================== */
+   ========================================================== */
 
 const fechaInicio = new Date("2024-10-27T00:00:00");
 
 
-/* ========================================
+/* ==========================================================
    PANTALLA DE BIENVENIDA
-======================================== */
+   ========================================================== */
 
 const bienvenida =
     document.getElementById("bienvenida");
@@ -30,16 +30,16 @@ if (abrirPagina && bienvenida) {
 
         reproducirMusica();
 
-        lanzarCorazonesBienvenida();
+        lanzarGrupoCorazones(20);
 
     });
 
 }
 
 
-/* ========================================
+/* ==========================================================
    CONTADOR
-======================================== */
+   ========================================================== */
 
 function actualizarContador() {
 
@@ -96,22 +96,34 @@ function actualizarContador() {
 
 
     if (elementoDias) {
-        elementoDias.textContent = dias;
+
+        elementoDias.textContent =
+            dias;
+
     }
 
 
     if (elementoHoras) {
-        elementoHoras.textContent = horas;
+
+        elementoHoras.textContent =
+            String(horas).padStart(2, "0");
+
     }
 
 
     if (elementoMinutos) {
-        elementoMinutos.textContent = minutos;
+
+        elementoMinutos.textContent =
+            String(minutos).padStart(2, "0");
+
     }
 
 
     if (elementoSegundos) {
-        elementoSegundos.textContent = segundos;
+
+        elementoSegundos.textContent =
+            String(segundos).padStart(2, "0");
+
     }
 
 }
@@ -119,15 +131,16 @@ function actualizarContador() {
 
 actualizarContador();
 
+
 setInterval(
     actualizarContador,
     1000
 );
 
 
-/* ========================================
+/* ==========================================================
    PRIMERA SORPRESA
-======================================== */
+   ========================================================== */
 
 const botonSorpresa =
     document.getElementById("botonSorpresa");
@@ -153,7 +166,7 @@ if (botonSorpresa && mensajeSorpresa) {
                 botonSorpresa.textContent =
                     "❤️ Te amo, Yoselin";
 
-                lanzarGrupoCorazones(12);
+                lanzarGrupoCorazones(15);
 
             } else {
 
@@ -168,9 +181,9 @@ if (botonSorpresa && mensajeSorpresa) {
 }
 
 
-/* ========================================
+/* ==========================================================
    RAZÓN SECRETA
-======================================== */
+   ========================================================== */
 
 const botonRazonSecreta =
     document.getElementById(
@@ -206,14 +219,20 @@ if (
                 lanzarGrupoCorazones(18);
 
 
-                setTimeout(function () {
+                setTimeout(
+                    function () {
 
-                    razonSecreta.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center"
-                    });
+                        razonSecreta.scrollIntoView({
 
-                }, 250);
+                            behavior: "smooth",
+
+                            block: "center"
+
+                        });
+
+                    },
+                    250
+                );
 
             } else {
 
@@ -228,15 +247,19 @@ if (
 }
 
 
-/* ========================================
+/* ==========================================================
    MÚSICA
-======================================== */
+   ========================================================== */
 
 const musicaFondo =
-    document.getElementById("musicaFondo");
+    document.getElementById(
+        "musicaFondo"
+    );
 
 const botonMusica =
-    document.getElementById("botonMusica");
+    document.getElementById(
+        "botonMusica"
+    );
 
 
 if (musicaFondo) {
@@ -246,9 +269,16 @@ if (musicaFondo) {
 }
 
 
+/* ==========================================================
+   ACTUALIZAR BOTÓN DE MÚSICA
+   ========================================================== */
+
 function actualizarBotonMusica() {
 
-    if (!musicaFondo || !botonMusica) {
+    if (
+        !musicaFondo ||
+        !botonMusica
+    ) {
 
         return;
 
@@ -270,6 +300,10 @@ function actualizarBotonMusica() {
 }
 
 
+/* ==========================================================
+   REPRODUCIR MÚSICA
+   ========================================================== */
+
 function reproducirMusica() {
 
     if (!musicaFondo) {
@@ -279,24 +313,36 @@ function reproducirMusica() {
     }
 
 
-    musicaFondo.play()
+    musicaFondo
+        .play()
 
-        .then(function () {
+        .then(
+            function () {
 
-            actualizarBotonMusica();
+                actualizarBotonMusica();
 
-        })
+            }
+        )
 
-        .catch(function () {
+        .catch(
+            function () {
 
-            actualizarBotonMusica();
+                actualizarBotonMusica();
 
-        });
+            }
+        );
 
 }
 
 
-if (botonMusica && musicaFondo) {
+/* ==========================================================
+   BOTÓN DE MÚSICA
+   ========================================================== */
+
+if (
+    botonMusica &&
+    musicaFondo
+) {
 
     botonMusica.addEventListener(
         "click",
@@ -320,9 +366,9 @@ if (botonMusica && musicaFondo) {
 }
 
 
-/* ========================================
+/* ==========================================================
    CORAZONES FLOTANTES
-======================================== */
+   ========================================================== */
 
 function crearCorazon() {
 
@@ -335,12 +381,14 @@ function crearCorazon() {
 
 
     const corazones = [
+
         "❤️",
         "💕",
         "💗",
         "💖",
         "💓",
         "💞"
+
     ];
 
 
@@ -358,11 +406,15 @@ function crearCorazon() {
 
 
     corazon.style.fontSize =
-        Math.random() * 20 + 15 + "px";
+        Math.random() * 20 +
+        15 +
+        "px";
 
 
     corazon.style.animationDuration =
-        Math.random() * 3 + 5 + "s";
+        Math.random() * 3 +
+        5 +
+        "s";
 
 
     document.body.appendChild(
@@ -370,29 +422,31 @@ function crearCorazon() {
     );
 
 
-    setTimeout(function () {
+    setTimeout(
+        function () {
 
-        corazon.remove();
+            corazon.remove();
 
-    }, 9000);
+        },
+        9000
+    );
 
 }
 
 
-/* ========================================
-   CORAZONES DE FONDO
-======================================== */
+/* ==========================================================
+   CORAZONES AUTOMÁTICOS
+   ========================================================== */
 
-const intervaloCorazones =
-    setInterval(
-        crearCorazon,
-        1100
-    );
+setInterval(
+    crearCorazon,
+    1100
+);
 
 
-/* ========================================
-   GRUPO DE CORAZONES
-======================================== */
+/* ==========================================================
+   LANZAR VARIOS CORAZONES
+   ========================================================== */
 
 function lanzarGrupoCorazones(cantidad) {
 
@@ -416,20 +470,10 @@ function lanzarGrupoCorazones(cantidad) {
 }
 
 
-/* ========================================
-   CORAZONES AL ABRIR
-======================================== */
-
-function lanzarCorazonesBienvenida() {
-
-    lanzarGrupoCorazones(20);
-
-}
-
-
-/* ========================================
-   FOTOS AMPLIABLES
-======================================== */
+/* ==========================================================
+   NUEVA GALERÍA
+   4 RECUERDOS, UNA HISTORIA ❤️
+   ========================================================== */
 
 const fotos =
     document.querySelectorAll(
@@ -455,42 +499,193 @@ const cerrarFoto =
     );
 
 
-if (
-    fotos.length > 0 &&
-    modalFoto &&
-    imagenGrande
-) {
+const tituloRecuerdo =
+    document.getElementById(
+        "tituloRecuerdo"
+    );
 
-    fotos.forEach(function (foto) {
+
+const textoRecuerdo =
+    document.getElementById(
+        "textoRecuerdo"
+    );
+
+
+/* ==========================================================
+   ABRIR RECUERDO
+   ========================================================== */
+
+function abrirRecuerdo(foto) {
+
+    if (
+        !modalFoto ||
+        !imagenGrande
+    ) {
+
+        return;
+
+    }
+
+
+    /* ------------------------------
+       COLOCAR LA FOTOGRAFÍA
+       ------------------------------ */
+
+    imagenGrande.src =
+        foto.src;
+
+
+    imagenGrande.alt =
+        foto.alt || "Nuestro recuerdo";
+
+
+    /* ------------------------------
+       LEER DATA-TITULO
+       ------------------------------ */
+
+    const titulo =
+        foto.dataset.titulo ||
+        "Nuestro recuerdo ❤️";
+
+
+    /* ------------------------------
+       LEER DATA-MENSAJE
+       ------------------------------ */
+
+    const mensaje =
+        foto.dataset.mensaje ||
+        "Un momento especial de nuestra historia.";
+
+
+    /* ------------------------------
+       COLOCAR EL TÍTULO
+       ------------------------------ */
+
+    if (tituloRecuerdo) {
+
+        tituloRecuerdo.textContent =
+            titulo;
+
+    }
+
+
+    /* ------------------------------
+       COLOCAR EL MENSAJE
+       ------------------------------ */
+
+    if (textoRecuerdo) {
+
+        textoRecuerdo.textContent =
+            mensaje;
+
+    }
+
+
+    /* ------------------------------
+       MOSTRAR MODAL
+       ------------------------------ */
+
+    modalFoto.classList.add(
+        "mostrar"
+    );
+
+
+    /* ------------------------------
+       BLOQUEAR SCROLL
+       ------------------------------ */
+
+    document.body.style.overflow =
+        "hidden";
+
+
+    /* ------------------------------
+       CORAZONES
+       ------------------------------ */
+
+    lanzarGrupoCorazones(8);
+
+}
+
+
+/* ==========================================================
+   CLIC EN CADA FOTOGRAFÍA
+   ========================================================== */
+
+fotos.forEach(
+    function (foto) {
 
         foto.addEventListener(
             "click",
             function () {
 
-                imagenGrande.src =
-                    foto.src;
-
-                imagenGrande.alt =
-                    foto.alt;
-
-                modalFoto.classList.add(
-                    "mostrar"
-                );
-
-                document.body.style.overflow =
-                    "hidden";
+                abrirRecuerdo(foto);
 
             }
         );
 
-    });
+    }
+);
 
-}
+
+/* ==========================================================
+   HACER CLIC EN TODA LA TARJETA
+   ========================================================== */
+
+const tarjetasRecuerdo =
+    document.querySelectorAll(
+        ".recuerdo"
+    );
 
 
-/* ========================================
-   FUNCIÓN PARA CERRAR FOTO
-======================================== */
+tarjetasRecuerdo.forEach(
+    function (tarjeta) {
+
+        tarjeta.style.cursor =
+            "pointer";
+
+
+        tarjeta.addEventListener(
+            "click",
+            function (evento) {
+
+                /*
+                Si se hizo clic directamente
+                sobre la imagen, el evento
+                anterior ya la abrió.
+                */
+
+                if (
+                    evento.target.tagName ===
+                    "IMG"
+                ) {
+
+                    return;
+
+                }
+
+
+                const foto =
+                    tarjeta.querySelector(
+                        "img"
+                    );
+
+
+                if (foto) {
+
+                    abrirRecuerdo(foto);
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* ==========================================================
+   CERRAR MODAL
+   ========================================================== */
 
 function cerrarModalFoto() {
 
@@ -500,33 +695,66 @@ function cerrarModalFoto() {
 
     }
 
+
     modalFoto.classList.remove(
         "mostrar"
     );
 
+
     document.body.style.overflow =
         "";
 
-}
 
+    /*
+    Esperamos a que termine
+    la animación antes de limpiar
+    la fotografía.
+    */
 
-/* ========================================
-   BOTÓN X DEL MODAL
-======================================== */
+    setTimeout(
+        function () {
 
-if (cerrarFoto && modalFoto) {
+            if (
+                !modalFoto.classList.contains(
+                    "mostrar"
+                )
+            ) {
 
-    cerrarFoto.addEventListener(
-        "click",
-        cerrarModalFoto
+                imagenGrande.src =
+                    "";
+
+            }
+
+        },
+        450
     );
 
 }
 
 
-/* ========================================
-   CERRAR TOCANDO EL FONDO
-======================================== */
+/* ==========================================================
+   CERRAR CON X
+   ========================================================== */
+
+if (cerrarFoto) {
+
+    cerrarFoto.addEventListener(
+        "click",
+        function (evento) {
+
+            evento.stopPropagation();
+
+            cerrarModalFoto();
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   CERRAR TOCANDO FUERA
+   ========================================================== */
 
 if (modalFoto) {
 
@@ -535,7 +763,8 @@ if (modalFoto) {
         function (evento) {
 
             if (
-                evento.target === modalFoto
+                evento.target ===
+                modalFoto
             ) {
 
                 cerrarModalFoto();
@@ -548,9 +777,9 @@ if (modalFoto) {
 }
 
 
-/* ========================================
-   CERRAR FOTO CON ESCAPE
-======================================== */
+/* ==========================================================
+   CERRAR CON ESC
+   ========================================================== */
 
 document.addEventListener(
     "keydown",
@@ -558,7 +787,10 @@ document.addEventListener(
 
         if (
             evento.key === "Escape" &&
-            modalFoto
+            modalFoto &&
+            modalFoto.classList.contains(
+                "mostrar"
+            )
         ) {
 
             cerrarModalFoto();
@@ -569,9 +801,9 @@ document.addEventListener(
 );
 
 
-/* ========================================
+/* ==========================================================
    SORPRESA FINAL
-======================================== */
+   ========================================================== */
 
 const botonFinal =
     document.getElementById(
@@ -594,13 +826,13 @@ if (
         "click",
         function () {
 
-            const yaEstaAbierto =
+            const abierto =
                 mensajeFinal.classList.contains(
                     "mostrar"
                 );
 
 
-            if (!yaEstaAbierto) {
+            if (!abierto) {
 
                 mensajeFinal.classList.add(
                     "mostrar"
@@ -614,14 +846,20 @@ if (
                 lanzarCorazonesFinales();
 
 
-                setTimeout(function () {
+                setTimeout(
+                    function () {
 
-                    mensajeFinal.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center"
-                    });
+                        mensajeFinal.scrollIntoView({
 
-                }, 250);
+                            behavior: "smooth",
+
+                            block: "center"
+
+                        });
+
+                    },
+                    250
+                );
 
             }
 
@@ -631,9 +869,9 @@ if (
 }
 
 
-/* ========================================
-   EXPLOSIÓN FINAL DE CORAZONES
-======================================== */
+/* ==========================================================
+   CORAZONES DE LA SORPRESA FINAL
+   ========================================================== */
 
 function lanzarCorazonesFinales() {
 
@@ -642,9 +880,9 @@ function lanzarCorazonesFinales() {
 }
 
 
-/* ========================================
-   PEQUEÑO EFECTO EN LAS TARJETAS
-======================================== */
+/* ==========================================================
+   EFECTO AL TOCAR LAS RAZONES
+   ========================================================== */
 
 const tarjetasRazones =
     document.querySelectorAll(
@@ -660,7 +898,9 @@ tarjetasRazones.forEach(
             function () {
 
                 tarjeta.animate(
+
                     [
+
                         {
                             transform:
                                 "scale(1)"
@@ -675,12 +915,17 @@ tarjetasRazones.forEach(
                             transform:
                                 "scale(1)"
                         }
+
                     ],
 
                     {
+
                         duration: 450,
+
                         easing: "ease"
+
                     }
+
                 );
 
             }
@@ -690,33 +935,50 @@ tarjetasRazones.forEach(
 );
 
 
-/* ========================================
+/* ==========================================================
    ANIMACIONES AL HACER SCROLL
-======================================== */
+   ========================================================== */
 
 const elementosAnimados =
     document.querySelectorAll(
+
         ".carta, " +
+
         ".historia-titulo, " +
+
         ".momento-contenido, " +
+
         ".contador-contenido, " +
+
         ".razones-contenido, " +
+
         ".razon-card, " +
+
         ".titulo-fotos, " +
-        ".foto, " +
+
+        ".recuerdo, " +
+
+        ".mensaje-recuerdos, " +
+
         ".sorpresa-contenido"
+
     );
 
 
-/* Preparar los elementos */
+/* ==========================================================
+   PREPARAR ELEMENTOS
+   ========================================================== */
 
 elementosAnimados.forEach(
     function (elemento) {
 
-        elemento.style.opacity = "0";
+        elemento.style.opacity =
+            "0";
+
 
         elemento.style.transform =
             "translateY(35px)";
+
 
         elemento.style.transition =
             "opacity 0.8s ease, " +
@@ -726,9 +988,9 @@ elementosAnimados.forEach(
 );
 
 
-/* ========================================
-   OBSERVADOR DE SCROLL
-======================================== */
+/* ==========================================================
+   INTERSECTION OBSERVER
+   ========================================================== */
 
 if (
     "IntersectionObserver" in window
@@ -749,8 +1011,10 @@ if (
                             entrada.target.style.opacity =
                                 "1";
 
+
                             entrada.target.style.transform =
                                 "translateY(0)";
+
 
                             observador.unobserve(
                                 entrada.target
@@ -764,7 +1028,9 @@ if (
             },
 
             {
+
                 threshold: 0.12
+
             }
 
         );
@@ -782,13 +1048,12 @@ if (
 
 } else {
 
-    /* Compatibilidad con navegadores antiguos */
-
     elementosAnimados.forEach(
         function (elemento) {
 
             elemento.style.opacity =
                 "1";
+
 
             elemento.style.transform =
                 "translateY(0)";
@@ -799,8 +1064,8 @@ if (
 }
 
 
-/* ========================================
-   INICIO
-======================================== */
+/* ==========================================================
+   INICIAR BOTÓN DE MÚSICA
+   ========================================================== */
 
 actualizarBotonMusica();
