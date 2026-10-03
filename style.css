@@ -1,12 +1,6 @@
-/* ==========================================================
-   PARA YOSELIN ❤️
-   STYLE.CSS COMPLETO
-   ========================================================== */
-
-
-/* ==========================================================
+/* =========================================================
    CONFIGURACIÓN GENERAL
-   ========================================================== */
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -19,7 +13,6 @@ html {
 }
 
 body {
-    margin: 0;
     font-family: Georgia, "Times New Roman", serif;
     background: #fff7fa;
     color: #4a2631;
@@ -35,10 +28,18 @@ button {
     cursor: pointer;
 }
 
+.etiqueta,
+.pequeno {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #a04d68;
+}
 
-/* ==========================================================
-   PANTALLA DE BIENVENIDA
-   ========================================================== */
+
+/* =========================================================
+   BIENVENIDA
+========================================================= */
 
 .bienvenida {
     position: fixed;
@@ -50,8 +51,9 @@ button {
     justify-content: center;
     align-items: center;
 
-    text-align: center;
     padding: 25px;
+
+    text-align: center;
 
     background:
         radial-gradient(
@@ -128,12 +130,13 @@ button {
 }
 
 
-/* ==========================================================
+/* =========================================================
    BOTÓN DE MÚSICA
-   ========================================================== */
+========================================================= */
 
 .boton-musica {
     position: fixed;
+
     top: 20px;
     right: 20px;
 
@@ -155,8 +158,7 @@ button {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
-    transition:
-        transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .boton-musica:hover {
@@ -164,9 +166,9 @@ button {
 }
 
 
-/* ==========================================================
+/* =========================================================
    PORTADA
-   ========================================================== */
+========================================================= */
 
 .portada {
     position: relative;
@@ -211,17 +213,12 @@ button {
     animation: subir 1.2s ease;
 }
 
-.pequeno,
-.etiqueta {
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: #a04d68;
-}
-
 .portada h1 {
     margin: 15px 0 5px;
+
     font-size: clamp(60px, 12vw, 110px);
     line-height: 1;
+
     color: #9e3152;
 }
 
@@ -231,8 +228,10 @@ button {
 
 .portada h2 {
     margin-bottom: 20px;
+
     font-size: clamp(25px, 5vw, 40px);
     font-weight: normal;
+
     color: #633746;
 }
 
@@ -257,29 +256,26 @@ button {
     box-shadow:
         0 10px 25px rgba(184, 61, 97, 0.25);
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .boton:hover {
     transform: translateY(-4px);
-
-    box-shadow:
-        0 15px 35px rgba(184, 61, 97, 0.3);
 }
 
 .flecha {
     position: absolute;
     bottom: 25px;
+
     font-size: 30px;
+
     animation: flecha 1.5s infinite;
 }
 
 
-/* ==========================================================
+/* =========================================================
    CARTA
-   ========================================================== */
+========================================================= */
 
 .carta-seccion {
     padding: 100px 20px;
@@ -304,6 +300,7 @@ button {
 
 .carta h2 {
     margin: 15px 0;
+
     font-size: 40px;
     color: #9e3152;
 }
@@ -315,20 +312,25 @@ button {
     margin: 20px auto 30px;
 
     border-radius: 5px;
+
     background: #d36b88;
 }
 
 .carta p:not(.etiqueta):not(.firma) {
     margin-bottom: 20px;
+
     font-size: 18px;
     line-height: 1.9;
+
     color: #68434f;
 }
 
 .te-amo {
     margin: 35px 0;
+
     font-size: 40px;
     color: #b83d61;
+
     animation: latido 1.5s infinite;
 }
 
@@ -338,9 +340,9 @@ button {
 }
 
 
-/* ==========================================================
-   NUESTRA HISTORIA
-   ========================================================== */
+/* =========================================================
+   HISTORIA
+========================================================= */
 
 .historia-seccion {
     padding: 110px 20px;
@@ -361,7 +363,9 @@ button {
 
 .historia-titulo h2 {
     margin: 18px 0;
+
     font-size: clamp(35px, 7vw, 55px);
+
     color: #9e3152;
 }
 
@@ -372,9 +376,9 @@ button {
 }
 
 
-/* ==========================================================
+/* =========================================================
    LÍNEA DE TIEMPO
-   ========================================================== */
+========================================================= */
 
 .linea-tiempo {
     position: relative;
@@ -398,6 +402,8 @@ button {
 
     transform: translateX(-50%);
 
+    border-radius: 10px;
+
     background:
         linear-gradient(
             to bottom,
@@ -405,14 +411,7 @@ button {
             #f1a8bb,
             #d36b88
         );
-
-    border-radius: 10px;
 }
-
-
-/* ==========================================================
-   MOMENTOS
-   ========================================================== */
 
 .momento {
     position: relative;
@@ -434,8 +433,9 @@ button {
 
 .momento-punto {
     position: absolute;
-
     top: 25px;
+
+    z-index: 2;
 
     width: 48px;
     height: 48px;
@@ -444,18 +444,15 @@ button {
     justify-content: center;
     align-items: center;
 
+    border: 3px solid #d36b88;
     border-radius: 50%;
 
     background: white;
-
-    border: 3px solid #d36b88;
 
     box-shadow:
         0 5px 20px rgba(184, 61, 97, 0.18);
 
     font-size: 21px;
-
-    z-index: 2;
 
     animation: latido 2s infinite;
 }
@@ -496,18 +493,16 @@ button {
     margin-bottom: 10px;
 
     font-size: 12px;
+    font-weight: bold;
     letter-spacing: 2px;
 
     color: #b04c6b;
-
-    font-weight: bold;
 }
 
 .momento-contenido h3 {
     margin-bottom: 12px;
 
     font-size: 25px;
-
     color: #9e3152;
 }
 
@@ -519,9 +514,9 @@ button {
 }
 
 
-/* ==========================================================
+/* =========================================================
    CONTADOR
-   ========================================================== */
+========================================================= */
 
 .contador-seccion {
     padding: 100px 20px;
@@ -553,7 +548,6 @@ button {
     margin-bottom: 40px;
 
     font-size: 18px;
-
     color: #77515e;
 }
 
@@ -579,24 +573,12 @@ button {
 
     box-shadow:
         0 10px 30px rgba(100, 30, 50, 0.08);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.tiempo:hover {
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 15px 35px rgba(100, 30, 50, 0.13);
 }
 
 .tiempo span {
     display: block;
 
     font-size: clamp(35px, 6vw, 55px);
-
     font-weight: bold;
 
     color: #b83d61;
@@ -617,9 +599,9 @@ button {
 }
 
 
-/* ==========================================================
-   BOTÓN SORPRESA
-   ========================================================== */
+/* =========================================================
+   PRIMERA SORPRESA
+========================================================= */
 
 .boton-sorpresa {
     padding: 15px 28px;
@@ -632,19 +614,11 @@ button {
 
     font-size: 16px;
 
-    box-shadow:
-        0 10px 25px rgba(184, 61, 97, 0.2);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .boton-sorpresa:hover {
     transform: scale(1.05);
-
-    box-shadow:
-        0 14px 30px rgba(184, 61, 97, 0.3);
 }
 
 .mensaje-sorpresa {
@@ -652,12 +626,11 @@ button {
     max-height: 0;
 
     margin: 25px auto 0;
+    padding: 0;
 
     overflow: hidden;
 
     opacity: 0;
-
-    padding: 0;
 
     border-radius: 20px;
 
@@ -681,7 +654,6 @@ button {
     margin-bottom: 15px;
 
     font-size: 28px;
-
     color: #b83d61;
 }
 
@@ -691,9 +663,9 @@ button {
 }
 
 
-/* ==========================================================
-   RAZONES POR LAS QUE ERES ESPECIAL
-   ========================================================== */
+/* =========================================================
+   RAZONES
+========================================================= */
 
 .razones-seccion {
     position: relative;
@@ -704,43 +676,47 @@ button {
 
     background:
         radial-gradient(
-            circle at 15% 20%,
-            rgba(255, 197, 216, 0.45),
-            transparent 30%
+            circle at 10% 15%,
+            rgba(255, 207, 222, 0.55),
+            transparent 28%
         ),
         radial-gradient(
-            circle at 85% 80%,
-            rgba(255, 218, 229, 0.65),
+            circle at 90% 85%,
+            rgba(255, 222, 232, 0.7),
             transparent 30%
         ),
         linear-gradient(
-            135deg,
-            #fff9fb,
-            #ffeef4
+            145deg,
+            #fff8fa,
+            #ffedf3
         );
 }
 
 .razones-contenido {
-    max-width: 1050px;
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1100px;
 
     margin: auto;
 
     text-align: center;
 }
 
-.razones-contenido h2 {
-    max-width: 800px;
+.razones-contenido > h2 {
+    max-width: 850px;
 
     margin: 15px auto 20px;
 
-    font-size: clamp(35px, 6vw, 55px);
+    font-size: clamp(38px, 7vw, 58px);
     line-height: 1.15;
 
     color: #9e3152;
 }
 
 .razones-intro {
-    max-width: 650px;
+    max-width: 700px;
 
     margin: 0 auto 55px;
 
@@ -754,157 +730,109 @@ button {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3, minmax(0, 1fr));
 
-    gap: 25px;
-
-    margin-bottom: 45px;
+    gap: 24px;
 }
 
 .razon-card {
     position: relative;
 
-    padding: 35px 25px;
-
-    overflow: hidden;
-
-    border:
-        1px solid rgba(211, 107, 136, 0.15);
-
-    border-radius: 25px;
-
-    background:
-        rgba(255, 255, 255, 0.82);
-
-    box-shadow:
-        0 15px 40px rgba(120, 45, 70, 0.09);
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
-}
-
-.razon-card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 100px;
-    height: 100px;
-
-    top: -50px;
-    right: -50px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255, 205, 220, 0.35);
-}
-
-.razon-card:hover {
-    transform:
-        translateY(-8px)
-        scale(1.02);
-
-    border-color:
-        rgba(211, 107, 136, 0.35);
-
-    box-shadow:
-        0 22px 50px rgba(120, 45, 70, 0.15);
-}
-
-.razon-icono {
-    position: relative;
-
-    width: 70px;
-    height: 70px;
+    min-height: 290px;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    margin: 0 auto 20px;
+    padding: 38px 28px;
 
-    border-radius: 50%;
+    overflow: hidden;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ffe2eb,
-            #ffffff
-        );
+    border: 1px solid rgba(184, 61, 97, 0.12);
+    border-radius: 28px;
+
+    background: rgba(255, 255, 255, 0.88);
 
     box-shadow:
-        0 8px 25px rgba(184, 61, 97, 0.12);
-
-    font-size: 34px;
+        0 18px 45px rgba(100, 30, 50, 0.09);
 
     transition:
-        transform 0.35s ease;
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
-.razon-card:hover .razon-icono {
-    transform:
-        scale(1.1)
-        rotate(5deg);
-}
+.razon-card:hover {
+    transform: translateY(-8px);
 
-.razon-card h3 {
-    position: relative;
-
-    margin-bottom: 12px;
-
-    font-size: 24px;
-
-    color: #9e3152;
-}
-
-.razon-card p {
-    position: relative;
-
-    font-size: 16px;
-    line-height: 1.75;
-
-    color: #72505c;
+    box-shadow:
+        0 27px 60px rgba(100, 30, 50, 0.15);
 }
 
 .razon-especial {
     background:
         linear-gradient(
             145deg,
-            #ffffff,
-            #fff0f5
+            #fff5f8,
+            #ffe5ee
         );
-
-    border-color:
-        rgba(184, 61, 97, 0.22);
 }
 
+.razon-icono {
+    width: 72px;
+    height: 72px;
 
-/* ==========================================================
-   RAZÓN SECRETA
-   ========================================================== */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.boton-razon-secreta {
-    padding: 16px 30px;
+    margin-bottom: 20px;
 
-    border: none;
-    border-radius: 50px;
+    border-radius: 50%;
 
     background:
         linear-gradient(
-            135deg,
-            #b83d61,
-            #d35d7e
+            145deg,
+            #ffe5ee,
+            #ffffff
         );
 
-    color: white;
-
-    font-size: 17px;
+    font-size: 33px;
 
     box-shadow:
-        0 10px 30px rgba(184, 61, 97, 0.25);
+        0 10px 28px rgba(184, 61, 97, 0.12);
+}
+
+.razon-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 23px;
+
+    color: #9e3152;
+}
+
+.razon-card p {
+    font-size: 15.5px;
+    line-height: 1.75;
+
+    color: #72505c;
+}
+
+.boton-razon-secreta {
+    margin-top: 45px;
+
+    padding: 15px 28px;
+
+    border: none;
+    border-radius: 40px;
+
+    background: #b83d61;
+    color: white;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 12px 30px rgba(184, 61, 97, 0.25);
 
     transition:
         transform 0.3s ease,
@@ -912,99 +840,102 @@ button {
 }
 
 .boton-razon-secreta:hover {
-    transform:
-        translateY(-4px)
-        scale(1.03);
+    transform: translateY(-4px) scale(1.03);
 
     box-shadow:
-        0 15px 35px rgba(184, 61, 97, 0.35);
+        0 17px 38px rgba(184, 61, 97, 0.34);
 }
 
 .razon-secreta {
+    width: 100%;
     max-width: 650px;
+
     max-height: 0;
 
     margin: 0 auto;
-
-    padding: 0 30px;
+    padding: 0 25px;
 
     overflow: hidden;
 
     opacity: 0;
 
-    border-radius: 30px;
+    transform: translateY(25px);
+
+    border: 1px solid transparent;
+    border-radius: 28px;
 
     background:
-        rgba(255, 255, 255, 0.9);
-
-    box-shadow:
-        0 20px 55px rgba(120, 45, 70, 0.12);
-
-    transform:
-        translateY(20px)
-        scale(0.96);
+        linear-gradient(
+            145deg,
+            #fff8fa,
+            #ffeaf1
+        );
 
     transition:
-        max-height 0.9s ease,
-        margin 0.6s ease,
-        padding 0.6s ease,
+        max-height 0.8s ease,
+        margin 0.7s ease,
+        padding 0.7s ease,
         opacity 0.6s ease,
-        transform 0.6s ease;
+        transform 0.7s ease,
+        border-color 0.7s ease,
+        box-shadow 0.7s ease;
 }
 
 .razon-secreta.mostrar {
-    max-height: 500px;
+    max-height: 450px;
 
     margin-top: 35px;
-
-    padding: 40px 30px;
+    padding: 35px 25px;
 
     opacity: 1;
 
-    transform:
-        translateY(0)
-        scale(1);
+    transform: translateY(0);
+
+    border-color:
+        rgba(184, 61, 97, 0.13);
+
+    box-shadow:
+        0 18px 45px rgba(100, 30, 50, 0.1);
 }
 
 .corazon-secreto {
     margin-bottom: 15px;
 
-    font-size: 60px;
+    font-size: 50px;
 
-    animation: latido 1.3s infinite;
+    animation: latido 1.4s infinite;
 }
 
 .razon-secreta h3 {
     margin-bottom: 15px;
 
-    font-size: 30px;
+    font-size: 27px;
 
     color: #9e3152;
 }
 
 .razon-secreta p {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.8;
 
-    color: #68434f;
+    color: #72505c;
 }
 
-.razon-secreta .razon-destacada {
-    margin-top: 20px;
-    margin-bottom: 0;
+.razon-destacada {
+    margin-top: 20px !important;
 
-    font-size: 22px;
+    font-size: 21px !important;
     font-weight: bold;
 
-    color: #b83d61;
+    color: #b83d61 !important;
 }
 
 
-/* ==========================================================
-   4 RECUERDOS, UNA HISTORIA ❤️
-   ========================================================== */
+/* =========================================================
+   GALERÍA DE RECUERDOS
+========================================================= */
 
 .fotos-seccion,
 #recuerdos {
@@ -1016,70 +947,46 @@ button {
 
     background:
         radial-gradient(
-            circle at 10% 10%,
-            rgba(255, 210, 225, 0.55),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 90% 90%,
-            rgba(255, 225, 235, 0.65),
+            circle at 15% 20%,
+            rgba(255, 218, 230, 0.48),
             transparent 30%
         ),
         linear-gradient(
-            135deg,
-            #fffafb,
-            #fff0f5
+            145deg,
+            #ffffff,
+            #fff6f9
         );
 }
 
+.titulo-fotos {
+    max-width: 750px;
 
-/* ==========================================================
-   TÍTULO DE LOS RECUERDOS
-   ========================================================== */
-
-#recuerdos .titulo-fotos {
-    max-width: 760px;
-
-    margin: 0 auto 60px;
+    margin: 0 auto 55px;
 
     text-align: center;
 }
 
-#recuerdos .titulo-fotos h2 {
+.titulo-fotos h2 {
     margin: 15px 0;
 
-    font-size:
-        clamp(
-            38px,
-            7vw,
-            58px
-        );
+    font-size: clamp(38px, 7vw, 58px);
 
     color: #9e3152;
 }
 
-#recuerdos .titulo-fotos > p {
-    line-height: 1.8;
-
+.titulo-fotos > p {
+    line-height: 1.7;
     color: #72505c;
 }
 
 .instruccion-fotos {
-    margin-top: 18px;
+    margin-top: 13px;
 
-    font-size: 15px;
+    font-size: 14px;
+    font-style: italic;
 
-    color: #b04c6b !important;
-
-    font-weight: bold;
-
-    letter-spacing: 0.5px;
+    color: #a04d68 !important;
 }
-
-
-/* ==========================================================
-   GALERÍA
-   ========================================================== */
 
 #recuerdos .galeria {
     display: grid;
@@ -1087,154 +994,94 @@ button {
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
-    gap: 32px;
+    gap: 30px;
 
     width: 100%;
     max-width: 1050px;
 
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 
-
-/* ==========================================================
-   TARJETAS DE RECUERDOS
-   ========================================================== */
-
-#recuerdos .recuerdo {
+.recuerdo {
     position: relative;
 
     overflow: hidden;
 
+    border: 1px solid rgba(184, 61, 97, 0.1);
     border-radius: 28px;
 
-    border:
-        1px solid rgba(184, 61, 97, 0.12);
-
-    background:
-        rgba(255, 255, 255, 0.92);
+    background: white;
 
     box-shadow:
-        0 18px 50px rgba(100, 30, 50, 0.12);
+        0 18px 48px rgba(100, 30, 50, 0.11);
+
+    cursor: pointer;
 
     transition:
         transform 0.4s ease,
-        box-shadow 0.4s ease,
-        border-color 0.4s ease;
+        box-shadow 0.4s ease;
 }
 
-#recuerdos .recuerdo:hover {
-    transform:
-        translateY(-10px);
-
-    border-color:
-        rgba(184, 61, 97, 0.3);
+.recuerdo:hover {
+    transform: translateY(-8px);
 
     box-shadow:
-        0 28px 65px rgba(100, 30, 50, 0.18);
+        0 27px 60px rgba(100, 30, 50, 0.17);
 }
-
-
-/* ==========================================================
-   NÚMEROS DE LOS RECUERDOS
-   ========================================================== */
 
 .numero-recuerdo {
     position: absolute;
 
-    top: 18px;
-    left: 18px;
+    top: 17px;
+    left: 17px;
 
-    z-index: 5;
+    z-index: 4;
+
+    width: 45px;
+    height: 45px;
 
     display: flex;
-    align-items: center;
     justify-content: center;
-
-    width: 52px;
-    height: 52px;
+    align-items: center;
 
     border-radius: 50%;
 
-    background:
-        rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.92);
 
-    color: #b83d61;
+    color: #a73859;
 
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bold;
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.15);
-
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-
-    transition:
-        transform 0.35s ease,
-        background 0.35s ease,
-        color 0.35s ease;
+        0 6px 20px rgba(0, 0, 0, 0.12);
 }
-
-.recuerdo:hover .numero-recuerdo {
-    transform: scale(1.08);
-
-    background: #b83d61;
-
-    color: white;
-}
-
-
-/* ==========================================================
-   CONTENEDOR DE FOTO
-   ========================================================== */
 
 .contenedor-imagen {
     position: relative;
 
     overflow: hidden;
 
-    background: #f8e8ed;
+    background: #ffeaf1;
 }
 
 .contenedor-imagen::after {
-    content: "❤️ Ver recuerdo";
+    content: "";
 
     position: absolute;
     inset: 0;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background:
-        rgba(92, 26, 48, 0.45);
-
-    color: white;
-
-    font-size: 19px;
-    font-weight: bold;
-
-    letter-spacing: 1px;
-
-    opacity: 0;
-
     pointer-events: none;
 
-    transition:
-        opacity 0.4s ease;
+    background:
+        linear-gradient(
+            to top,
+            rgba(73, 25, 42, 0.16),
+            transparent 40%
+        );
 }
 
-.recuerdo:hover .contenedor-imagen::after {
-    opacity: 1;
-}
-
-
-/* ==========================================================
-   IMÁGENES
-   ========================================================== */
-
-#recuerdos .foto img {
+.recuerdo img {
     display: block;
 
     width: 100%;
@@ -1242,28 +1089,17 @@ button {
 
     object-fit: cover;
 
-    cursor: pointer;
-
     transition:
         transform 0.6s ease,
-        filter 0.5s ease;
+        filter 0.6s ease;
 }
 
-#recuerdos .recuerdo:hover img {
-    transform: scale(1.06);
-
-    filter: brightness(0.92);
+.recuerdo:hover img {
+    transform: scale(1.045);
 }
 
-
-/* ==========================================================
-   INFORMACIÓN DE LAS FOTOS
-   ========================================================== */
-
-#recuerdos .foto-info {
-    position: relative;
-
-    padding: 27px 25px 30px;
+.foto-info {
+    padding: 28px 25px 30px;
 
     text-align: center;
 }
@@ -1271,32 +1107,27 @@ button {
 .recuerdo-etiqueta {
     display: block;
 
-    margin-bottom: 9px;
-
-    font-size: 11px;
-
-    letter-spacing: 2.5px;
-
-    font-weight: bold;
-
-    color: #c15a78;
-}
-
-#recuerdos .foto-info h3 {
     margin-bottom: 10px;
 
-    font-size: 25px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    color: #b04c6b;
+}
+
+.foto-info h3 {
+    margin-bottom: 10px;
+
+    font-size: 24px;
 
     color: #9e3152;
 }
 
-#recuerdos .foto-info p {
-    max-width: 370px;
+.foto-info p {
+    margin: 0 auto 15px;
 
-    margin-left: auto;
-    margin-right: auto;
-
-    font-size: 16px;
+    font-size: 15.5px;
     line-height: 1.7;
 
     color: #72505c;
@@ -1305,26 +1136,22 @@ button {
 .ver-recuerdo {
     display: inline-block;
 
-    margin-top: 17px;
+    padding: 8px 15px;
+
+    border-radius: 25px;
+
+    background: #fff0f5;
+
+    color: #b04c6b;
 
     font-size: 13px;
     font-weight: bold;
-
-    color: #b83d61;
-
-    transition:
-        transform 0.3s ease;
-}
-
-.recuerdo:hover .ver-recuerdo {
-    transform: translateY(-2px);
 }
 
 
-/* ==========================================================
-   MENSAJE DEBAJO DE LOS 4 RECUERDOS
-   CORRECCIÓN CONSERVADA ❤️
-   ========================================================== */
+/* =========================================================
+   MENSAJE DEBAJO DE LOS RECUERDOS
+========================================================= */
 
 #recuerdos .mensaje-recuerdos {
     width: calc(100% - 30px);
@@ -1345,8 +1172,7 @@ button {
 
     border-radius: 30px;
 
-    background:
-        rgba(255, 255, 255, 0.82);
+    background: rgba(255, 255, 255, 0.82);
 
     border:
         1px solid rgba(184, 61, 97, 0.12);
@@ -1366,8 +1192,7 @@ button {
 
     font-size: 45px;
 
-    animation:
-        latido 1.5s infinite;
+    animation: latido 1.5s infinite;
 }
 
 #recuerdos .mensaje-recuerdos p {
@@ -1403,10 +1228,9 @@ button {
 }
 
 
-/* ==========================================================
-   NUEVA SECCIÓN ❤️
+/* =========================================================
    UNA PREGUNTA PARA TI
-   ========================================================== */
+========================================================= */
 
 .pregunta-seccion {
     position: relative;
@@ -1433,9 +1257,6 @@ button {
         );
 }
 
-
-/* DETALLES DECORATIVOS */
-
 .pregunta-seccion::before {
     content: "♡";
 
@@ -1446,8 +1267,7 @@ button {
 
     font-size: 150px;
 
-    color:
-        rgba(184, 61, 97, 0.05);
+    color: rgba(184, 61, 97, 0.05);
 
     transform: rotate(-15deg);
 
@@ -1464,22 +1284,15 @@ button {
 
     font-size: 190px;
 
-    color:
-        rgba(184, 61, 97, 0.05);
+    color: rgba(184, 61, 97, 0.05);
 
     transform: rotate(15deg);
 
     pointer-events: none;
 }
 
-
-/* ==========================================================
-   CONTENIDO DE LA PREGUNTA
-   ========================================================== */
-
 .pregunta-contenido {
     position: relative;
-
     z-index: 2;
 
     width: 100%;
@@ -1489,11 +1302,6 @@ button {
 
     text-align: center;
 }
-
-
-/* ==========================================================
-   CORAZÓN / SOBRE SUPERIOR
-   ========================================================== */
 
 .pregunta-corazon {
     width: 90px;
@@ -1505,13 +1313,10 @@ button {
 
     margin: 0 auto 25px;
 
+    border: 1px solid rgba(184, 61, 97, 0.12);
     border-radius: 50%;
 
-    background:
-        rgba(255, 255, 255, 0.88);
-
-    border:
-        1px solid rgba(184, 61, 97, 0.12);
+    background: rgba(255, 255, 255, 0.88);
 
     box-shadow:
         0 15px 40px rgba(120, 45, 70, 0.12);
@@ -1522,21 +1327,10 @@ button {
         flotarSuave 3s ease-in-out infinite;
 }
 
-
-/* ==========================================================
-   TÍTULO DE LA PREGUNTA
-   ========================================================== */
-
 .pregunta-contenido > h2 {
     margin: 14px 0 18px;
 
-    font-size:
-        clamp(
-            42px,
-            7vw,
-            65px
-        );
-
+    font-size: clamp(42px, 7vw, 65px);
     line-height: 1.1;
 
     color: #9e3152;
@@ -1545,8 +1339,7 @@ button {
 .pregunta-introduccion {
     max-width: 650px;
 
-    margin:
-        0 auto 45px;
+    margin: 0 auto 45px;
 
     font-size: 18px;
     line-height: 1.8;
@@ -1554,40 +1347,26 @@ button {
     color: #72505c;
 }
 
-
-/* ==========================================================
-   TARJETA PRINCIPAL
-   ========================================================== */
-
 .pregunta-tarjeta {
     position: relative;
 
     max-width: 760px;
 
-    margin:
-        0 auto;
-
-    padding:
-        55px 45px;
+    margin: 0 auto;
+    padding: 55px 45px;
 
     overflow: hidden;
 
+    border: 1px solid rgba(184, 61, 97, 0.14);
     border-radius: 35px;
 
-    background:
-        rgba(255, 255, 255, 0.9);
-
-    border:
-        1px solid rgba(184, 61, 97, 0.14);
+    background: rgba(255, 255, 255, 0.9);
 
     box-shadow:
         0 25px 70px rgba(105, 36, 60, 0.13);
 
-    backdrop-filter:
-        blur(12px);
-
-    -webkit-backdrop-filter:
-        blur(12px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
     transition:
         transform 0.4s ease,
@@ -1595,15 +1374,11 @@ button {
 }
 
 .pregunta-tarjeta:hover {
-    transform:
-        translateY(-5px);
+    transform: translateY(-5px);
 
     box-shadow:
         0 32px 80px rgba(105, 36, 60, 0.17);
 }
-
-
-/* CÍRCULO DECORATIVO */
 
 .pregunta-tarjeta::before {
     content: "";
@@ -1643,11 +1418,6 @@ button {
     pointer-events: none;
 }
 
-
-/* ==========================================================
-   ICONOS DE LA PREGUNTA
-   ========================================================== */
-
 .pregunta-iconos {
     position: relative;
     z-index: 2;
@@ -1655,7 +1425,6 @@ button {
     margin-bottom: 22px;
 
     font-size: 28px;
-
     letter-spacing: 8px;
 
     animation:
@@ -1670,16 +1439,10 @@ button {
 
     font-size: 11px;
     font-weight: bold;
-
     letter-spacing: 3px;
 
     color: #b04c6b;
 }
-
-
-/* ==========================================================
-   PREGUNTA PRINCIPAL
-   ========================================================== */
 
 .pregunta-tarjeta > h3 {
     position: relative;
@@ -1687,16 +1450,9 @@ button {
 
     max-width: 650px;
 
-    margin:
-        0 auto 20px;
+    margin: 0 auto 20px;
 
-    font-size:
-        clamp(
-            27px,
-            5vw,
-            39px
-        );
-
+    font-size: clamp(27px, 5vw, 39px);
     line-height: 1.35;
 
     color: #9e3152;
@@ -1708,8 +1464,7 @@ button {
 
     max-width: 540px;
 
-    margin:
-        0 auto 32px;
+    margin: 0 auto 32px;
 
     font-size: 17px;
     line-height: 1.8;
@@ -1717,38 +1472,28 @@ button {
     color: #72505c;
 }
 
-
-/* ==========================================================
-   BOTONES DE RESPUESTA
-   ========================================================== */
-
 .pregunta-botones {
     position: relative;
     z-index: 3;
 
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     flex-wrap: wrap;
 
     gap: 16px;
 
     width: 100%;
 
-    margin:
-        10px auto 0;
+    margin: 10px auto 0;
 }
 
 .respuesta-boton {
     min-width: 180px;
 
-    padding:
-        16px 27px;
+    padding: 16px 27px;
 
     border: none;
-
     border-radius: 50px;
 
     font-size: 16px;
@@ -1759,9 +1504,6 @@ button {
         box-shadow 0.3s ease,
         background 0.3s ease;
 }
-
-
-/* BOTÓN SÍ */
 
 .respuesta-si {
     background:
@@ -1778,58 +1520,40 @@ button {
 }
 
 .respuesta-si:hover {
-    transform:
-        translateY(-4px)
-        scale(1.04);
+    transform: translateY(-4px) scale(1.04);
 
     box-shadow:
         0 17px 38px rgba(184, 61, 97, 0.38);
 }
 
-
-/* BOTÓN CLARO QUE SÍ */
-
 .respuesta-claro {
-    background:
-        #fff0f5;
-
-    color: #a73859;
-
     border:
         1px solid rgba(184, 61, 97, 0.25);
+
+    background: #fff0f5;
+
+    color: #a73859;
 
     box-shadow:
         0 10px 28px rgba(120, 45, 70, 0.1);
 }
 
 .respuesta-claro:hover {
-    transform:
-        translateY(-4px)
-        scale(1.04);
+    transform: translateY(-4px) scale(1.04);
 
-    background:
-        #ffe4ed;
+    background: #ffe4ed;
 
     box-shadow:
         0 15px 35px rgba(120, 45, 70, 0.15);
 }
 
-
-/* ESTADO CUANDO YA RESPONDIÓ */
-
 .respuesta-boton.respondido {
     opacity: 0.7;
 
-    transform:
-        scale(0.96);
+    transform: scale(0.96);
 
     pointer-events: none;
 }
-
-
-/* ==========================================================
-   RESPUESTA OCULTA
-   ========================================================== */
 
 .respuesta-pregunta {
     position: relative;
@@ -1837,19 +1561,16 @@ button {
 
     width: 100%;
     max-width: 620px;
-
     max-height: 0;
 
-    margin:
-        0 auto;
-
-    padding:
-        0 30px;
+    margin: 0 auto;
+    padding: 0 30px;
 
     overflow: hidden;
 
     opacity: 0;
 
+    border: 1px solid transparent;
     border-radius: 28px;
 
     background:
@@ -1859,12 +1580,8 @@ button {
             #ffeef4
         );
 
-    border:
-        1px solid transparent;
-
     transform:
-        translateY(25px)
-        scale(0.96);
+        translateY(25px) scale(0.96);
 
     transition:
         max-height 0.9s ease,
@@ -1876,16 +1593,11 @@ button {
         box-shadow 0.7s ease;
 }
 
-
-/* CUANDO JAVASCRIPT AGREGA .mostrar */
-
 .respuesta-pregunta.mostrar {
     max-height: 550px;
 
     margin-top: 38px;
-
-    padding:
-        38px 30px;
+    padding: 38px 30px;
 
     opacity: 1;
 
@@ -1896,29 +1608,21 @@ button {
         0 18px 45px rgba(100, 30, 50, 0.1);
 
     transform:
-        translateY(0)
-        scale(1);
+        translateY(0) scale(1);
 }
-
-
-/* ==========================================================
-   CORAZÓN DE LA RESPUESTA
-   ========================================================== */
 
 .respuesta-corazon {
     margin-bottom: 17px;
 
     font-size: 55px;
 
-    animation:
-        latido 1.3s infinite;
+    animation: latido 1.3s infinite;
 }
 
 .respuesta-pregunta h3 {
     max-width: 520px;
 
-    margin:
-        0 auto 17px;
+    margin: 0 auto 17px;
 
     font-size: 27px;
     line-height: 1.4;
@@ -1929,8 +1633,7 @@ button {
 .respuesta-pregunta p {
     max-width: 520px;
 
-    margin:
-        0 auto;
+    margin: 0 auto;
 
     font-size: 16px;
     line-height: 1.8;
@@ -1942,9 +1645,7 @@ button {
     display: inline-block;
 
     margin-top: 24px;
-
-    padding:
-        11px 22px;
+    padding: 11px 22px;
 
     border-radius: 30px;
 
@@ -1957,11 +1658,6 @@ button {
     font-weight: bold;
 }
 
-
-/* ==========================================================
-   TEXTO INFERIOR DE LA PREGUNTA
-   ========================================================== */
-
 .pregunta-pie {
     margin-top: 35px;
 
@@ -1972,263 +1668,391 @@ button {
 }
 
 
-/* ==========================================================
-   MODAL DE LOS RECUERDOS
-   ========================================================== */
+/* =========================================================
+   COSAS QUE QUIERO VIVIR CONTIGO ✨
+========================================================= */
 
-.modal-foto {
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 11000;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 30px;
-
-    background:
-        rgba(35, 12, 22, 0.94);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-
-    transition:
-        opacity 0.4s ease,
-        visibility 0.4s ease;
-}
-
-.modal-foto.mostrar {
-    opacity: 1;
-
-    visibility: visible;
-
-    pointer-events: auto;
-}
-
-
-/* ==========================================================
-   CONTENIDO CENTRAL DEL MODAL
-   ========================================================== */
-
-.modal-recuerdo-contenido {
+.futuro-seccion {
     position: relative;
 
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.15fr)
-        minmax(300px, 0.85fr);
-
-    width: min(1050px, 95vw);
-
-    max-height: 88vh;
+    padding: 120px 20px;
 
     overflow: hidden;
 
-    border-radius: 30px;
-
-    background: white;
-
-    box-shadow:
-        0 30px 90px rgba(0, 0, 0, 0.4);
-
-    transform:
-        translateY(30px)
-        scale(0.94);
-
-    transition:
-        transform 0.5s
-        cubic-bezier(
-            0.2,
-            0.8,
-            0.2,
-            1
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 205, 221, 0.55),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(255, 225, 235, 0.7),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #fffafb,
+            #ffedf3
         );
 }
 
-.modal-foto.mostrar
-.modal-recuerdo-contenido {
+.futuro-seccion::before {
+    content: "♡";
+
+    position: absolute;
+
+    top: 30px;
+    right: 5%;
+
+    font-size: 180px;
+
+    color:
+        rgba(184, 61, 97, 0.045);
+
     transform:
-        translateY(0)
-        scale(1);
+        rotate(15deg);
+
+    pointer-events: none;
 }
 
+.futuro-seccion::after {
+    content: "♡";
 
-/* ==========================================================
-   FOTO GRANDE DEL MODAL
-   ========================================================== */
+    position: absolute;
 
-.modal-imagen-contenedor {
-    min-height: 550px;
+    bottom: 20px;
+    left: 4%;
 
-    background: #1c1015;
+    font-size: 150px;
+
+    color:
+        rgba(184, 61, 97, 0.045);
+
+    transform:
+        rotate(-15deg);
+
+    pointer-events: none;
+}
+
+.futuro-contenido {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.futuro-icono-principal {
+    width: 85px;
+    height: 85px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    overflow: hidden;
-}
+    margin: 0 auto 25px;
 
-.modal-imagen-contenedor img {
-    display: block;
+    border:
+        1px solid rgba(184, 61, 97, 0.12);
 
-    width: 100%;
-    height: 100%;
-
-    max-width: none;
-    max-height: 88vh;
-
-    object-fit: contain;
-
-    border-radius: 0;
-
-    box-shadow: none;
-}
-
-
-/* ==========================================================
-   TEXTO DEL MODAL
-   ========================================================== */
-
-.modal-texto-recuerdo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding: 50px 40px;
-
-    text-align: center;
+    border-radius: 50%;
 
     background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #fff4f7
-        );
+        rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 15px 40px rgba(100, 30, 50, 0.1);
+
+    font-size: 40px;
+
+    animation:
+        flotarSuave 3s ease-in-out infinite;
 }
 
-.modal-etiqueta {
-    margin-bottom: 15px;
+.futuro-contenido > h2 {
+    max-width: 850px;
 
-    font-size: 11px;
-    letter-spacing: 2.5px;
+    margin: 15px auto 20px;
 
-    font-weight: bold;
-
-    color: #b04c6b;
-}
-
-.modal-texto-recuerdo h2 {
     font-size:
-        clamp(
-            28px,
-            4vw,
-            40px
-        );
+        clamp(38px, 7vw, 60px);
 
-    line-height: 1.2;
+    line-height: 1.15;
 
     color: #9e3152;
 }
 
-.modal-linea {
-    width: 60px;
-    height: 3px;
+.futuro-introduccion {
+    max-width: 700px;
 
-    margin: 20px auto;
+    margin: 0 auto 60px;
 
-    border-radius: 10px;
+    font-size: 18px;
+    line-height: 1.8;
+
+    color: #72505c;
+}
+
+.futuro-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+
+    width: 100%;
+}
+
+.futuro-card {
+    position: relative;
+
+    min-height: 315px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 42px 28px 35px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(184, 61, 97, 0.12);
+
+    border-radius: 28px;
 
     background:
-        linear-gradient(
-            90deg,
-            #d36b88,
-            #f2a6ba
-        );
+        rgba(255, 255, 255, 0.86);
+
+    box-shadow:
+        0 18px 45px rgba(100, 30, 50, 0.09);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
 }
 
-.modal-texto-recuerdo p {
-    font-size: 17px;
-    line-height: 1.85;
+.futuro-card:hover {
+    transform:
+        translateY(-10px);
 
-    color: #68434f;
+    border-color:
+        rgba(184, 61, 97, 0.28);
+
+    box-shadow:
+        0 28px 60px rgba(100, 30, 50, 0.15);
 }
 
-.modal-corazon {
-    margin-top: 25px;
+.futuro-numero {
+    position: absolute;
 
-    font-size: 40px;
+    top: 18px;
+    left: 20px;
 
-    animation: latido 1.5s infinite;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    color: #c05b79;
 }
 
+.futuro-card::before {
+    content: "";
 
-/* ==========================================================
-   BOTÓN X DEL MODAL
-   ========================================================== */
+    position: absolute;
 
-.cerrar-foto {
-    position: fixed;
+    width: 120px;
+    height: 120px;
 
-    top: 20px;
-    right: 25px;
+    top: -65px;
+    right: -55px;
 
-    z-index: 11010;
+    border-radius: 50%;
+
+    background:
+        rgba(255, 203, 220, 0.28);
+
+    transition:
+        transform 0.5s ease;
+}
+
+.futuro-card:hover::before {
+    transform:
+        scale(1.3);
+}
+
+.futuro-emoji {
+    position: relative;
+
+    width: 75px;
+    height: 75px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 48px;
-    height: 48px;
+    margin-bottom: 22px;
 
-    padding: 0;
-
-    border: none;
     border-radius: 50%;
 
     background:
-        rgba(255, 255, 255, 0.15);
+        linear-gradient(
+            145deg,
+            #ffe6ee,
+            #ffffff
+        );
 
-    color: white;
+    box-shadow:
+        0 10px 28px rgba(184, 61, 97, 0.12);
 
-    font-family: Arial, sans-serif;
-    font-size: 35px;
-    line-height: 1;
-
-    cursor: pointer;
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    font-size: 34px;
 
     transition:
-        transform 0.3s ease,
-        background 0.3s ease;
+        transform 0.4s ease;
 }
 
-.cerrar-foto:hover {
+.futuro-card:hover .futuro-emoji {
     transform:
-        rotate(90deg)
-        scale(1.08);
+        scale(1.12)
+        rotate(5deg);
+}
+
+.futuro-card h3 {
+    position: relative;
+
+    margin-bottom: 13px;
+
+    font-size: 23px;
+    line-height: 1.3;
+
+    color: #9e3152;
+}
+
+.futuro-card p {
+    position: relative;
+
+    font-size: 15.5px;
+    line-height: 1.75;
+
+    color: #72505c;
+}
+
+
+/* =========================================================
+   MENSAJE FINAL DE FUTURO
+========================================================= */
+
+.futuro-final {
+    position: relative;
+
+    width: calc(100% - 30px);
+    max-width: 760px;
+
+    margin: 75px auto 0;
+    padding: 48px 35px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(184, 61, 97, 0.14);
+
+    border-radius: 32px;
 
     background:
-        rgba(255, 255, 255, 0.25);
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.95),
+            rgba(255, 240, 245, 0.95)
+        );
+
+    box-shadow:
+        0 22px 60px rgba(100, 30, 50, 0.11);
+}
+
+.futuro-final::before {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    top: -100px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 201, 219, 0.25);
+}
+
+.futuro-corazon {
+    position: relative;
+
+    margin-bottom: 18px;
+
+    font-size: 55px;
+
+    animation:
+        latido 1.5s infinite;
+}
+
+.futuro-final p {
+    position: relative;
+
+    margin-bottom: 10px;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: #72505c;
+}
+
+.futuro-final h3 {
+    position: relative;
+
+    max-width: 620px;
+
+    margin: 0 auto 22px;
+
+    font-size: 27px;
+    line-height: 1.45;
+
+    color: #9e3152;
+}
+
+.futuro-final span {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 11px 22px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(184, 61, 97, 0.09);
+
+    color: #b83d61;
+
+    font-size: 17px;
+    font-weight: bold;
 }
 
 
-/* ==========================================================
+/* =========================================================
    SORPRESA FINAL
-   ========================================================== */
+========================================================= */
 
 .sorpresa-final {
     min-height: 100vh;
@@ -2255,6 +2079,7 @@ button {
 }
 
 .sorpresa-contenido {
+    width: 100%;
     max-width: 750px;
 }
 
@@ -2270,17 +2095,12 @@ button {
     margin: 20px 0;
 
     font-size:
-        clamp(
-            35px,
-            7vw,
-            60px
-        );
+        clamp(35px, 7vw, 60px);
 
     color: #9e3152;
 }
 
-.sorpresa-contenido >
-p:not(.etiqueta) {
+.sorpresa-contenido > p:not(.etiqueta) {
     margin-bottom: 25px;
 
     font-size: 19px;
@@ -2296,7 +2116,6 @@ p:not(.etiqueta) {
     border-radius: 50px;
 
     background: #b83d61;
-
     color: white;
 
     font-size: 17px;
@@ -2313,14 +2132,13 @@ p:not(.etiqueta) {
     transform: scale(1.05);
 
     box-shadow:
-        0 15px 35px rgba(184, 61, 97, 0.35);
+        0 15px 38px rgba(184, 61, 97, 0.35);
 }
 
 .mensaje-final {
     display: none;
 
     margin-top: 40px;
-
     padding: 45px 25px;
 
     border-radius: 30px;
@@ -2331,7 +2149,8 @@ p:not(.etiqueta) {
     box-shadow:
         0 20px 60px rgba(100, 30, 50, 0.15);
 
-    animation: aparecer 1s ease;
+    animation:
+        aparecer 1s ease;
 }
 
 .mensaje-final.mostrar {
@@ -2344,7 +2163,8 @@ p:not(.etiqueta) {
     font-size: 28px;
     letter-spacing: 8px;
 
-    animation: flotar 2s infinite;
+    animation:
+        flotar 2s infinite;
 }
 
 .mensaje-final h2 {
@@ -2359,7 +2179,6 @@ p:not(.etiqueta) {
 
 .mensaje-final .grande {
     font-size: 32px;
-
     font-weight: bold;
 
     color: #b83d61;
@@ -2369,12 +2188,12 @@ p:not(.etiqueta) {
     margin: 30px 0;
 
     font-size: 45px;
-
     font-weight: bold;
 
     color: #b83d61;
 
-    animation: latido 1.4s infinite;
+    animation:
+        latido 1.4s infinite;
 }
 
 .firma-final {
@@ -2382,27 +2201,192 @@ p:not(.etiqueta) {
 }
 
 
-/* ==========================================================
-   CORAZONES FLOTANTES
-   ========================================================== */
+/* =========================================================
+   MODAL DE RECUERDOS
+========================================================= */
+
+.modal-foto {
+    position: fixed;
+    inset: 0;
+
+    z-index: 11000;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    overflow-y: auto;
+
+    background:
+        rgba(30, 10, 20, 0.92);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.modal-foto.mostrar {
+    display: flex;
+}
+
+.cerrar-foto {
+    position: fixed;
+
+    top: 20px;
+    right: 30px;
+
+    z-index: 11002;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    color: white;
+
+    font-size: 37px;
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.cerrar-foto:hover {
+    transform: rotate(90deg);
+
+    background:
+        rgba(255, 255, 255, 0.22);
+}
+
+.modal-recuerdo-contenido {
+    width: 100%;
+    max-width: 1050px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(300px, 0.85fr);
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background: white;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.35);
+
+    animation:
+        zoom 0.45s ease;
+}
+
+.modal-imagen-contenedor {
+    min-height: 550px;
+
+    background: #1f1016;
+}
+
+.modal-imagen-contenedor img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    min-height: 550px;
+    max-height: 80vh;
+
+    object-fit: contain;
+}
+
+.modal-texto-recuerdo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 45px 38px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffafb,
+            #ffeef4
+        );
+}
+
+.modal-etiqueta {
+    margin-bottom: 15px;
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    color: #b04c6b;
+}
+
+.modal-texto-recuerdo h2 {
+    font-size: 34px;
+    line-height: 1.3;
+
+    color: #9e3152;
+}
+
+.modal-linea {
+    width: 60px;
+    height: 3px;
+
+    margin: 20px auto;
+
+    border-radius: 10px;
+
+    background: #d36b88;
+}
+
+.modal-texto-recuerdo p {
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #72505c;
+}
+
+.modal-corazon {
+    margin-top: 25px;
+
+    font-size: 45px;
+
+    animation:
+        latido 1.5s infinite;
+}
+
+
+/* =========================================================
+   CORAZONES FLOTANTES CREADOS CON JAVASCRIPT
+========================================================= */
 
 .corazon-flotante {
     position: fixed;
 
-    bottom: -40px;
+    bottom: -50px;
 
-    z-index: 8000;
+    z-index: 9998;
 
     pointer-events: none;
 
     animation:
-        subirCorazon 6s linear forwards;
+        subirCorazon linear forwards;
 }
 
 
-/* ==========================================================
+/* =========================================================
    ANIMACIONES
-   ========================================================== */
+========================================================= */
 
 @keyframes latido {
 
@@ -2416,7 +2400,6 @@ p:not(.etiqueta) {
     }
 }
 
-
 @keyframes aparecer {
 
     from {
@@ -2427,7 +2410,6 @@ p:not(.etiqueta) {
         opacity: 1;
     }
 }
-
 
 @keyframes subir {
 
@@ -2446,7 +2428,6 @@ p:not(.etiqueta) {
     }
 }
 
-
 @keyframes flecha {
 
     0%,
@@ -2460,7 +2441,6 @@ p:not(.etiqueta) {
             translateY(10px);
     }
 }
-
 
 @keyframes flotar {
 
@@ -2476,25 +2456,19 @@ p:not(.etiqueta) {
     }
 }
 
-
-/* NUEVA ANIMACIÓN */
-
 @keyframes flotarSuave {
 
     0%,
     100% {
         transform:
-            translateY(0)
-            rotate(-2deg);
+            translateY(0) rotate(-2deg);
     }
 
     50% {
         transform:
-            translateY(-10px)
-            rotate(2deg);
+            translateY(-8px) rotate(2deg);
     }
 }
-
 
 @keyframes zoom {
 
@@ -2502,7 +2476,7 @@ p:not(.etiqueta) {
         opacity: 0;
 
         transform:
-            scale(0.8);
+            scale(0.85);
     }
 
     to {
@@ -2513,102 +2487,90 @@ p:not(.etiqueta) {
     }
 }
 
-
 @keyframes subirCorazon {
 
     0% {
+        opacity: 0;
+
         transform:
             translateY(0)
-            rotate(0deg);
+            rotate(0deg)
+            scale(0.8);
+    }
 
-        opacity: 0.8;
+    15% {
+        opacity: 1;
     }
 
     100% {
-        transform:
-            translateY(-110vh)
-            rotate(25deg);
-
         opacity: 0;
+
+        transform:
+            translateY(-115vh)
+            rotate(360deg)
+            scale(1.3);
     }
 }
 
 
-/* ==========================================================
-   TABLETS
-   ========================================================== */
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 900px) {
 
     .razones-grid {
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(2, minmax(0, 1fr));
     }
 
+    .futuro-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
 }
 
 
+/* =========================================================
+   MODAL / GALERÍA TABLET
+========================================================= */
+
 @media (max-width: 850px) {
 
-    #recuerdos .galeria {
-        gap: 22px;
-    }
-
-    #recuerdos .foto img {
+    .recuerdo img {
         height: 330px;
     }
 
     .modal-recuerdo-contenido {
+        max-width: 650px;
+
         grid-template-columns: 1fr;
-
-        overflow-y: auto;
-
-        max-height: 90vh;
     }
 
     .modal-imagen-contenedor {
         min-height: 0;
-
-        height: 50vh;
     }
 
     .modal-imagen-contenedor img {
-        max-height: 50vh;
+        min-height: 0;
+        max-height: 55vh;
     }
 
     .modal-texto-recuerdo {
-        padding: 35px 30px;
+        padding: 30px 25px;
     }
 
+    .modal-texto-recuerdo h2 {
+        font-size: 29px;
+    }
 }
 
 
-/* ==========================================================
+/* =========================================================
    TABLET PEQUEÑA
-   ========================================================== */
+========================================================= */
 
 @media (max-width: 768px) {
-
-    .carta {
-        padding: 40px 25px;
-    }
-
-    .contador {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .boton-musica {
-        top: 12px;
-        right: 12px;
-
-        font-size: 12px;
-
-        padding: 9px 13px;
-    }
-
-
-    /* LÍNEA DE TIEMPO */
 
     .linea-tiempo::before {
         left: 24px;
@@ -2619,21 +2581,18 @@ p:not(.etiqueta) {
     .momento,
     .momento:nth-child(odd),
     .momento:nth-child(even) {
-        width: 100%;
-
         left: 0;
 
-        text-align: left;
+        width: 100%;
 
         padding:
-            20px 0 35px 70px;
+            15px 0 35px 75px;
+
+        text-align: left;
     }
 
-    .momento-punto,
-    .momento:nth-child(odd)
-    .momento-punto,
-    .momento:nth-child(even)
-    .momento-punto {
+    .momento:nth-child(odd) .momento-punto,
+    .momento:nth-child(even) .momento-punto {
         left: 0;
         right: auto;
 
@@ -2644,29 +2603,30 @@ p:not(.etiqueta) {
         padding: 25px 20px;
     }
 
-
-    /* PREGUNTA */
-
     .pregunta-seccion {
-        padding:
-            90px 18px;
+        padding: 90px 18px;
     }
 
     .pregunta-tarjeta {
-        padding:
-            45px 30px;
-
-        border-radius: 30px;
+        padding: 45px 28px;
     }
-
 }
 
 
-/* ==========================================================
+/* =========================================================
    CELULARES
-   ========================================================== */
+========================================================= */
 
 @media (max-width: 600px) {
+
+    .boton-musica {
+        top: 12px;
+        right: 12px;
+
+        padding: 9px 13px;
+
+        font-size: 12px;
+    }
 
     .portada {
         padding-top: 90px;
@@ -2686,9 +2646,10 @@ p:not(.etiqueta) {
     .razones-seccion,
     .fotos-seccion,
     .pregunta-seccion,
+    .futuro-seccion,
     .sorpresa-final {
         padding:
-            70px 15px;
+            75px 15px;
     }
 
     .carta {
@@ -2722,21 +2683,21 @@ p:not(.etiqueta) {
 
     .tiempo {
         padding:
-            20px 10px;
+            20px 8px;
     }
 
     .tiempo span {
-        font-size: 35px;
+        font-size: 33px;
     }
 
     .tiempo small {
-        font-size: 12px;
+        font-size: 11px;
     }
 
 
     /* RAZONES */
 
-    .razones-contenido h2 {
+    .razones-contenido > h2 {
         font-size: 35px;
     }
 
@@ -2749,49 +2710,18 @@ p:not(.etiqueta) {
     .razones-grid {
         grid-template-columns: 1fr;
 
-        gap: 18px;
+        gap: 20px;
     }
 
     .razon-card {
+        min-height: 0;
+
         padding:
-            30px 20px;
-    }
-
-    .razon-icono {
-        width: 62px;
-        height: 62px;
-
-        font-size: 30px;
-    }
-
-    .razon-card h3 {
-        font-size: 22px;
-    }
-
-    .razon-secreta.mostrar {
-        padding:
-            35px 20px;
-    }
-
-    .razon-secreta h3 {
-        font-size: 26px;
+            35px 22px;
     }
 
 
     /* RECUERDOS */
-
-    #recuerdos {
-        padding:
-            75px 15px;
-    }
-
-    #recuerdos .titulo-fotos {
-        margin-bottom: 40px;
-    }
-
-    #recuerdos .titulo-fotos h2 {
-        font-size: 36px;
-    }
 
     #recuerdos .galeria {
         grid-template-columns: 1fr;
@@ -2799,39 +2729,14 @@ p:not(.etiqueta) {
         gap: 25px;
     }
 
-    #recuerdos .recuerdo {
-        border-radius: 22px;
-    }
-
-    #recuerdos .foto img {
+    .recuerdo img {
         height: 360px;
     }
 
-    .numero-recuerdo {
-        width: 46px;
-        height: 46px;
-
-        top: 14px;
-        left: 14px;
-
-        font-size: 13px;
-    }
-
-    .contenedor-imagen::after {
-        display: none;
-    }
-
-    #recuerdos .foto-info {
+    .foto-info {
         padding:
-            23px 18px 27px;
+            25px 20px 28px;
     }
-
-    #recuerdos .foto-info h3 {
-        font-size: 23px;
-    }
-
-
-    /* MENSAJE FINAL DE RECUERDOS */
 
     #recuerdos .mensaje-recuerdos {
         width:
@@ -2862,9 +2767,7 @@ p:not(.etiqueta) {
     }
 
 
-    /* ======================================================
-       NUEVA SECCIÓN - PREGUNTA
-       ====================================================== */
+    /* PREGUNTA */
 
     .pregunta-seccion::before,
     .pregunta-seccion::after {
@@ -2874,8 +2777,6 @@ p:not(.etiqueta) {
     .pregunta-corazon {
         width: 75px;
         height: 75px;
-
-        margin-bottom: 20px;
 
         font-size: 38px;
     }
@@ -2894,12 +2795,11 @@ p:not(.etiqueta) {
         padding:
             38px 20px;
 
-        border-radius: 25px;
+        border-radius: 27px;
     }
 
     .pregunta-iconos {
-        font-size: 24px;
-
+        font-size: 23px;
         letter-spacing: 5px;
     }
 
@@ -2908,113 +2808,103 @@ p:not(.etiqueta) {
     }
 
     .pregunta-texto {
-        margin-bottom: 27px;
-
-        font-size: 15px;
+        font-size: 15.5px;
     }
 
     .pregunta-botones {
         flex-direction: column;
-
-        gap: 12px;
     }
 
     .respuesta-boton {
         width: 100%;
         max-width: 300px;
-
-        min-width: 0;
-
-        padding:
-            15px 20px;
     }
 
     .respuesta-pregunta.mostrar {
-        margin-top: 30px;
-
         padding:
             32px 18px;
-    }
-
-    .respuesta-corazon {
-        font-size: 45px;
     }
 
     .respuesta-pregunta h3 {
         font-size: 23px;
     }
 
-    .respuesta-pregunta p {
-        font-size: 15px;
+
+    /* FUTURO */
+
+    .futuro-icono-principal {
+        width: 72px;
+        height: 72px;
+
+        font-size: 35px;
     }
 
-    .respuesta-final {
+    .futuro-contenido > h2 {
+        font-size: 36px;
+    }
+
+    .futuro-introduccion {
+        margin-bottom: 40px;
+
         font-size: 16px;
     }
 
-    .pregunta-pie {
-        margin-top: 28px;
+    .futuro-grid {
+        grid-template-columns: 1fr;
 
-        font-size: 14px;
+        gap: 20px;
     }
 
+    .futuro-card {
+        min-height: 0;
 
-    /* MODAL */
-
-    .modal-foto {
         padding:
-            60px 12px 15px;
+            38px 22px 32px;
+
+        border-radius: 24px;
     }
 
-    .modal-recuerdo-contenido {
-        width: 100%;
+    .futuro-emoji {
+        width: 68px;
+        height: 68px;
 
-        max-height: 86vh;
-
-        border-radius: 22px;
+        font-size: 31px;
     }
 
-    .modal-imagen-contenedor {
-        height: 46vh;
+    .futuro-card h3 {
+        font-size: 22px;
     }
 
-    .modal-imagen-contenedor img {
-        max-height: 46vh;
-    }
-
-    .modal-texto-recuerdo {
-        padding:
-            28px 20px 32px;
-    }
-
-    .modal-texto-recuerdo h2 {
-        font-size: 28px;
-    }
-
-    .modal-texto-recuerdo p {
+    .futuro-card p {
         font-size: 15px;
-
-        line-height: 1.7;
     }
 
-    .modal-corazon {
-        margin-top: 18px;
+    .futuro-final {
+        width:
+            calc(100% - 10px);
 
-        font-size: 32px;
+        margin-top: 50px;
+
+        padding:
+            38px 20px;
+
+        border-radius: 27px;
     }
 
-    .cerrar-foto {
-        top: 10px;
-        right: 12px;
+    .futuro-corazon {
+        font-size: 47px;
+    }
 
-        width: 42px;
-        height: 42px;
+    .futuro-final p {
+        font-size: 16px;
+    }
 
-        font-size: 30px;
+    .futuro-final h3 {
+        font-size: 23px;
     }
 
 
-    /* SORPRESA FINAL */
+    /* FINAL */
 
     .mensaje-final {
         padding:
@@ -3029,12 +2919,45 @@ p:not(.etiqueta) {
         font-size: 35px;
     }
 
+
+    /* MODAL */
+
+    .modal-foto {
+        padding:
+            70px 12px 20px;
+    }
+
+    .cerrar-foto {
+        top: 12px;
+        right: 15px;
+    }
+
+    .modal-recuerdo-contenido {
+        border-radius: 22px;
+    }
+
+    .modal-imagen-contenedor img {
+        max-height: 50vh;
+    }
+
+    .modal-texto-recuerdo {
+        padding:
+            28px 20px;
+    }
+
+    .modal-texto-recuerdo h2 {
+        font-size: 26px;
+    }
+
+    .modal-texto-recuerdo p {
+        font-size: 15px;
+    }
 }
 
 
-/* ==========================================================
+/* =========================================================
    CELULARES PEQUEÑOS
-   ========================================================== */
+========================================================= */
 
 @media (max-width: 380px) {
 
@@ -3060,11 +2983,11 @@ p:not(.etiqueta) {
 
     .tiempo {
         padding:
-            15px 5px;
+            15px 4px;
     }
 
     .tiempo span {
-        font-size: 28px;
+        font-size: 27px;
     }
 
     .momento {
@@ -3082,28 +3005,7 @@ p:not(.etiqueta) {
         left: 21px;
     }
 
-    .razones-contenido h2 {
-        font-size: 31px;
-    }
-
-    .boton-razon-secreta {
-        width: 100%;
-
-        padding: 15px;
-
-        font-size: 15px;
-    }
-
-
-    /* RECUERDOS */
-
-    #recuerdos
-    .titulo-fotos h2 {
-        font-size: 31px;
-    }
-
-    #recuerdos
-    .foto img {
+    .recuerdo img {
         height: 300px;
     }
 
@@ -3117,9 +3019,6 @@ p:not(.etiqueta) {
     .mensaje-recuerdos h3 {
         font-size: 20px;
     }
-
-
-    /* PREGUNTA */
 
     .pregunta-contenido > h2 {
         font-size: 35px;
@@ -3141,58 +3040,46 @@ p:not(.etiqueta) {
         font-size: 34px;
     }
 
-    .respuesta-boton {
-        font-size: 15px;
+    .futuro-contenido > h2 {
+        font-size: 31px;
     }
 
-    .respuesta-pregunta.mostrar {
+    .futuro-card {
         padding:
-            28px 15px;
+            35px 17px 28px;
     }
 
-    .respuesta-pregunta h3 {
+    .futuro-final {
+        padding:
+            32px 16px;
+    }
+
+    .futuro-final h3 {
         font-size: 21px;
     }
-
-
-    /* MODAL */
-
-    .modal-imagen-contenedor {
-        height: 40vh;
-    }
-
-    .modal-imagen-contenedor img {
-        max-height: 40vh;
-    }
-
-    .modal-texto-recuerdo {
-        padding:
-            24px 16px;
-    }
-
-    .modal-texto-recuerdo h2 {
-        font-size: 25px;
-    }
-
 }
 
 
-/* ==========================================================
-   ACCESIBILIDAD
-   ========================================================== */
+/* =========================================================
+   REDUCIR ANIMACIONES
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
 
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
+        animation-duration:
+            0.01ms !important;
 
-        animation-duration: 0.01ms !important;
+        animation-iteration-count:
+            1 !important;
 
-        animation-iteration-count: 1 !important;
-
-        transition-duration: 0.01ms !important;
+        transition-duration:
+            0.01ms !important;
     }
-
 }
