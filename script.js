@@ -17,30 +17,202 @@ const botonMusica = document.getElementById("botonMusica");
 
 
 /* ==========================================================
+   CORAZONES FLOTANTES ❤️
+========================================================== */
+
+const tiposCorazon = [
+    "❤️",
+    "💕",
+    "💗",
+    "💖",
+    "💓",
+    "💞"
+];
+
+
+function crearCorazon() {
+
+    const corazon = document.createElement("div");
+
+    corazon.classList.add("corazon-flotante");
+
+    const indice = Math.floor(
+        Math.random() * tiposCorazon.length
+    );
+
+    corazon.textContent = tiposCorazon[indice];
+
+    corazon.style.left =
+        `${Math.random() * 100}vw`;
+
+    const tamano =
+        14 + Math.random() * 20;
+
+    corazon.style.fontSize =
+        `${tamano}px`;
+
+    const duracion =
+        5 + Math.random() * 4;
+
+    corazon.style.animationDuration =
+        `${duracion}s`;
+
+    corazon.style.opacity =
+        0.55 + Math.random() * 0.35;
+
+    document.body.appendChild(corazon);
+
+
+    setTimeout(() => {
+
+        corazon.remove();
+
+    }, 9000);
+
+}
+
+
+function lanzarGrupoCorazones(cantidad = 12) {
+
+    for (
+        let i = 0;
+        i < cantidad;
+        i++
+    ) {
+
+        setTimeout(() => {
+
+            crearCorazon();
+
+        }, i * 90);
+
+    }
+
+}
+
+
+/* Corazones suaves durante toda la página */
+
+setInterval(() => {
+
+    crearCorazon();
+
+}, 1100);
+
+
+/* ==========================================================
+   MÚSICA 🎵
+========================================================== */
+
+if (musicaFondo) {
+
+    musicaFondo.volume = 0.5;
+
+}
+
+
+function actualizarBotonMusica() {
+
+    if (
+        !botonMusica ||
+        !musicaFondo
+    ) {
+
+        return;
+
+    }
+
+
+    if (musicaFondo.paused) {
+
+        botonMusica.textContent =
+            "🎵 Reproducir música";
+
+    } else {
+
+        botonMusica.textContent =
+            "⏸️ Pausar música";
+
+    }
+
+}
+
+
+if (
+    botonMusica &&
+    musicaFondo
+) {
+
+    botonMusica.addEventListener(
+        "click",
+        () => {
+
+            if (musicaFondo.paused) {
+
+                musicaFondo
+                    .play()
+                    .then(() => {
+
+                        actualizarBotonMusica();
+
+                    })
+                    .catch(() => {
+
+                        actualizarBotonMusica();
+
+                    });
+
+            } else {
+
+                musicaFondo.pause();
+
+                actualizarBotonMusica();
+
+            }
+
+        }
+    );
+
+
+    musicaFondo.addEventListener(
+        "play",
+        actualizarBotonMusica
+    );
+
+
+    musicaFondo.addEventListener(
+        "pause",
+        actualizarBotonMusica
+    );
+
+}
+
+
+/* ==========================================================
    ABRIR LA PÁGINA
 ========================================================== */
 
 if (abrirPagina) {
 
-    abrirPagina.addEventListener("click", () => {
+    abrirPagina.addEventListener(
+        "click",
+        () => {
 
-        if (bienvenida) {
-            bienvenida.classList.add("ocultar");
-        }
+            if (bienvenida) {
+
+                bienvenida.classList.add(
+                    "ocultar"
+                );
+
+            }
 
 
-        /* Intentar reproducir la música */
+            if (musicaFondo) {
 
-        if (musicaFondo) {
+                musicaFondo.volume = 0.5;
 
-            musicaFondo.volume = 0.5;
-
-            const promesa =
-                musicaFondo.play();
-
-            if (promesa !== undefined) {
-
-                promesa
+                musicaFondo
+                    .play()
                     .then(() => {
 
                         actualizarBotonMusica();
@@ -54,20 +226,17 @@ if (abrirPagina) {
 
             }
 
+
+            lanzarGrupoCorazones(20);
+
         }
-
-
-        /* Corazones de bienvenida */
-
-        lanzarGrupoCorazones(20);
-
-    });
+    );
 
 }
 
 
 /* ==========================================================
-   CONTADOR
+   CONTADOR DESDE EL 27 DE OCTUBRE DE 2024
 ========================================================== */
 
 const diasElemento =
@@ -94,26 +263,20 @@ function agregarCero(numero) {
 
 function actualizarContador() {
 
-    const ahora =
-        new Date();
+    const ahora = new Date();
 
     let diferencia =
         ahora - fechaInicio;
 
 
-    /*
-        Si por algún motivo la fecha actual
-        fuera anterior a la fecha inicial,
-        evitamos números negativos.
-    */
-
     if (diferencia < 0) {
+
         diferencia = 0;
+
     }
 
 
-    const segundo =
-        1000;
+    const segundo = 1000;
 
     const minuto =
         segundo * 60;
@@ -215,11 +378,6 @@ if (
         "click",
         () => {
 
-            /*
-                Evitamos volver a abrir
-                la misma sorpresa varias veces.
-            */
-
             if (
                 mensajeSorpresa.classList
                     .contains("mostrar")
@@ -230,8 +388,9 @@ if (
             }
 
 
-            mensajeSorpresa.classList
-                .add("mostrar");
+            mensajeSorpresa.classList.add(
+                "mostrar"
+            );
 
 
             botonSorpresa.textContent =
@@ -293,8 +452,9 @@ if (
             }
 
 
-            razonSecreta.classList
-                .add("mostrar");
+            razonSecreta.classList.add(
+                "mostrar"
+            );
 
 
             botonRazonSecreta.textContent =
@@ -323,227 +483,6 @@ if (
 
 
 /* ==========================================================
-   MÚSICA 🎵
-========================================================== */
-
-if (musicaFondo) {
-
-    musicaFondo.volume = 0.5;
-
-}
-
-
-function actualizarBotonMusica() {
-
-    if (
-        !botonMusica ||
-        !musicaFondo
-    ) {
-
-        return;
-
-    }
-
-
-    if (musicaFondo.paused) {
-
-        botonMusica.textContent =
-            "🎵 Reproducir música";
-
-    } else {
-
-        botonMusica.textContent =
-            "⏸️ Pausar música";
-
-    }
-
-}
-
-
-if (
-    botonMusica &&
-    musicaFondo
-) {
-
-    botonMusica.addEventListener(
-        "click",
-        () => {
-
-            if (musicaFondo.paused) {
-
-                musicaFondo
-                    .play()
-                    .then(() => {
-
-                        actualizarBotonMusica();
-
-                    })
-                    .catch(() => {
-
-                        actualizarBotonMusica();
-
-                    });
-
-            } else {
-
-                musicaFondo.pause();
-
-                actualizarBotonMusica();
-
-            }
-
-        }
-    );
-
-
-    musicaFondo.addEventListener(
-        "play",
-        actualizarBotonMusica
-    );
-
-
-    musicaFondo.addEventListener(
-        "pause",
-        actualizarBotonMusica
-    );
-
-}
-
-
-/* ==========================================================
-   CORAZONES FLOTANTES ❤️
-========================================================== */
-
-const tiposCorazon = [
-    "❤️",
-    "💕",
-    "💗",
-    "💖",
-    "💓",
-    "💞"
-];
-
-
-function crearCorazon() {
-
-    const corazon =
-        document.createElement("div");
-
-
-    corazon.classList.add(
-        "corazon-flotante"
-    );
-
-
-    const indice =
-        Math.floor(
-            Math.random() *
-            tiposCorazon.length
-        );
-
-
-    corazon.textContent =
-        tiposCorazon[indice];
-
-
-    /*
-        Posición horizontal aleatoria.
-    */
-
-    corazon.style.left =
-        `${Math.random() * 100}vw`;
-
-
-    /*
-        Tamaño aleatorio.
-    */
-
-    const tamano =
-        14 +
-        Math.random() * 20;
-
-
-    corazon.style.fontSize =
-        `${tamano}px`;
-
-
-    /*
-        Duración aleatoria para que
-        no todos suban igual.
-    */
-
-    const duracion =
-        5 +
-        Math.random() * 4;
-
-
-    corazon.style.animationDuration =
-        `${duracion}s`;
-
-
-    /*
-        Transparencia ligeramente distinta.
-    */
-
-    corazon.style.opacity =
-        0.55 +
-        Math.random() * 0.35;
-
-
-    document.body.appendChild(
-        corazon
-    );
-
-
-    /*
-        El corazón se elimina después
-        de terminar su recorrido.
-    */
-
-    setTimeout(() => {
-
-        corazon.remove();
-
-    }, 9000);
-
-}
-
-
-/* ==========================================================
-   GRUPO DE CORAZONES
-========================================================== */
-
-function lanzarGrupoCorazones(cantidad = 12) {
-
-    for (
-        let i = 0;
-        i < cantidad;
-        i++
-    ) {
-
-        setTimeout(() => {
-
-            crearCorazon();
-
-        }, i * 90);
-
-    }
-
-}
-
-
-/*
-    Corazones suaves de fondo.
-*/
-
-setInterval(() => {
-
-    crearCorazon();
-
-}, 1100);
-
-
-/* ==========================================================
    GALERÍA DE RECUERDOS 📸
 ========================================================== */
 
@@ -556,7 +495,6 @@ const tarjetasRecuerdo =
     document.querySelectorAll(
         ".recuerdo"
     );
-
 
 const modalFoto =
     document.getElementById(
@@ -638,9 +576,7 @@ function abrirRecuerdo(foto) {
 }
 
 
-/* ==========================================================
-   CLICK DIRECTO EN LAS FOTOGRAFÍAS
-========================================================== */
+/* CLICK DIRECTO EN LA FOTO */
 
 fotosRecuerdos.forEach(
     (foto) => {
@@ -660,9 +596,7 @@ fotosRecuerdos.forEach(
 );
 
 
-/* ==========================================================
-   CLICK EN TODA LA TARJETA DEL RECUERDO
-========================================================== */
+/* CLICK EN TODA LA TARJETA */
 
 tarjetasRecuerdo.forEach(
     (tarjeta) => {
@@ -670,12 +604,6 @@ tarjetasRecuerdo.forEach(
         tarjeta.addEventListener(
             "click",
             (evento) => {
-
-                /*
-                    Si el usuario ya tocó
-                    directamente la imagen,
-                    no repetimos el evento.
-                */
 
                 if (
                     evento.target.tagName ===
@@ -703,13 +631,15 @@ tarjetasRecuerdo.forEach(
 
 
 /* ==========================================================
-   CERRAR MODAL
+   CERRAR FOTOGRAFÍA
 ========================================================== */
 
 function cerrarModalRecuerdo() {
 
     if (!modalFoto) {
+
         return;
+
     }
 
 
@@ -721,11 +651,6 @@ function cerrarModalRecuerdo() {
     document.body.style.overflow =
         "";
 
-
-    /*
-        Esperamos a que desaparezca
-        antes de quitar la imagen.
-    */
 
     setTimeout(() => {
 
@@ -750,10 +675,6 @@ if (cerrarFoto) {
 }
 
 
-/*
-    Cerrar tocando el fondo oscuro.
-*/
-
 if (modalFoto) {
 
     modalFoto.addEventListener(
@@ -774,10 +695,6 @@ if (modalFoto) {
 
 }
 
-
-/*
-    Cerrar con ESC en computadora.
-*/
 
 document.addEventListener(
     "keydown",
@@ -818,8 +735,7 @@ const respuestaPregunta =
     );
 
 
-let preguntaRespondida =
-    false;
+let preguntaRespondida = false;
 
 
 function mostrarRespuestaPregunta(
@@ -827,21 +743,25 @@ function mostrarRespuestaPregunta(
 ) {
 
     if (!respuestaPregunta) {
+
         return;
+
     }
 
 
     if (preguntaRespondida) {
+
         return;
+
     }
 
 
-    preguntaRespondida =
-        true;
+    preguntaRespondida = true;
 
 
-    respuestaPregunta.classList
-        .add("mostrar");
+    respuestaPregunta.classList.add(
+        "mostrar"
+    );
 
 
     if (botonElegido) {
@@ -854,23 +774,21 @@ function mostrarRespuestaPregunta(
 
     if (respuestaSi) {
 
-        respuestaSi.classList
-            .add("respondido");
+        respuestaSi.classList.add(
+            "respondido"
+        );
 
     }
 
 
     if (respuestaClaro) {
 
-        respuestaClaro.classList
-            .add("respondido");
+        respuestaClaro.classList.add(
+            "respondido"
+        );
 
     }
 
-
-    /*
-        Celebración de corazones.
-    */
 
     lanzarGrupoCorazones(30);
 
@@ -939,29 +857,14 @@ tarjetasFuturo.forEach(
             "click",
             () => {
 
-                /*
-                    Pequeño efecto al tocar
-                    una de las tarjetas.
-                */
-
                 tarjeta.style.transform =
                     "scale(0.97)";
 
-
-                /*
-                    Aparecen algunos corazones.
-                */
 
                 lanzarGrupoCorazones(5);
 
 
                 setTimeout(() => {
-
-                    /*
-                        Quitamos el estilo en línea
-                        para que vuelva a funcionar
-                        correctamente el hover.
-                    */
 
                     tarjeta.style.transform =
                         "";
@@ -976,74 +879,7 @@ tarjetasFuturo.forEach(
 
 
 /* ==========================================================
-   SORPRESA FINAL ❤️
-========================================================== */
-
-const botonFinal =
-    document.getElementById(
-        "botonFinal"
-    );
-
-const mensajeFinal =
-    document.getElementById(
-        "mensajeFinal"
-    );
-
-
-let sorpresaFinalAbierta =
-    false;
-
-
-if (
-    botonFinal &&
-    mensajeFinal
-) {
-
-    botonFinal.addEventListener(
-        "click",
-        () => {
-
-            if (sorpresaFinalAbierta) {
-                return;
-            }
-
-
-            sorpresaFinalAbierta =
-                true;
-
-
-            mensajeFinal.classList.add(
-                "mostrar"
-            );
-
-
-            botonFinal.textContent =
-                "❤️ Siempre contigo";
-
-
-            lanzarGrupoCorazones(35);
-
-
-            setTimeout(() => {
-
-                mensajeFinal
-                    .scrollIntoView({
-
-                        behavior: "smooth",
-                        block: "center"
-
-                    });
-
-            }, 400);
-
-        }
-    );
-
-}
-
-
-/* ==========================================================
-   PEQUEÑA INTERACCIÓN EN LAS TARJETAS DE RAZONES
+   INTERACCIÓN EN LAS TARJETAS DE RAZONES
 ========================================================== */
 
 const tarjetasRazones =
@@ -1081,16 +917,197 @@ tarjetasRazones.forEach(
 
 
 /* ==========================================================
-   ANIMACIONES AL HACER SCROLL
+   NUEVA SORPRESA FINAL ❤️
 ========================================================== */
 
-/*
-    Seleccionamos las partes principales
-    de la página.
+const botonFinal =
+    document.getElementById(
+        "botonFinal"
+    );
 
-    También están incluidas las tarjetas
-    de "Cosas que quiero vivir contigo".
+const mensajeFinal =
+    document.getElementById(
+        "mensajeFinal"
+    );
+
+const bloquesFinales =
+    document.querySelectorAll(
+        ".final-bloque"
+    );
+
+
+let sorpresaFinalAbierta = false;
+
+
+/*
+    Esta función revela uno por uno
+    los bloques de la sorpresa final.
 */
+
+function revelarBloquesFinales() {
+
+    bloquesFinales.forEach(
+        (bloque, indice) => {
+
+            /*
+                Cada bloque espera un poco más
+                que el anterior.
+
+                650 ms permite que la lectura
+                se sienta progresiva sin ser
+                demasiado lenta.
+            */
+
+            setTimeout(() => {
+
+                bloque.classList.add(
+                    "visible"
+                );
+
+
+                /*
+                    En algunos momentos lanzamos
+                    pequeños grupos de corazones.
+                */
+
+                if (
+                    indice === 0 ||
+                    indice === 3 ||
+                    indice === 6 ||
+                    indice === 8
+                ) {
+
+                    lanzarGrupoCorazones(6);
+
+                }
+
+            }, 700 + indice * 650);
+
+        }
+    );
+
+}
+
+
+/*
+    Celebración especial cuando aparece
+    el gran "TE AMO ❤️".
+*/
+
+function celebracionFinal() {
+
+    setTimeout(() => {
+
+        lanzarGrupoCorazones(20);
+
+    }, 4550);
+
+
+    setTimeout(() => {
+
+        lanzarGrupoCorazones(18);
+
+    }, 5400);
+
+}
+
+
+if (
+    botonFinal &&
+    mensajeFinal
+) {
+
+    botonFinal.addEventListener(
+        "click",
+        () => {
+
+            /*
+                Solo se puede abrir una vez
+                para evitar repetir todos
+                los temporizadores.
+            */
+
+            if (sorpresaFinalAbierta) {
+
+                return;
+
+            }
+
+
+            sorpresaFinalAbierta = true;
+
+
+            /*
+                Cambiamos el botón.
+            */
+
+            botonFinal.classList.add(
+                "abierto"
+            );
+
+
+            botonFinal.textContent =
+                "❤️ Para ti, Yoselin";
+
+
+            /*
+                Primera celebración.
+            */
+
+            lanzarGrupoCorazones(25);
+
+
+            /*
+                Abrimos la tarjeta.
+            */
+
+            mensajeFinal.classList.add(
+                "mostrar"
+            );
+
+
+            /*
+                Desplazamos suavemente hacia
+                el comienzo del mensaje.
+            */
+
+            setTimeout(() => {
+
+                mensajeFinal
+                    .scrollIntoView({
+
+                        behavior: "smooth",
+                        block: "start"
+
+                    });
+
+            }, 500);
+
+
+            /*
+                Comienza la revelación
+                progresiva.
+            */
+
+            revelarBloquesFinales();
+
+
+            /*
+                Corazones especiales al llegar
+                al "TE AMO".
+            */
+
+            celebracionFinal();
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   ANIMACIONES AL HACER SCROLL
+========================================================== */
 
 const elementosAnimados =
     document.querySelectorAll(
@@ -1114,20 +1131,10 @@ const elementosAnimados =
     );
 
 
-/*
-    Solo utilizamos IntersectionObserver
-    si el navegador lo admite.
-*/
-
 if (
     "IntersectionObserver"
     in window
 ) {
-
-    /*
-        Preparamos inicialmente
-        los elementos.
-    */
 
     elementosAnimados.forEach(
         (elemento) => {
@@ -1135,10 +1142,8 @@ if (
             elemento.style.opacity =
                 "0";
 
-
             elemento.style.transform =
                 "translateY(35px)";
-
 
             elemento.style.transition =
                 "opacity 0.8s ease, transform 0.8s ease";
@@ -1171,10 +1176,29 @@ if (
                                 "translateY(0)";
 
 
-                            observador
-                                .unobserve(
-                                    entrada.target
-                                );
+                            /*
+                                Después de terminar
+                                la entrada quitamos el
+                                transform inline.
+
+                                Así los efectos :hover
+                                de las tarjetas siguen
+                                funcionando correctamente.
+                            */
+
+                            setTimeout(() => {
+
+                                entrada.target
+                                    .style
+                                    .transform =
+                                    "";
+
+                            }, 850);
+
+
+                            observador.unobserve(
+                                entrada.target
+                            );
 
                         }
 
@@ -1202,20 +1226,14 @@ if (
 
 } else {
 
-    /*
-        Navegadores antiguos:
-        simplemente mostramos todo.
-    */
-
     elementosAnimados.forEach(
         (elemento) => {
 
             elemento.style.opacity =
                 "1";
 
-
             elemento.style.transform =
-                "translateY(0)";
+                "";
 
         }
     );
@@ -1224,14 +1242,14 @@ if (
 
 
 /* ==========================================================
-   BOTÓN DE MÚSICA AL CARGAR
+   ESTADO INICIAL DEL BOTÓN DE MÚSICA
 ========================================================== */
 
 actualizarBotonMusica();
 
 
 /* ==========================================================
-   MENSAJE PARA COMPROBAR QUE TODO CARGÓ
+   COMPROBACIÓN
 ========================================================== */
 
 console.log(
