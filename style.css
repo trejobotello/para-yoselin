@@ -44,7 +44,6 @@ button {
     align-items: center;
 
     text-align: center;
-
     padding: 25px;
 
     background:
@@ -72,9 +71,7 @@ button {
 
 .bienvenida-corazon {
     font-size: 80px;
-
-    animation:
-        latido 1.4s infinite;
+    animation: latido 1.4s infinite;
 }
 
 .bienvenida-pequeno {
@@ -157,6 +154,7 @@ button {
         0 5px 20px rgba(0, 0, 0, 0.12);
 
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     transition:
         transform 0.3s ease;
@@ -208,15 +206,13 @@ button {
 
     margin-bottom: 25px;
 
-    animation:
-        aparecer 1.5s ease;
+    animation: aparecer 1.5s ease;
 }
 
 .contenido-portada {
     max-width: 800px;
 
-    animation:
-        subir 1.2s ease;
+    animation: subir 1.2s ease;
 }
 
 .pequeno,
@@ -277,11 +273,15 @@ button {
         0 10px 25px rgba(184, 61, 97, 0.25);
 
     transition:
-        transform 0.3s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .boton:hover {
     transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(184, 61, 97, 0.3);
 }
 
 .flecha {
@@ -291,8 +291,7 @@ button {
 
     font-size: 30px;
 
-    animation:
-        flecha 1.5s infinite;
+    animation: flecha 1.5s infinite;
 }
 
 
@@ -359,8 +358,7 @@ button {
 
     color: #b83d61;
 
-    animation:
-        latido 1.5s infinite;
+    animation: latido 1.5s infinite;
 }
 
 .firma {
@@ -396,11 +394,7 @@ button {
 .historia-titulo h2 {
     margin: 18px 0;
 
-    font-size: clamp(
-        35px,
-        7vw,
-        55px
-    );
+    font-size: clamp(35px, 7vw, 55px);
 
     color: #9e3152;
 }
@@ -427,9 +421,6 @@ button {
 
     padding: 10px 0;
 }
-
-
-/* Línea central */
 
 .linea-tiempo::before {
     content: "";
@@ -481,11 +472,6 @@ button {
     text-align: left;
 }
 
-
-/* ========================================
-   PUNTO
-======================================== */
-
 .momento-punto {
     position: absolute;
 
@@ -506,59 +492,32 @@ button {
     border: 3px solid #d36b88;
 
     box-shadow:
-        0 5px 20px rgba(
-            184,
-            61,
-            97,
-            0.18
-        );
+        0 5px 20px rgba(184, 61, 97, 0.18);
 
     font-size: 21px;
 
     z-index: 2;
 
-    animation:
-        latido 2s infinite;
+    animation: latido 2s infinite;
 }
 
-.momento:nth-child(odd)
-.momento-punto {
-
+.momento:nth-child(odd) .momento-punto {
     right: -24px;
 }
 
-.momento:nth-child(even)
-.momento-punto {
-
+.momento:nth-child(even) .momento-punto {
     left: -24px;
 }
 
-
-/* ========================================
-   CONTENIDO DEL MOMENTO
-======================================== */
-
 .momento-contenido {
-
     padding: 30px;
 
     border-radius: 25px;
 
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.85
-        );
+    background: rgba(255, 255, 255, 0.85);
 
     box-shadow:
-        0 15px 40px rgba(
-            100,
-            30,
-            50,
-            0.08
-        );
+        0 15px 40px rgba(100, 30, 50, 0.08);
 
     transition:
         transform 0.35s ease,
@@ -566,21 +525,13 @@ button {
 }
 
 .momento-contenido:hover {
-
-    transform:
-        translateY(-6px);
+    transform: translateY(-6px);
 
     box-shadow:
-        0 20px 45px rgba(
-            100,
-            30,
-            50,
-            0.14
-        );
+        0 20px 45px rgba(100, 30, 50, 0.14);
 }
 
 .momento-fecha {
-
     display: block;
 
     margin-bottom: 10px;
@@ -595,7 +546,6 @@ button {
 }
 
 .momento-contenido h3 {
-
     margin-bottom: 12px;
 
     font-size: 25px;
@@ -604,7 +554,6 @@ button {
 }
 
 .momento-contenido p {
-
     font-size: 16px;
 
     line-height: 1.8;
@@ -639,11 +588,7 @@ button {
 .contador-contenido h2 {
     margin: 15px 0;
 
-    font-size: clamp(
-        35px,
-        7vw,
-        55px
-    );
+    font-size: clamp(35px, 7vw, 55px);
 
     color: #9e3152;
 }
@@ -674,31 +619,27 @@ button {
 
     border-radius: 20px;
 
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.8
-        );
+    background: rgba(255, 255, 255, 0.8);
 
     box-shadow:
-        0 10px 30px rgba(
-            100,
-            30,
-            50,
-            0.08
-        );
+        0 10px 30px rgba(100, 30, 50, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.tiempo:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(100, 30, 50, 0.13);
 }
 
 .tiempo span {
     display: block;
 
-    font-size: clamp(
-        35px,
-        6vw,
-        55px
-    );
+    font-size: clamp(35px, 6vw, 55px);
 
     font-weight: bold;
 
@@ -725,7 +666,6 @@ button {
 ======================================== */
 
 .boton-sorpresa {
-
     padding: 15px 28px;
 
     border: none;
@@ -738,20 +678,23 @@ button {
 
     font-size: 16px;
 
+    box-shadow:
+        0 10px 25px rgba(184, 61, 97, 0.2);
+
     transition:
-        transform 0.3s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .boton-sorpresa:hover {
+    transform: scale(1.05);
 
-    transform:
-        scale(1.05);
+    box-shadow:
+        0 14px 30px rgba(184, 61, 97, 0.3);
 }
 
 .mensaje-sorpresa {
-
     max-width: 600px;
-
     max-height: 0;
 
     margin: 25px auto 0;
@@ -773,7 +716,6 @@ button {
 }
 
 .mensaje-sorpresa.mostrar {
-
     max-height: 500px;
 
     padding: 30px;
@@ -782,7 +724,6 @@ button {
 }
 
 .mensaje-sorpresa h3 {
-
     margin-bottom: 15px;
 
     font-size: 28px;
@@ -791,10 +732,328 @@ button {
 }
 
 .mensaje-sorpresa p {
-
     margin-bottom: 12px;
 
     line-height: 1.7;
+}
+
+
+/* ========================================
+   RAZONES POR LAS QUE ERES ESPECIAL
+======================================== */
+
+.razones-seccion {
+    position: relative;
+
+    padding: 110px 20px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 197, 216, 0.45),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 218, 229, 0.65),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff9fb,
+            #ffeef4
+        );
+}
+
+.razones-contenido {
+    max-width: 1050px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.razones-contenido h2 {
+    max-width: 800px;
+
+    margin: 15px auto 20px;
+
+    font-size: clamp(35px, 6vw, 55px);
+
+    line-height: 1.15;
+
+    color: #9e3152;
+}
+
+.razones-intro {
+    max-width: 650px;
+
+    margin: 0 auto 55px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #72505c;
+}
+
+.razones-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-bottom: 45px;
+}
+
+.razon-card {
+    position: relative;
+
+    padding: 35px 25px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(211, 107, 136, 0.15);
+
+    border-radius: 25px;
+
+    background:
+        rgba(255, 255, 255, 0.82);
+
+    box-shadow:
+        0 15px 40px rgba(120, 45, 70, 0.09);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.razon-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    top: -50px;
+    right: -50px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 205, 220, 0.35);
+}
+
+.razon-card:hover {
+    transform:
+        translateY(-8px)
+        scale(1.02);
+
+    border-color:
+        rgba(211, 107, 136, 0.35);
+
+    box-shadow:
+        0 22px 50px rgba(120, 45, 70, 0.15);
+}
+
+.razon-icono {
+    position: relative;
+
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe2eb,
+            #fff
+        );
+
+    box-shadow:
+        0 8px 25px rgba(184, 61, 97, 0.12);
+
+    font-size: 34px;
+
+    transition:
+        transform 0.35s ease;
+}
+
+.razon-card:hover .razon-icono {
+    transform:
+        scale(1.1)
+        rotate(5deg);
+}
+
+.razon-card h3 {
+    position: relative;
+
+    margin-bottom: 12px;
+
+    font-size: 24px;
+
+    color: #9e3152;
+}
+
+.razon-card p {
+    position: relative;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+    color: #72505c;
+}
+
+.razon-especial {
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #fff0f5
+        );
+
+    border-color:
+        rgba(184, 61, 97, 0.22);
+}
+
+
+/* ========================================
+   RAZÓN SECRETA
+======================================== */
+
+.boton-razon-secreta {
+    padding: 16px 30px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b83d61,
+            #d35d7e
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 10px 30px rgba(184, 61, 97, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.boton-razon-secreta:hover {
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 35px rgba(184, 61, 97, 0.35);
+}
+
+.razon-secreta {
+    max-width: 650px;
+    max-height: 0;
+
+    margin: 0 auto;
+
+    padding: 0 30px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 20px 55px rgba(120, 45, 70, 0.12);
+
+    transform:
+        translateY(20px)
+        scale(0.96);
+
+    transition:
+        max-height 0.9s ease,
+        margin 0.6s ease,
+        padding 0.6s ease,
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.razon-secreta.mostrar {
+    max-height: 500px;
+
+    margin-top: 35px;
+
+    padding: 40px 30px;
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.corazon-secreto {
+    margin-bottom: 15px;
+
+    font-size: 60px;
+
+    animation:
+        latido 1.3s infinite;
+}
+
+.razon-secreta h3 {
+    margin-bottom: 15px;
+
+    font-size: 30px;
+
+    color: #9e3152;
+}
+
+.razon-secreta p {
+    margin-bottom: 12px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #68434f;
+}
+
+.razon-secreta .razon-destacada {
+    margin-top: 20px;
+    margin-bottom: 0;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #b83d61;
 }
 
 
@@ -803,14 +1062,12 @@ button {
 ======================================== */
 
 .fotos-seccion {
-
     padding: 100px 20px;
 
     background: #fff;
 }
 
 .titulo-fotos {
-
     max-width: 700px;
 
     margin:
@@ -820,7 +1077,6 @@ button {
 }
 
 .titulo-fotos h2 {
-
     margin: 15px 0;
 
     font-size:
@@ -834,14 +1090,12 @@ button {
 }
 
 .titulo-fotos > p:last-child {
-
     line-height: 1.7;
 
     color: #72505c;
 }
 
 .galeria {
-
     display: grid;
 
     grid-template-columns:
@@ -855,7 +1109,6 @@ button {
 }
 
 .foto {
-
     overflow: hidden;
 
     border-radius: 25px;
@@ -863,29 +1116,25 @@ button {
     background: white;
 
     box-shadow:
-        0 15px 40px rgba(
-            100,
-            30,
-            50,
-            0.12
-        );
+        0 15px 40px rgba(100, 30, 50, 0.12);
 
     transition:
-        transform 0.4s ease;
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
 .foto:hover {
-
     transform:
         translateY(-8px);
+
+    box-shadow:
+        0 22px 50px rgba(100, 30, 50, 0.18);
 }
 
 .foto img {
-
     display: block;
 
     width: 100%;
-
     height: 350px;
 
     object-fit: cover;
@@ -893,31 +1142,28 @@ button {
     cursor: pointer;
 
     transition:
-        transform 0.5s ease;
+        transform 0.5s ease,
+        filter 0.5s ease;
 }
 
 .foto:hover img {
-
     transform:
         scale(1.04);
 }
 
 .foto-info {
-
     padding: 20px;
 
     text-align: center;
 }
 
 .foto-info h3 {
-
     margin-bottom: 8px;
 
     color: #9e3152;
 }
 
 .foto-info p {
-
     line-height: 1.6;
 
     color: #72505c;
@@ -929,13 +1175,11 @@ button {
 ======================================== */
 
 .sorpresa-final {
-
     min-height: 100vh;
 
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     padding: 100px 20px;
@@ -956,12 +1200,10 @@ button {
 }
 
 .sorpresa-contenido {
-
     max-width: 750px;
 }
 
 .corazon-final {
-
     font-size: 85px;
 
     margin-bottom: 20px;
@@ -971,7 +1213,6 @@ button {
 }
 
 .sorpresa-contenido h2 {
-
     margin: 20px 0;
 
     font-size:
@@ -985,7 +1226,6 @@ button {
 }
 
 .sorpresa-contenido > p:not(.etiqueta) {
-
     margin-bottom: 25px;
 
     font-size: 19px;
@@ -996,7 +1236,6 @@ button {
 }
 
 .boton-final {
-
     padding: 17px 30px;
 
     border: none;
@@ -1010,25 +1249,22 @@ button {
     font-size: 17px;
 
     box-shadow:
-        0 10px 30px rgba(
-            184,
-            61,
-            97,
-            0.25
-        );
+        0 10px 30px rgba(184, 61, 97, 0.25);
 
     transition:
-        transform 0.3s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .boton-final:hover {
-
     transform:
         scale(1.05);
+
+    box-shadow:
+        0 15px 35px rgba(184, 61, 97, 0.35);
 }
 
 .mensaje-final {
-
     display: none;
 
     margin-top: 40px;
@@ -1038,32 +1274,20 @@ button {
     border-radius: 30px;
 
     background:
-        rgba(
-            255,
-            255,
-            255,
-            0.8
-        );
+        rgba(255, 255, 255, 0.8);
 
     box-shadow:
-        0 20px 60px rgba(
-            100,
-            30,
-            50,
-            0.15
-        );
+        0 20px 60px rgba(100, 30, 50, 0.15);
 
     animation:
         aparecer 1s ease;
 }
 
 .mensaje-final.mostrar {
-
     display: block;
 }
 
 .lluvia-corazones {
-
     margin-bottom: 25px;
 
     font-size: 28px;
@@ -1075,19 +1299,16 @@ button {
 }
 
 .mensaje-final h2 {
-
     margin-bottom: 20px;
 }
 
 .mensaje-final p {
-
     margin-bottom: 15px;
 
     font-size: 20px;
 }
 
 .mensaje-final .grande {
-
     font-size: 32px;
 
     font-weight: bold;
@@ -1096,7 +1317,6 @@ button {
 }
 
 .final-amor {
-
     margin: 30px 0;
 
     font-size: 45px;
@@ -1110,7 +1330,6 @@ button {
 }
 
 .firma-final {
-
     line-height: 1.7;
 }
 
@@ -1120,7 +1339,6 @@ button {
 ======================================== */
 
 .modal-foto {
-
     position: fixed;
 
     inset: 0;
@@ -1130,29 +1348,23 @@ button {
     display: none;
 
     justify-content: center;
-
     align-items: center;
 
     padding: 30px;
 
     background:
-        rgba(
-            30,
-            10,
-            20,
-            0.9
-        );
+        rgba(30, 10, 20, 0.92);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .modal-foto.mostrar {
-
     display: flex;
 }
 
 .modal-foto img {
-
     max-width: 95%;
-
     max-height: 90vh;
 
     object-fit: contain;
@@ -1160,23 +1372,16 @@ button {
     border-radius: 15px;
 
     box-shadow:
-        0 20px 60px rgba(
-            0,
-            0,
-            0,
-            0.4
-        );
+        0 20px 60px rgba(0, 0, 0, 0.4);
 
     animation:
         zoom 0.4s ease;
 }
 
 .cerrar-foto {
-
     position: absolute;
 
     top: 20px;
-
     right: 30px;
 
     color: white;
@@ -1197,13 +1402,11 @@ button {
 
     0%,
     100% {
-
         transform:
             scale(1);
     }
 
     50% {
-
         transform:
             scale(1.12);
     }
@@ -1213,12 +1416,10 @@ button {
 @keyframes aparecer {
 
     from {
-
         opacity: 0;
     }
 
     to {
-
         opacity: 1;
     }
 }
@@ -1227,7 +1428,6 @@ button {
 @keyframes subir {
 
     from {
-
         opacity: 0;
 
         transform:
@@ -1235,7 +1435,6 @@ button {
     }
 
     to {
-
         opacity: 1;
 
         transform:
@@ -1248,13 +1447,11 @@ button {
 
     0%,
     100% {
-
         transform:
             translateY(0);
     }
 
     50% {
-
         transform:
             translateY(10px);
     }
@@ -1265,13 +1462,11 @@ button {
 
     0%,
     100% {
-
         transform:
             translateY(0);
     }
 
     50% {
-
         transform:
             translateY(-10px);
     }
@@ -1281,7 +1476,6 @@ button {
 @keyframes zoom {
 
     from {
-
         opacity: 0;
 
         transform:
@@ -1289,7 +1483,6 @@ button {
     }
 
     to {
-
         opacity: 1;
 
         transform:
@@ -1303,7 +1496,6 @@ button {
 ======================================== */
 
 .corazon-flotante {
-
     position: fixed;
 
     bottom: -40px;
@@ -1321,7 +1513,6 @@ button {
 @keyframes subirCorazon {
 
     0% {
-
         transform:
             translateY(0)
             rotate(0deg);
@@ -1330,7 +1521,6 @@ button {
     }
 
     100% {
-
         transform:
             translateY(-110vh)
             rotate(25deg);
@@ -1344,37 +1534,42 @@ button {
    TABLET
 ======================================== */
 
+@media (max-width: 900px) {
+
+    .razones-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
 @media (max-width: 768px) {
 
     .carta {
-
         padding:
             40px 25px;
     }
 
 
     .contador {
-
         grid-template-columns:
             repeat(2, 1fr);
     }
 
 
     .galeria {
-
         grid-template-columns:
             1fr;
     }
 
 
     .foto img {
-
-        height: 320px;
+        height: 420px;
     }
 
 
     .boton-musica {
-
         top: 12px;
 
         right: 12px;
@@ -1386,10 +1581,9 @@ button {
     }
 
 
-    /* Línea de tiempo */
+    /* LÍNEA DE TIEMPO */
 
     .linea-tiempo::before {
-
         left: 24px;
 
         transform: none;
@@ -1399,7 +1593,6 @@ button {
     .momento,
     .momento:nth-child(odd),
     .momento:nth-child(even) {
-
         width: 100%;
 
         left: 0;
@@ -1414,7 +1607,6 @@ button {
     .momento-punto,
     .momento:nth-child(odd) .momento-punto,
     .momento:nth-child(even) .momento-punto {
-
         left: 0;
 
         right: auto;
@@ -1424,7 +1616,6 @@ button {
 
 
     .momento-contenido {
-
         padding: 25px 20px;
     }
 
@@ -1438,19 +1629,16 @@ button {
 @media (max-width: 600px) {
 
     .portada {
-
         padding-top: 90px;
     }
 
 
     .corazones {
-
         font-size: 22px;
     }
 
 
     .fecha {
-
         font-size: 16px;
     }
 
@@ -1458,97 +1646,137 @@ button {
     .carta-seccion,
     .historia-seccion,
     .contador-seccion,
+    .razones-seccion,
     .fotos-seccion,
     .sorpresa-final {
-
         padding:
             70px 15px;
     }
 
 
     .carta {
-
         padding:
             35px 20px;
     }
 
 
     .carta p:not(.etiqueta):not(.firma) {
-
         font-size: 16px;
     }
 
 
     .historia-titulo {
-
         margin-bottom: 50px;
     }
 
 
     .historia-titulo h2 {
-
         font-size: 35px;
     }
 
 
     .momento-contenido h3 {
-
         font-size: 22px;
     }
 
 
     .momento-contenido p {
-
         font-size: 15px;
     }
 
 
     .contador {
-
         gap: 10px;
     }
 
 
     .tiempo {
-
         padding:
             20px 10px;
     }
 
 
     .tiempo span {
-
         font-size: 35px;
     }
 
 
     .tiempo small {
-
         font-size: 12px;
     }
 
 
-    .foto img {
+    /* RAZONES */
 
-        height: 280px;
+    .razones-contenido h2 {
+        font-size: 35px;
+    }
+
+
+    .razones-intro {
+        margin-bottom: 40px;
+
+        font-size: 16px;
+    }
+
+
+    .razones-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 18px;
+    }
+
+
+    .razon-card {
+        padding:
+            30px 20px;
+    }
+
+
+    .razon-icono {
+        width: 62px;
+        height: 62px;
+
+        font-size: 30px;
+    }
+
+
+    .razon-card h3 {
+        font-size: 22px;
+    }
+
+
+    .razon-secreta.mostrar {
+        padding:
+            35px 20px;
+    }
+
+
+    .razon-secreta h3 {
+        font-size: 26px;
+    }
+
+
+    /* FOTOS */
+
+    .foto img {
+        height: 330px;
     }
 
 
     .mensaje-final {
-
         padding:
             35px 18px;
     }
 
 
     .mensaje-final .grande {
-
         font-size: 27px;
     }
 
 
     .final-amor {
-
         font-size: 35px;
     }
 
@@ -1562,62 +1790,52 @@ button {
 @media (max-width: 380px) {
 
     .bienvenida h1 {
-
         font-size: 55px;
     }
 
 
     .bienvenida p {
-
         font-size: 17px;
     }
 
 
     .portada h1 {
-
         font-size: 55px;
     }
 
 
     .portada h2 {
-
         font-size: 25px;
     }
 
 
     .contador {
-
         gap: 7px;
     }
 
 
     .tiempo {
-
         padding:
             15px 5px;
     }
 
 
     .tiempo span {
-
         font-size: 28px;
     }
 
 
     .foto img {
-
-        height: 240px;
+        height: 280px;
     }
 
 
     .momento {
-
         padding-left: 62px;
     }
 
 
     .momento-punto {
-
         width: 42px;
 
         height: 42px;
@@ -1627,8 +1845,45 @@ button {
 
 
     .linea-tiempo::before {
-
         left: 21px;
+    }
+
+
+    .razones-contenido h2 {
+        font-size: 31px;
+    }
+
+
+    .boton-razon-secreta {
+        width: 100%;
+
+        padding:
+            15px 15px;
+
+        font-size: 15px;
+    }
+
+}
+
+
+/* ========================================
+   ACCESIBILIDAD
+   REDUCIR ANIMACIONES SI EL DISPOSITIVO
+   LO SOLICITA
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
     }
 
 }
