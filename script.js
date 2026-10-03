@@ -1,38 +1,63 @@
 /* ==========================================================
-   PARA YOSELIN ❤️
-   SCRIPT.JS COMPLETO
-   ========================================================== */
-
-
-/* ==========================================================
-   FECHA DE INICIO
-   ========================================================== */
+   FECHA DE INICIO ❤️
+========================================================== */
 
 const fechaInicio = new Date("2024-10-27T00:00:00");
 
 
 /* ==========================================================
    ELEMENTOS PRINCIPALES
-   ========================================================== */
+========================================================== */
 
 const bienvenida = document.getElementById("bienvenida");
 const abrirPagina = document.getElementById("abrirPagina");
 
-const musica = document.getElementById("musicaFondo");
+const musicaFondo = document.getElementById("musicaFondo");
 const botonMusica = document.getElementById("botonMusica");
 
 
 /* ==========================================================
-   PANTALLA DE BIENVENIDA
-   ========================================================== */
+   ABRIR LA PÁGINA
+========================================================== */
 
-if (abrirPagina && bienvenida) {
+if (abrirPagina) {
 
     abrirPagina.addEventListener("click", () => {
 
-        bienvenida.classList.add("ocultar");
+        if (bienvenida) {
+            bienvenida.classList.add("ocultar");
+        }
 
-        reproducirMusica();
+
+        /* Intentar reproducir la música */
+
+        if (musicaFondo) {
+
+            musicaFondo.volume = 0.5;
+
+            const promesa =
+                musicaFondo.play();
+
+            if (promesa !== undefined) {
+
+                promesa
+                    .then(() => {
+
+                        actualizarBotonMusica();
+
+                    })
+                    .catch(() => {
+
+                        actualizarBotonMusica();
+
+                    });
+
+            }
+
+        }
+
+
+        /* Corazones de bienvenida */
 
         lanzarGrupoCorazones(20);
 
@@ -43,18 +68,25 @@ if (abrirPagina && bienvenida) {
 
 /* ==========================================================
    CONTADOR
-   ========================================================== */
+========================================================== */
 
-const diasElemento = document.getElementById("dias");
-const horasElemento = document.getElementById("horas");
-const minutosElemento = document.getElementById("minutos");
-const segundosElemento = document.getElementById("segundos");
+const diasElemento =
+    document.getElementById("dias");
+
+const horasElemento =
+    document.getElementById("horas");
+
+const minutosElemento =
+    document.getElementById("minutos");
+
+const segundosElemento =
+    document.getElementById("segundos");
 
 
 function agregarCero(numero) {
 
     return numero < 10
-        ? "0" + numero
+        ? `0${numero}`
         : numero;
 
 }
@@ -62,21 +94,26 @@ function agregarCero(numero) {
 
 function actualizarContador() {
 
-    const ahora = new Date();
+    const ahora =
+        new Date();
 
     let diferencia =
-        ahora.getTime() -
-        fechaInicio.getTime();
+        ahora - fechaInicio;
 
+
+    /*
+        Si por algún motivo la fecha actual
+        fuera anterior a la fecha inicial,
+        evitamos números negativos.
+    */
 
     if (diferencia < 0) {
-
         diferencia = 0;
-
     }
 
 
-    const segundo = 1000;
+    const segundo =
+        1000;
 
     const minuto =
         segundo * 60;
@@ -96,22 +133,19 @@ function actualizarContador() {
 
     const horas =
         Math.floor(
-            (diferencia % dia) /
-            hora
+            (diferencia % dia) / hora
         );
 
 
     const minutos =
         Math.floor(
-            (diferencia % hora) /
-            minuto
+            (diferencia % hora) / minuto
         );
 
 
     const segundos =
         Math.floor(
-            (diferencia % minuto) /
-            segundo
+            (diferencia % minuto) / segundo
         );
 
 
@@ -158,8 +192,8 @@ setInterval(
 
 
 /* ==========================================================
-   PRIMERA SORPRESA
-   ========================================================== */
+   PRIMERA SORPRESA 💝
+========================================================== */
 
 const botonSorpresa =
     document.getElementById(
@@ -181,36 +215,43 @@ if (
         "click",
         () => {
 
-            const estaVisible =
+            /*
+                Evitamos volver a abrir
+                la misma sorpresa varias veces.
+            */
+
+            if (
                 mensajeSorpresa.classList
-                    .contains("mostrar");
+                    .contains("mostrar")
+            ) {
 
-
-            if (!estaVisible) {
-
-                mensajeSorpresa
-                    .classList
-                    .add("mostrar");
-
-
-                botonSorpresa.textContent =
-                    "❤️ Te amo, Yoselin";
-
-
-                lanzarGrupoCorazones(15);
-
-
-                setTimeout(() => {
-
-                    mensajeSorpresa
-                        .scrollIntoView({
-                            behavior: "smooth",
-                            block: "center"
-                        });
-
-                }, 250);
+                return;
 
             }
+
+
+            mensajeSorpresa.classList
+                .add("mostrar");
+
+
+            botonSorpresa.textContent =
+                "❤️ Te amo, Yoselin";
+
+
+            lanzarGrupoCorazones(15);
+
+
+            setTimeout(() => {
+
+                mensajeSorpresa
+                    .scrollIntoView({
+
+                        behavior: "smooth",
+                        block: "center"
+
+                    });
+
+            }, 350);
 
         }
     );
@@ -219,8 +260,8 @@ if (
 
 
 /* ==========================================================
-   RAZÓN SECRETA
-   ========================================================== */
+   RAZÓN SECRETA ❤️
+========================================================== */
 
 const botonRazonSecreta =
     document.getElementById(
@@ -242,36 +283,38 @@ if (
         "click",
         () => {
 
-            const estaVisible =
+            if (
                 razonSecreta.classList
-                    .contains("mostrar");
+                    .contains("mostrar")
+            ) {
 
-
-            if (!estaVisible) {
-
-                razonSecreta
-                    .classList
-                    .add("mostrar");
-
-
-                botonRazonSecreta.textContent =
-                    "❤️ Siempre serás especial";
-
-
-                lanzarGrupoCorazones(18);
-
-
-                setTimeout(() => {
-
-                    razonSecreta
-                        .scrollIntoView({
-                            behavior: "smooth",
-                            block: "center"
-                        });
-
-                }, 250);
+                return;
 
             }
+
+
+            razonSecreta.classList
+                .add("mostrar");
+
+
+            botonRazonSecreta.textContent =
+                "❤️ Siempre serás especial";
+
+
+            lanzarGrupoCorazones(18);
+
+
+            setTimeout(() => {
+
+                razonSecreta
+                    .scrollIntoView({
+
+                        behavior: "smooth",
+                        block: "center"
+
+                    });
+
+            }, 350);
 
         }
     );
@@ -280,62 +323,12 @@ if (
 
 
 /* ==========================================================
-   MÚSICA
-   ========================================================== */
+   MÚSICA 🎵
+========================================================== */
 
-if (musica) {
+if (musicaFondo) {
 
-    musica.volume = 0.5;
-
-}
-
-
-function reproducirMusica() {
-
-    if (!musica) {
-
-        return;
-
-    }
-
-
-    const promesa =
-        musica.play();
-
-
-    if (
-        promesa !== undefined
-    ) {
-
-        promesa
-            .then(() => {
-
-                actualizarBotonMusica();
-
-            })
-            .catch(() => {
-
-                actualizarBotonMusica();
-
-            });
-
-    }
-
-}
-
-
-function pausarMusica() {
-
-    if (!musica) {
-
-        return;
-
-    }
-
-
-    musica.pause();
-
-    actualizarBotonMusica();
+    musicaFondo.volume = 0.5;
 
 }
 
@@ -343,8 +336,8 @@ function pausarMusica() {
 function actualizarBotonMusica() {
 
     if (
-        !musica ||
-        !botonMusica
+        !botonMusica ||
+        !musicaFondo
     ) {
 
         return;
@@ -352,7 +345,7 @@ function actualizarBotonMusica() {
     }
 
 
-    if (musica.paused) {
+    if (musicaFondo.paused) {
 
         botonMusica.textContent =
             "🎵 Reproducir música";
@@ -360,7 +353,7 @@ function actualizarBotonMusica() {
     } else {
 
         botonMusica.textContent =
-            "🔊 Pausar música";
+            "⏸️ Pausar música";
 
     }
 
@@ -369,20 +362,33 @@ function actualizarBotonMusica() {
 
 if (
     botonMusica &&
-    musica
+    musicaFondo
 ) {
 
     botonMusica.addEventListener(
         "click",
         () => {
 
-            if (musica.paused) {
+            if (musicaFondo.paused) {
 
-                reproducirMusica();
+                musicaFondo
+                    .play()
+                    .then(() => {
+
+                        actualizarBotonMusica();
+
+                    })
+                    .catch(() => {
+
+                        actualizarBotonMusica();
+
+                    });
 
             } else {
 
-                pausarMusica();
+                musicaFondo.pause();
+
+                actualizarBotonMusica();
 
             }
 
@@ -390,13 +396,13 @@ if (
     );
 
 
-    musica.addEventListener(
+    musicaFondo.addEventListener(
         "play",
         actualizarBotonMusica
     );
 
 
-    musica.addEventListener(
+    musicaFondo.addEventListener(
         "pause",
         actualizarBotonMusica
     );
@@ -405,10 +411,10 @@ if (
 
 
 /* ==========================================================
-   CORAZONES FLOTANTES
-   ========================================================== */
+   CORAZONES FLOTANTES ❤️
+========================================================== */
 
-const emojisCorazones = [
+const tiposCorazon = [
     "❤️",
     "💕",
     "💗",
@@ -429,51 +435,70 @@ function crearCorazon() {
     );
 
 
-    const emoji =
-        emojisCorazones[
-            Math.floor(
-                Math.random() *
-                emojisCorazones.length
-            )
-        ];
+    const indice =
+        Math.floor(
+            Math.random() *
+            tiposCorazon.length
+        );
 
 
     corazon.textContent =
-        emoji;
+        tiposCorazon[indice];
 
+
+    /*
+        Posición horizontal aleatoria.
+    */
 
     corazon.style.left =
-        Math.random() * 100 +
-        "vw";
+        `${Math.random() * 100}vw`;
+
+
+    /*
+        Tamaño aleatorio.
+    */
+
+    const tamano =
+        14 +
+        Math.random() * 20;
 
 
     corazon.style.fontSize =
-        (
-            15 +
-            Math.random() * 18
-        ) +
-        "px";
+        `${tamano}px`;
+
+
+    /*
+        Duración aleatoria para que
+        no todos suban igual.
+    */
+
+    const duracion =
+        5 +
+        Math.random() * 4;
 
 
     corazon.style.animationDuration =
-        (
-            5 +
-            Math.random() * 4
-        ) +
-        "s";
+        `${duracion}s`;
 
+
+    /*
+        Transparencia ligeramente distinta.
+    */
 
     corazon.style.opacity =
-        (
-            0.45 +
-            Math.random() * 0.45
-        );
+        0.55 +
+        Math.random() * 0.35;
 
 
     document.body.appendChild(
         corazon
     );
 
+
+    /*
+        El corazón se elimina después
+        de terminar su recorrido.
+    */
 
     setTimeout(() => {
 
@@ -484,22 +509,11 @@ function crearCorazon() {
 }
 
 
-/* CORAZONES SUAVES DE FONDO */
-
-setInterval(() => {
-
-    crearCorazon();
-
-}, 1100);
-
-
 /* ==========================================================
    GRUPO DE CORAZONES
-   ========================================================== */
+========================================================== */
 
-function lanzarGrupoCorazones(
-    cantidad = 15
-) {
+function lanzarGrupoCorazones(cantidad = 12) {
 
     for (
         let i = 0;
@@ -511,26 +525,38 @@ function lanzarGrupoCorazones(
 
             crearCorazon();
 
-        }, i * 80);
+        }, i * 90);
 
     }
 
 }
 
 
-/* ==========================================================
-   GALERÍA DE RECUERDOS
-   ========================================================== */
+/*
+    Corazones suaves de fondo.
+*/
 
-const fotos =
+setInterval(() => {
+
+    crearCorazon();
+
+}, 1100);
+
+
+/* ==========================================================
+   GALERÍA DE RECUERDOS 📸
+========================================================== */
+
+const fotosRecuerdos =
     document.querySelectorAll(
         ".foto img"
     );
 
-const recuerdos =
+const tarjetasRecuerdo =
     document.querySelectorAll(
         ".recuerdo"
     );
+
 
 const modalFoto =
     document.getElementById(
@@ -558,10 +584,6 @@ const textoRecuerdo =
     );
 
 
-/* ==========================================================
-   ABRIR RECUERDO
-   ========================================================== */
-
 function abrirRecuerdo(foto) {
 
     if (
@@ -584,20 +606,11 @@ function abrirRecuerdo(foto) {
         "Recuerdo ampliado";
 
 
-    const titulo =
-        foto.dataset.titulo ||
-        "Nuestro recuerdo ❤️";
-
-
-    const mensaje =
-        foto.dataset.mensaje ||
-        "Un momento especial de nuestra historia.";
-
-
     if (tituloRecuerdo) {
 
         tituloRecuerdo.textContent =
-            titulo;
+            foto.dataset.titulo ||
+            "Nuestro recuerdo ❤️";
 
     }
 
@@ -605,14 +618,15 @@ function abrirRecuerdo(foto) {
     if (textoRecuerdo) {
 
         textoRecuerdo.textContent =
-            mensaje;
+            foto.dataset.mensaje ||
+            "Un momento especial de nuestra historia.";
 
     }
 
 
-    modalFoto
-        .classList
-        .add("mostrar");
+    modalFoto.classList.add(
+        "mostrar"
+    );
 
 
     document.body.style.overflow =
@@ -625,35 +639,43 @@ function abrirRecuerdo(foto) {
 
 
 /* ==========================================================
-   CLIC DIRECTO EN LAS FOTOS
-   ========================================================== */
+   CLICK DIRECTO EN LAS FOTOGRAFÍAS
+========================================================== */
 
-fotos.forEach((foto) => {
+fotosRecuerdos.forEach(
+    (foto) => {
 
-    foto.addEventListener(
-        "click",
-        (evento) => {
+        foto.addEventListener(
+            "click",
+            (evento) => {
 
-            evento.stopPropagation();
+                evento.stopPropagation();
 
-            abrirRecuerdo(foto);
+                abrirRecuerdo(foto);
 
-        }
-    );
+            }
+        );
 
-});
+    }
+);
 
 
 /* ==========================================================
-   CLIC EN TODA LA TARJETA
-   ========================================================== */
+   CLICK EN TODA LA TARJETA DEL RECUERDO
+========================================================== */
 
-recuerdos.forEach(
-    (recuerdo) => {
+tarjetasRecuerdo.forEach(
+    (tarjeta) => {
 
-        recuerdo.addEventListener(
+        tarjeta.addEventListener(
             "click",
             (evento) => {
+
+                /*
+                    Si el usuario ya tocó
+                    directamente la imagen,
+                    no repetimos el evento.
+                */
 
                 if (
                     evento.target.tagName ===
@@ -666,16 +688,12 @@ recuerdos.forEach(
 
 
                 const foto =
-                    recuerdo.querySelector(
+                    tarjeta.querySelector(
                         "img"
                     );
 
 
-                if (foto) {
-
-                    abrirRecuerdo(foto);
-
-                }
+                abrirRecuerdo(foto);
 
             }
         );
@@ -686,32 +704,34 @@ recuerdos.forEach(
 
 /* ==========================================================
    CERRAR MODAL
-   ========================================================== */
+========================================================== */
 
-function cerrarModalFoto() {
+function cerrarModalRecuerdo() {
 
     if (!modalFoto) {
-
         return;
-
     }
 
 
-    modalFoto
-        .classList
-        .remove("mostrar");
+    modalFoto.classList.remove(
+        "mostrar"
+    );
 
 
     document.body.style.overflow =
         "";
 
 
+    /*
+        Esperamos a que desaparezca
+        antes de quitar la imagen.
+    */
+
     setTimeout(() => {
 
         if (imagenGrande) {
 
-            imagenGrande.src =
-                "";
+            imagenGrande.src = "";
 
         }
 
@@ -724,13 +744,15 @@ if (cerrarFoto) {
 
     cerrarFoto.addEventListener(
         "click",
-        cerrarModalFoto
+        cerrarModalRecuerdo
     );
 
 }
 
 
-/* CERRAR TOCANDO EL FONDO */
+/*
+    Cerrar tocando el fondo oscuro.
+*/
 
 if (modalFoto) {
 
@@ -743,7 +765,7 @@ if (modalFoto) {
                 modalFoto
             ) {
 
-                cerrarModalFoto();
+                cerrarModalRecuerdo();
 
             }
 
@@ -753,7 +775,9 @@ if (modalFoto) {
 }
 
 
-/* CERRAR CON ESC */
+/*
+    Cerrar con ESC en computadora.
+*/
 
 document.addEventListener(
     "keydown",
@@ -766,7 +790,7 @@ document.addEventListener(
                 .contains("mostrar")
         ) {
 
-            cerrarModalFoto();
+            cerrarModalRecuerdo();
 
         }
 
@@ -775,9 +799,8 @@ document.addEventListener(
 
 
 /* ==========================================================
-   NUEVA SECCIÓN ❤️
-   UNA PREGUNTA PARA TI
-   ========================================================== */
+   UNA PREGUNTA PARA TI 💌
+========================================================== */
 
 const respuestaSi =
     document.getElementById(
@@ -795,34 +818,21 @@ const respuestaPregunta =
     );
 
 
-/* CONTROL PARA QUE LA ANIMACIÓN
-   PRINCIPAL SE EJECUTE UNA SOLA VEZ */
-
 let preguntaRespondida =
     false;
 
-
-/* ==========================================================
-   MOSTRAR RESPUESTA
-   ========================================================== */
 
 function mostrarRespuestaPregunta(
     botonElegido
 ) {
 
     if (!respuestaPregunta) {
-
         return;
-
     }
 
 
-    /* EVITAMOS REPETIR LA ANIMACIÓN */
-
     if (preguntaRespondida) {
-
         return;
-
     }
 
 
@@ -830,14 +840,9 @@ function mostrarRespuestaPregunta(
         true;
 
 
-    /* MOSTRAMOS EL MENSAJE */
-
-    respuestaPregunta
-        .classList
+    respuestaPregunta.classList
         .add("mostrar");
 
-
-    /* CAMBIAMOS EL BOTÓN ELEGIDO */
 
     if (botonElegido) {
 
@@ -847,12 +852,9 @@ function mostrarRespuestaPregunta(
     }
 
 
-    /* DESACTIVAMOS AMBOS BOTONES */
-
     if (respuestaSi) {
 
-        respuestaSi
-            .classList
+        respuestaSi.classList
             .add("respondido");
 
     }
@@ -860,37 +862,33 @@ function mostrarRespuestaPregunta(
 
     if (respuestaClaro) {
 
-        respuestaClaro
-            .classList
+        respuestaClaro.classList
             .add("respondido");
 
     }
 
 
-    /* PEQUEÑA CELEBRACIÓN */
+    /*
+        Celebración de corazones.
+    */
 
     lanzarGrupoCorazones(30);
 
-
-    /* LLEVAMOS SUAVEMENTE
-       AL MENSAJE */
 
     setTimeout(() => {
 
         respuestaPregunta
             .scrollIntoView({
+
                 behavior: "smooth",
                 block: "center"
+
             });
 
     }, 400);
 
 }
 
-
-/* ==========================================================
-   BOTÓN "SÍ ❤️"
-   ========================================================== */
 
 if (respuestaSi) {
 
@@ -907,10 +905,6 @@ if (respuestaSi) {
 
 }
 
-
-/* ==========================================================
-   BOTÓN "CLARO QUE SÍ 💕"
-   ========================================================== */
 
 if (respuestaClaro) {
 
@@ -929,8 +923,61 @@ if (respuestaClaro) {
 
 
 /* ==========================================================
-   SORPRESA FINAL
-   ========================================================== */
+   COSAS QUE QUIERO VIVIR CONTIGO ✨
+========================================================== */
+
+const tarjetasFuturo =
+    document.querySelectorAll(
+        ".futuro-card"
+    );
+
+
+tarjetasFuturo.forEach(
+    (tarjeta) => {
+
+        tarjeta.addEventListener(
+            "click",
+            () => {
+
+                /*
+                    Pequeño efecto al tocar
+                    una de las tarjetas.
+                */
+
+                tarjeta.style.transform =
+                    "scale(0.97)";
+
+
+                /*
+                    Aparecen algunos corazones.
+                */
+
+                lanzarGrupoCorazones(5);
+
+
+                setTimeout(() => {
+
+                    /*
+                        Quitamos el estilo en línea
+                        para que vuelva a funcionar
+                        correctamente el hover.
+                    */
+
+                    tarjeta.style.transform =
+                        "";
+
+                }, 180);
+
+            }
+        );
+
+    }
+);
+
+
+/* ==========================================================
+   SORPRESA FINAL ❤️
+========================================================== */
 
 const botonFinal =
     document.getElementById(
@@ -956,12 +1003,8 @@ if (
         "click",
         () => {
 
-            if (
-                sorpresaFinalAbierta
-            ) {
-
+            if (sorpresaFinalAbierta) {
                 return;
-
             }
 
 
@@ -969,9 +1012,9 @@ if (
                 true;
 
 
-            mensajeFinal
-                .classList
-                .add("mostrar");
+            mensajeFinal.classList.add(
+                "mostrar"
+            );
 
 
             botonFinal.textContent =
@@ -985,11 +1028,13 @@ if (
 
                 mensajeFinal
                     .scrollIntoView({
+
                         behavior: "smooth",
                         block: "center"
+
                     });
 
-            }, 350);
+            }, 400);
 
         }
     );
@@ -998,16 +1043,16 @@ if (
 
 
 /* ==========================================================
-   EFECTO EN LAS TARJETAS DE RAZONES
-   ========================================================== */
+   PEQUEÑA INTERACCIÓN EN LAS TARJETAS DE RAZONES
+========================================================== */
 
-const tarjetasRazon =
+const tarjetasRazones =
     document.querySelectorAll(
         ".razon-card"
     );
 
 
-tarjetasRazon.forEach(
+tarjetasRazones.forEach(
     (tarjeta) => {
 
         tarjeta.addEventListener(
@@ -1018,12 +1063,15 @@ tarjetasRazon.forEach(
                     "scale(0.97)";
 
 
+                lanzarGrupoCorazones(3);
+
+
                 setTimeout(() => {
 
                     tarjeta.style.transform =
                         "";
 
-                }, 180);
+                }, 170);
 
             }
         );
@@ -1034,7 +1082,15 @@ tarjetasRazon.forEach(
 
 /* ==========================================================
    ANIMACIONES AL HACER SCROLL
-   ========================================================== */
+========================================================== */
+
+/*
+    Seleccionamos las partes principales
+    de la página.
+
+    También están incluidas las tarjetas
+    de "Cosas que quiero vivir contigo".
+*/
 
 const elementosAnimados =
     document.querySelectorAll(
@@ -1050,37 +1106,46 @@ const elementosAnimados =
         .mensaje-recuerdos,
         .pregunta-contenido,
         .pregunta-tarjeta,
+        .futuro-contenido,
+        .futuro-card,
+        .futuro-final,
         .sorpresa-contenido
         `
     );
 
 
-/* PREPARAMOS LOS ELEMENTOS */
-
-elementosAnimados.forEach(
-    (elemento) => {
-
-        elemento.style.opacity =
-            "0";
-
-        elemento.style.transform =
-            "translateY(35px)";
-
-        elemento.style.transition =
-            "opacity 0.8s ease, transform 0.8s ease";
-
-    }
-);
-
-
-/* ==========================================================
-   OBSERVADOR
-   ========================================================== */
+/*
+    Solo utilizamos IntersectionObserver
+    si el navegador lo admite.
+*/
 
 if (
     "IntersectionObserver"
     in window
 ) {
+
+    /*
+        Preparamos inicialmente
+        los elementos.
+    */
+
+    elementosAnimados.forEach(
+        (elemento) => {
+
+            elemento.style.opacity =
+                "0";
+
+
+            elemento.style.transform =
+                "translateY(35px)";
+
+
+            elemento.style.transition =
+                "opacity 0.8s ease, transform 0.8s ease";
+
+        }
+    );
+
 
     const observador =
         new IntersectionObserver(
@@ -1137,15 +1202,17 @@ if (
 
 } else {
 
-
-    /* RESPALDO PARA NAVEGADORES
-       SIN INTERSECTION OBSERVER */
+    /*
+        Navegadores antiguos:
+        simplemente mostramos todo.
+    */
 
     elementosAnimados.forEach(
         (elemento) => {
 
             elemento.style.opacity =
                 "1";
+
 
             elemento.style.transform =
                 "translateY(0)";
@@ -1157,16 +1224,16 @@ if (
 
 
 /* ==========================================================
-   ESTADO INICIAL DEL BOTÓN DE MÚSICA
-   ========================================================== */
+   BOTÓN DE MÚSICA AL CARGAR
+========================================================== */
 
 actualizarBotonMusica();
 
 
 /* ==========================================================
-   FIN ❤️
-   ========================================================== */
+   MENSAJE PARA COMPROBAR QUE TODO CARGÓ
+========================================================== */
 
 console.log(
-    "❤️ Página para Yoselin cargada correctamente."
+    "Página para Yoselin cargada correctamente ❤️"
 );
