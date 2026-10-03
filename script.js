@@ -917,6 +917,121 @@ tarjetasRazones.forEach(
 
 
 /* ==========================================================
+   CÁPSULA DEL TIEMPO 💌
+========================================================== */
+
+const botonCapsula =
+    document.getElementById(
+        "botonCapsula"
+    );
+
+const mensajeCapsula =
+    document.getElementById(
+        "mensajeCapsula"
+    );
+
+const capsulaSobre =
+    document.getElementById(
+        "capsulaSobre"
+    );
+
+
+let capsulaAbierta = false;
+
+
+if (
+    botonCapsula &&
+    mensajeCapsula
+) {
+
+    botonCapsula.addEventListener(
+        "click",
+        () => {
+
+            /*
+                Evita que la cápsula vuelva
+                a abrirse varias veces.
+            */
+
+            if (capsulaAbierta) {
+
+                return;
+
+            }
+
+
+            capsulaAbierta = true;
+
+
+            /*
+                Cambiamos el aspecto
+                del botón.
+            */
+
+            botonCapsula.classList.add(
+                "abierto"
+            );
+
+
+            botonCapsula.textContent =
+                "❤️ Cápsula abierta";
+
+
+            /*
+                Cambiamos suavemente
+                el aspecto del sobre.
+            */
+
+            if (capsulaSobre) {
+
+                capsulaSobre.classList.add(
+                    "abierto"
+                );
+
+            }
+
+
+            /*
+                Mostramos la carta.
+            */
+
+            mensajeCapsula.classList.add(
+                "mostrar"
+            );
+
+
+            /*
+                Celebración con corazones.
+            */
+
+            lanzarGrupoCorazones(22);
+
+
+            /*
+                Después de abrirla,
+                desplazamos suavemente
+                la pantalla hacia la carta.
+            */
+
+            setTimeout(() => {
+
+                mensajeCapsula
+                    .scrollIntoView({
+
+                        behavior: "smooth",
+                        block: "center"
+
+                    });
+
+            }, 500);
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
    NUEVA SORPRESA FINAL ❤️
 ========================================================== */
 
@@ -949,26 +1064,12 @@ function revelarBloquesFinales() {
     bloquesFinales.forEach(
         (bloque, indice) => {
 
-            /*
-                Cada bloque espera un poco más
-                que el anterior.
-
-                650 ms permite que la lectura
-                se sienta progresiva sin ser
-                demasiado lenta.
-            */
-
             setTimeout(() => {
 
                 bloque.classList.add(
                     "visible"
                 );
 
-
-                /*
-                    En algunos momentos lanzamos
-                    pequeños grupos de corazones.
-                */
 
                 if (
                     indice === 0 ||
@@ -1021,12 +1122,6 @@ if (
         "click",
         () => {
 
-            /*
-                Solo se puede abrir una vez
-                para evitar repetir todos
-                los temporizadores.
-            */
-
             if (sorpresaFinalAbierta) {
 
                 return;
@@ -1037,10 +1132,6 @@ if (
             sorpresaFinalAbierta = true;
 
 
-            /*
-                Cambiamos el botón.
-            */
-
             botonFinal.classList.add(
                 "abierto"
             );
@@ -1050,26 +1141,13 @@ if (
                 "❤️ Para ti, Yoselin";
 
 
-            /*
-                Primera celebración.
-            */
-
             lanzarGrupoCorazones(25);
 
-
-            /*
-                Abrimos la tarjeta.
-            */
 
             mensajeFinal.classList.add(
                 "mostrar"
             );
 
-
-            /*
-                Desplazamos suavemente hacia
-                el comienzo del mensaje.
-            */
 
             setTimeout(() => {
 
@@ -1084,18 +1162,8 @@ if (
             }, 500);
 
 
-            /*
-                Comienza la revelación
-                progresiva.
-            */
-
             revelarBloquesFinales();
 
-
-            /*
-                Corazones especiales al llegar
-                al "TE AMO".
-            */
 
             celebracionFinal();
 
@@ -1126,6 +1194,7 @@ const elementosAnimados =
         .futuro-contenido,
         .futuro-card,
         .futuro-final,
+        .capsula-contenido,
         .sorpresa-contenido
         `
     );
@@ -1175,16 +1244,6 @@ if (
                                 .transform =
                                 "translateY(0)";
 
-
-                            /*
-                                Después de terminar
-                                la entrada quitamos el
-                                transform inline.
-
-                                Así los efectos :hover
-                                de las tarjetas siguen
-                                funcionando correctamente.
-                            */
 
                             setTimeout(() => {
 
