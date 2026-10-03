@@ -52,20 +52,11 @@ button {
     align-items: center;
 
     padding: 25px;
-
     text-align: center;
 
     background:
-        radial-gradient(
-            circle at top,
-            #ffdce8,
-            transparent 45%
-        ),
-        linear-gradient(
-            135deg,
-            #fff0f5,
-            #ffd5e2
-        );
+        radial-gradient(circle at top, #ffdce8, transparent 45%),
+        linear-gradient(135deg, #fff0f5, #ffd5e2);
 
     transition:
         opacity 1s ease,
@@ -114,8 +105,7 @@ button {
 
     font-size: 18px;
 
-    box-shadow:
-        0 10px 30px rgba(184, 61, 97, 0.25);
+    box-shadow: 0 10px 30px rgba(184, 61, 97, 0.25);
 
     transition:
         transform 0.3s ease,
@@ -124,22 +114,18 @@ button {
 
 .boton-abrir:hover {
     transform: translateY(-4px) scale(1.04);
-
-    box-shadow:
-        0 15px 35px rgba(184, 61, 97, 0.35);
+    box-shadow: 0 15px 35px rgba(184, 61, 97, 0.35);
 }
 
 
 /* =========================================================
-   BOTÓN DE MÚSICA
+   MÚSICA
 ========================================================= */
 
 .boton-musica {
     position: fixed;
-
     top: 20px;
     right: 20px;
-
     z-index: 9000;
 
     padding: 11px 18px;
@@ -152,8 +138,7 @@ button {
 
     font-size: 14px;
 
-    box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -172,7 +157,6 @@ button {
 
 .portada {
     position: relative;
-
     min-height: 100vh;
 
     display: flex;
@@ -181,25 +165,12 @@ button {
     align-items: center;
 
     padding: 80px 20px 50px;
-
     text-align: center;
 
     background:
-        radial-gradient(
-            circle at 20% 20%,
-            #ffe4ec,
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 80%,
-            #ffd7e3,
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #fff8fa,
-            #ffeaf1
-        );
+        radial-gradient(circle at 20% 20%, #ffe4ec, transparent 30%),
+        radial-gradient(circle at 80% 80%, #ffd7e3, transparent 30%),
+        linear-gradient(135deg, #fff8fa, #ffeaf1);
 }
 
 .corazones {
@@ -215,10 +186,8 @@ button {
 
 .portada h1 {
     margin: 15px 0 5px;
-
     font-size: clamp(60px, 12vw, 110px);
     line-height: 1;
-
     color: #9e3152;
 }
 
@@ -228,10 +197,8 @@ button {
 
 .portada h2 {
     margin-bottom: 20px;
-
     font-size: clamp(25px, 5vw, 40px);
     font-weight: normal;
-
     color: #633746;
 }
 
@@ -243,7 +210,6 @@ button {
 
 .boton {
     display: inline-block;
-
     padding: 15px 30px;
 
     border-radius: 40px;
@@ -253,8 +219,7 @@ button {
 
     text-decoration: none;
 
-    box-shadow:
-        0 10px 25px rgba(184, 61, 97, 0.25);
+    box-shadow: 0 10px 25px rgba(184, 61, 97, 0.25);
 
     transition: transform 0.3s ease;
 }
@@ -284,7 +249,6 @@ button {
 
 .carta {
     max-width: 760px;
-
     margin: auto;
     padding: 55px;
 
@@ -292,15 +256,13 @@ button {
 
     background: #fff9fb;
 
-    box-shadow:
-        0 20px 60px rgba(120, 45, 70, 0.1);
+    box-shadow: 0 20px 60px rgba(120, 45, 70, 0.1);
 
     text-align: center;
 }
 
 .carta h2 {
     margin: 15px 0;
-
     font-size: 40px;
     color: #9e3152;
 }
@@ -312,25 +274,20 @@ button {
     margin: 20px auto 30px;
 
     border-radius: 5px;
-
     background: #d36b88;
 }
 
 .carta p:not(.etiqueta):not(.firma) {
     margin-bottom: 20px;
-
     font-size: 18px;
     line-height: 1.9;
-
     color: #68434f;
 }
 
 .te-amo {
     margin: 35px 0;
-
     font-size: 40px;
     color: #b83d61;
-
     animation: latido 1.5s infinite;
 }
 
@@ -346,13 +303,7 @@ button {
 
 .historia-seccion {
     padding: 110px 20px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #fff7fa,
-            #ffeaf1
-        );
+    background: linear-gradient(180deg, #fff7fa, #ffeaf1);
 }
 
 .historia-titulo {
@@ -363,9 +314,7 @@ button {
 
 .historia-titulo h2 {
     margin: 18px 0;
-
     font-size: clamp(35px, 7vw, 55px);
-
     color: #9e3152;
 }
 
@@ -375,16 +324,9 @@ button {
     color: #72505c;
 }
 
-
-/* =========================================================
-   LÍNEA DE TIEMPO
-========================================================= */
-
 .linea-tiempo {
     position: relative;
-
     max-width: 900px;
-
     margin: auto;
     padding: 10px 0;
 }
@@ -393,7 +335,6 @@ button {
     content: "";
 
     position: absolute;
-
     top: 0;
     bottom: 0;
     left: 50%;
@@ -404,20 +345,17 @@ button {
 
     border-radius: 10px;
 
-    background:
-        linear-gradient(
-            to bottom,
-            #d36b88,
-            #f1a8bb,
-            #d36b88
-        );
+    background: linear-gradient(
+        to bottom,
+        #d36b88,
+        #f1a8bb,
+        #d36b88
+    );
 }
 
 .momento {
     position: relative;
-
     width: 50%;
-
     padding: 20px 50px 45px;
 }
 
@@ -434,7 +372,6 @@ button {
 .momento-punto {
     position: absolute;
     top: 25px;
-
     z-index: 2;
 
     width: 48px;
@@ -449,8 +386,7 @@ button {
 
     background: white;
 
-    box-shadow:
-        0 5px 20px rgba(184, 61, 97, 0.18);
+    box-shadow: 0 5px 20px rgba(184, 61, 97, 0.18);
 
     font-size: 21px;
 
@@ -472,8 +408,7 @@ button {
 
     background: rgba(255, 255, 255, 0.85);
 
-    box-shadow:
-        0 15px 40px rgba(100, 30, 50, 0.08);
+    box-shadow: 0 15px 40px rgba(100, 30, 50, 0.08);
 
     transition:
         transform 0.35s ease,
@@ -482,14 +417,11 @@ button {
 
 .momento-contenido:hover {
     transform: translateY(-6px);
-
-    box-shadow:
-        0 20px 45px rgba(100, 30, 50, 0.14);
+    box-shadow: 0 20px 45px rgba(100, 30, 50, 0.14);
 }
 
 .momento-fecha {
     display: block;
-
     margin-bottom: 10px;
 
     font-size: 12px;
@@ -501,7 +433,6 @@ button {
 
 .momento-contenido h3 {
     margin-bottom: 12px;
-
     font-size: 25px;
     color: #9e3152;
 }
@@ -509,7 +440,6 @@ button {
 .momento-contenido p {
     font-size: 16px;
     line-height: 1.8;
-
     color: #68434f;
 }
 
@@ -520,15 +450,9 @@ button {
 
 .contador-seccion {
     padding: 100px 20px;
-
     text-align: center;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ffe5ed,
-            #fff5f8
-        );
+    background: linear-gradient(135deg, #ffe5ed, #fff5f8);
 }
 
 .contador-contenido {
@@ -538,29 +462,22 @@ button {
 
 .contador-contenido h2 {
     margin: 15px 0;
-
     font-size: clamp(35px, 7vw, 55px);
-
     color: #9e3152;
 }
 
 .fecha-inicio {
     margin-bottom: 40px;
-
     font-size: 18px;
     color: #77515e;
 }
 
 .contador {
     display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
+    grid-template-columns: repeat(4, 1fr);
     gap: 18px;
 
     max-width: 800px;
-
     margin: auto;
 }
 
@@ -571,8 +488,7 @@ button {
 
     background: rgba(255, 255, 255, 0.8);
 
-    box-shadow:
-        0 10px 30px rgba(100, 30, 50, 0.08);
+    box-shadow: 0 10px 30px rgba(100, 30, 50, 0.08);
 }
 
 .tiempo span {
@@ -586,22 +502,14 @@ button {
 
 .tiempo small {
     display: block;
-
     margin-top: 5px;
-
     font-size: 14px;
-
     color: #76515d;
 }
 
 .texto-contador {
     margin: 30px 0;
 }
-
-
-/* =========================================================
-   PRIMERA SORPRESA
-========================================================= */
 
 .boton-sorpresa {
     padding: 15px 28px;
@@ -629,11 +537,9 @@ button {
     padding: 0;
 
     overflow: hidden;
-
     opacity: 0;
 
     border-radius: 20px;
-
     background: white;
 
     transition:
@@ -644,15 +550,12 @@ button {
 
 .mensaje-sorpresa.mostrar {
     max-height: 500px;
-
     padding: 30px;
-
     opacity: 1;
 }
 
 .mensaje-sorpresa h3 {
     margin-bottom: 15px;
-
     font-size: 28px;
     color: #b83d61;
 }
@@ -669,9 +572,7 @@ button {
 
 .razones-seccion {
     position: relative;
-
     padding: 110px 20px;
-
     overflow: hidden;
 
     background:
@@ -685,11 +586,7 @@ button {
             rgba(255, 222, 232, 0.7),
             transparent 30%
         ),
-        linear-gradient(
-            145deg,
-            #fff8fa,
-            #ffedf3
-        );
+        linear-gradient(145deg, #fff8fa, #ffedf3);
 }
 
 .razones-contenido {
@@ -700,7 +597,6 @@ button {
     max-width: 1100px;
 
     margin: auto;
-
     text-align: center;
 }
 
@@ -728,10 +624,7 @@ button {
 
 .razones-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
 }
 
@@ -754,8 +647,7 @@ button {
 
     background: rgba(255, 255, 255, 0.88);
 
-    box-shadow:
-        0 18px 45px rgba(100, 30, 50, 0.09);
+    box-shadow: 0 18px 45px rgba(100, 30, 50, 0.09);
 
     transition:
         transform 0.4s ease,
@@ -764,18 +656,11 @@ button {
 
 .razon-card:hover {
     transform: translateY(-8px);
-
-    box-shadow:
-        0 27px 60px rgba(100, 30, 50, 0.15);
+    box-shadow: 0 27px 60px rgba(100, 30, 50, 0.15);
 }
 
 .razon-especial {
-    background:
-        linear-gradient(
-            145deg,
-            #fff5f8,
-            #ffe5ee
-        );
+    background: linear-gradient(145deg, #fff5f8, #ffe5ee);
 }
 
 .razon-icono {
@@ -790,37 +675,27 @@ button {
 
     border-radius: 50%;
 
-    background:
-        linear-gradient(
-            145deg,
-            #ffe5ee,
-            #ffffff
-        );
+    background: linear-gradient(145deg, #ffe5ee, #ffffff);
 
     font-size: 33px;
 
-    box-shadow:
-        0 10px 28px rgba(184, 61, 97, 0.12);
+    box-shadow: 0 10px 28px rgba(184, 61, 97, 0.12);
 }
 
 .razon-card h3 {
     margin-bottom: 12px;
-
     font-size: 23px;
-
     color: #9e3152;
 }
 
 .razon-card p {
     font-size: 15.5px;
     line-height: 1.75;
-
     color: #72505c;
 }
 
 .boton-razon-secreta {
     margin-top: 45px;
-
     padding: 15px 28px;
 
     border: none;
@@ -831,8 +706,7 @@ button {
 
     font-size: 16px;
 
-    box-shadow:
-        0 12px 30px rgba(184, 61, 97, 0.25);
+    box-shadow: 0 12px 30px rgba(184, 61, 97, 0.25);
 
     transition:
         transform 0.3s ease,
@@ -841,22 +715,18 @@ button {
 
 .boton-razon-secreta:hover {
     transform: translateY(-4px) scale(1.03);
-
-    box-shadow:
-        0 17px 38px rgba(184, 61, 97, 0.34);
+    box-shadow: 0 17px 38px rgba(184, 61, 97, 0.34);
 }
 
 .razon-secreta {
     width: 100%;
     max-width: 650px;
-
     max-height: 0;
 
     margin: 0 auto;
     padding: 0 25px;
 
     overflow: hidden;
-
     opacity: 0;
 
     transform: translateY(25px);
@@ -864,12 +734,7 @@ button {
     border: 1px solid transparent;
     border-radius: 28px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #fff8fa,
-            #ffeaf1
-        );
+    background: linear-gradient(145deg, #fff8fa, #ffeaf1);
 
     transition:
         max-height 0.8s ease,
@@ -891,35 +756,27 @@ button {
 
     transform: translateY(0);
 
-    border-color:
-        rgba(184, 61, 97, 0.13);
+    border-color: rgba(184, 61, 97, 0.13);
 
-    box-shadow:
-        0 18px 45px rgba(100, 30, 50, 0.1);
+    box-shadow: 0 18px 45px rgba(100, 30, 50, 0.1);
 }
 
 .corazon-secreto {
     margin-bottom: 15px;
-
     font-size: 50px;
-
     animation: latido 1.4s infinite;
 }
 
 .razon-secreta h3 {
     margin-bottom: 15px;
-
     font-size: 27px;
-
     color: #9e3152;
 }
 
 .razon-secreta p {
     margin-bottom: 10px;
-
     font-size: 16px;
     line-height: 1.8;
-
     color: #72505c;
 }
 
@@ -934,7 +791,7 @@ button {
 
 
 /* =========================================================
-   GALERÍA DE RECUERDOS
+   GALERÍA
 ========================================================= */
 
 .fotos-seccion,
@@ -951,26 +808,18 @@ button {
             rgba(255, 218, 230, 0.48),
             transparent 30%
         ),
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #fff6f9
-        );
+        linear-gradient(145deg, #ffffff, #fff6f9);
 }
 
 .titulo-fotos {
     max-width: 750px;
-
     margin: 0 auto 55px;
-
     text-align: center;
 }
 
 .titulo-fotos h2 {
     margin: 15px 0;
-
     font-size: clamp(38px, 7vw, 58px);
-
     color: #9e3152;
 }
 
@@ -981,19 +830,14 @@ button {
 
 .instruccion-fotos {
     margin-top: 13px;
-
     font-size: 14px;
     font-style: italic;
-
     color: #a04d68 !important;
 }
 
 #recuerdos .galeria {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
 
     width: 100%;
@@ -1012,8 +856,7 @@ button {
 
     background: white;
 
-    box-shadow:
-        0 18px 48px rgba(100, 30, 50, 0.11);
+    box-shadow: 0 18px 48px rgba(100, 30, 50, 0.11);
 
     cursor: pointer;
 
@@ -1024,17 +867,13 @@ button {
 
 .recuerdo:hover {
     transform: translateY(-8px);
-
-    box-shadow:
-        0 27px 60px rgba(100, 30, 50, 0.17);
+    box-shadow: 0 27px 60px rgba(100, 30, 50, 0.17);
 }
 
 .numero-recuerdo {
     position: absolute;
-
     top: 17px;
     left: 17px;
-
     z-index: 4;
 
     width: 45px;
@@ -1053,15 +892,12 @@ button {
     font-size: 12px;
     font-weight: bold;
 
-    box-shadow:
-        0 6px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .contenedor-imagen {
     position: relative;
-
     overflow: hidden;
-
     background: #ffeaf1;
 }
 
@@ -1073,12 +909,11 @@ button {
 
     pointer-events: none;
 
-    background:
-        linear-gradient(
-            to top,
-            rgba(73, 25, 42, 0.16),
-            transparent 40%
-        );
+    background: linear-gradient(
+        to top,
+        rgba(73, 25, 42, 0.16),
+        transparent 40%
+    );
 }
 
 .recuerdo img {
@@ -1100,7 +935,6 @@ button {
 
 .foto-info {
     padding: 28px 25px 30px;
-
     text-align: center;
 }
 
@@ -1118,9 +952,7 @@ button {
 
 .foto-info h3 {
     margin-bottom: 10px;
-
     font-size: 24px;
-
     color: #9e3152;
 }
 
@@ -1150,7 +982,7 @@ button {
 
 
 /* =========================================================
-   MENSAJE DEBAJO DE LOS RECUERDOS
+   MENSAJE DE RECUERDOS
 ========================================================= */
 
 #recuerdos .mensaje-recuerdos {
@@ -1174,22 +1006,18 @@ button {
 
     background: rgba(255, 255, 255, 0.82);
 
-    border:
-        1px solid rgba(184, 61, 97, 0.12);
+    border: 1px solid rgba(184, 61, 97, 0.12);
 
-    box-shadow:
-        0 18px 50px rgba(100, 30, 50, 0.08);
+    box-shadow: 0 18px 50px rgba(100, 30, 50, 0.08);
 }
 
 #recuerdos .mensaje-recuerdos .mini-corazon {
     display: block;
-
     width: 100%;
 
     margin: 0 auto 15px;
 
     text-align: center;
-
     font-size: 45px;
 
     animation: latido 1.5s infinite;
@@ -1229,7 +1057,7 @@ button {
 
 
 /* =========================================================
-   UNA PREGUNTA PARA TI
+   PREGUNTA
 ========================================================= */
 
 .pregunta-seccion {
@@ -1250,18 +1078,13 @@ button {
             rgba(255, 220, 231, 0.75),
             transparent 32%
         ),
-        linear-gradient(
-            145deg,
-            #fff7fa,
-            #ffe6ee
-        );
+        linear-gradient(145deg, #fff7fa, #ffe6ee);
 }
 
 .pregunta-seccion::before {
     content: "♡";
 
     position: absolute;
-
     top: 40px;
     left: 6%;
 
@@ -1278,7 +1101,6 @@ button {
     content: "♡";
 
     position: absolute;
-
     right: 5%;
     bottom: 20px;
 
@@ -1313,18 +1135,17 @@ button {
 
     margin: 0 auto 25px;
 
-    border: 1px solid rgba(184, 61, 97, 0.12);
     border-radius: 50%;
 
     background: rgba(255, 255, 255, 0.88);
 
-    box-shadow:
-        0 15px 40px rgba(120, 45, 70, 0.12);
+    border: 1px solid rgba(184, 61, 97, 0.12);
+
+    box-shadow: 0 15px 40px rgba(120, 45, 70, 0.12);
 
     font-size: 45px;
 
-    animation:
-        flotarSuave 3s ease-in-out infinite;
+    animation: flotarSuave 3s ease-in-out infinite;
 }
 
 .pregunta-contenido > h2 {
@@ -1357,16 +1178,13 @@ button {
 
     overflow: hidden;
 
-    border: 1px solid rgba(184, 61, 97, 0.14);
     border-radius: 35px;
 
     background: rgba(255, 255, 255, 0.9);
 
-    box-shadow:
-        0 25px 70px rgba(105, 36, 60, 0.13);
+    border: 1px solid rgba(184, 61, 97, 0.14);
 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 25px 70px rgba(105, 36, 60, 0.13);
 
     transition:
         transform 0.4s ease,
@@ -1375,47 +1193,7 @@ button {
 
 .pregunta-tarjeta:hover {
     transform: translateY(-5px);
-
-    box-shadow:
-        0 32px 80px rgba(105, 36, 60, 0.17);
-}
-
-.pregunta-tarjeta::before {
-    content: "";
-
-    position: absolute;
-
-    width: 170px;
-    height: 170px;
-
-    top: -90px;
-    right: -70px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255, 207, 222, 0.3);
-
-    pointer-events: none;
-}
-
-.pregunta-tarjeta::after {
-    content: "";
-
-    position: absolute;
-
-    width: 120px;
-    height: 120px;
-
-    left: -60px;
-    bottom: -60px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255, 207, 222, 0.25);
-
-    pointer-events: none;
+    box-shadow: 0 32px 80px rgba(105, 36, 60, 0.17);
 }
 
 .pregunta-iconos {
@@ -1427,14 +1205,10 @@ button {
     font-size: 28px;
     letter-spacing: 8px;
 
-    animation:
-        flotar 2.5s ease-in-out infinite;
+    animation: flotar 2.5s ease-in-out infinite;
 }
 
 .pregunta-pequena {
-    position: relative;
-    z-index: 2;
-
     margin-bottom: 14px;
 
     font-size: 11px;
@@ -1445,9 +1219,6 @@ button {
 }
 
 .pregunta-tarjeta > h3 {
-    position: relative;
-    z-index: 2;
-
     max-width: 650px;
 
     margin: 0 auto 20px;
@@ -1459,9 +1230,6 @@ button {
 }
 
 .pregunta-texto {
-    position: relative;
-    z-index: 2;
-
     max-width: 540px;
 
     margin: 0 auto 32px;
@@ -1473,9 +1241,6 @@ button {
 }
 
 .pregunta-botones {
-    position: relative;
-    z-index: 3;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1501,64 +1266,33 @@ button {
 
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+        box-shadow 0.3s ease;
 }
 
 .respuesta-si {
-    background:
-        linear-gradient(
-            135deg,
-            #b83d61,
-            #d85d80
-        );
-
+    background: linear-gradient(135deg, #b83d61, #d85d80);
     color: white;
 
-    box-shadow:
-        0 12px 30px rgba(184, 61, 97, 0.28);
-}
-
-.respuesta-si:hover {
-    transform: translateY(-4px) scale(1.04);
-
-    box-shadow:
-        0 17px 38px rgba(184, 61, 97, 0.38);
+    box-shadow: 0 12px 30px rgba(184, 61, 97, 0.28);
 }
 
 .respuesta-claro {
-    border:
-        1px solid rgba(184, 61, 97, 0.25);
-
     background: #fff0f5;
-
     color: #a73859;
 
-    box-shadow:
-        0 10px 28px rgba(120, 45, 70, 0.1);
+    border: 1px solid rgba(184, 61, 97, 0.25);
 }
 
-.respuesta-claro:hover {
+.respuesta-boton:hover {
     transform: translateY(-4px) scale(1.04);
-
-    background: #ffe4ed;
-
-    box-shadow:
-        0 15px 35px rgba(120, 45, 70, 0.15);
 }
 
 .respuesta-boton.respondido {
     opacity: 0.7;
-
-    transform: scale(0.96);
-
     pointer-events: none;
 }
 
 .respuesta-pregunta {
-    position: relative;
-    z-index: 2;
-
     width: 100%;
     max-width: 620px;
     max-height: 0;
@@ -1570,27 +1304,18 @@ button {
 
     opacity: 0;
 
-    border: 1px solid transparent;
     border-radius: 28px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #fff8fa,
-            #ffeef4
-        );
+    background: linear-gradient(145deg, #fff8fa, #ffeef4);
 
-    transform:
-        translateY(25px) scale(0.96);
+    transform: translateY(25px) scale(0.96);
 
     transition:
         max-height 0.9s ease,
         margin 0.7s ease,
         padding 0.7s ease,
         opacity 0.6s ease,
-        transform 0.7s ease,
-        border-color 0.7s ease,
-        box-shadow 0.7s ease;
+        transform 0.7s ease;
 }
 
 .respuesta-pregunta.mostrar {
@@ -1601,43 +1326,24 @@ button {
 
     opacity: 1;
 
-    border-color:
-        rgba(184, 61, 97, 0.13);
-
-    box-shadow:
-        0 18px 45px rgba(100, 30, 50, 0.1);
-
-    transform:
-        translateY(0) scale(1);
+    transform: translateY(0) scale(1);
 }
 
 .respuesta-corazon {
     margin-bottom: 17px;
-
     font-size: 55px;
-
     animation: latido 1.3s infinite;
 }
 
 .respuesta-pregunta h3 {
-    max-width: 520px;
-
-    margin: 0 auto 17px;
-
+    margin-bottom: 17px;
     font-size: 27px;
-    line-height: 1.4;
-
     color: #9e3152;
 }
 
 .respuesta-pregunta p {
-    max-width: 520px;
-
-    margin: 0 auto;
-
     font-size: 16px;
     line-height: 1.8;
-
     color: #72505c;
 }
 
@@ -1649,8 +1355,7 @@ button {
 
     border-radius: 30px;
 
-    background:
-        rgba(184, 61, 97, 0.09);
+    background: rgba(184, 61, 97, 0.09);
 
     color: #b83d61;
 
@@ -1669,7 +1374,7 @@ button {
 
 
 /* =========================================================
-   COSAS QUE QUIERO VIVIR CONTIGO ✨
+   COSAS QUE QUIERO VIVIR CONTIGO
 ========================================================= */
 
 .futuro-seccion {
@@ -1690,49 +1395,7 @@ button {
             rgba(255, 225, 235, 0.7),
             transparent 30%
         ),
-        linear-gradient(
-            145deg,
-            #fffafb,
-            #ffedf3
-        );
-}
-
-.futuro-seccion::before {
-    content: "♡";
-
-    position: absolute;
-
-    top: 30px;
-    right: 5%;
-
-    font-size: 180px;
-
-    color:
-        rgba(184, 61, 97, 0.045);
-
-    transform:
-        rotate(15deg);
-
-    pointer-events: none;
-}
-
-.futuro-seccion::after {
-    content: "♡";
-
-    position: absolute;
-
-    bottom: 20px;
-    left: 4%;
-
-    font-size: 150px;
-
-    color:
-        rgba(184, 61, 97, 0.045);
-
-    transform:
-        rotate(-15deg);
-
-    pointer-events: none;
+        linear-gradient(145deg, #fffafb, #ffedf3);
 }
 
 .futuro-contenido {
@@ -1757,32 +1420,21 @@ button {
 
     margin: 0 auto 25px;
 
-    border:
-        1px solid rgba(184, 61, 97, 0.12);
-
     border-radius: 50%;
 
-    background:
-        rgba(255, 255, 255, 0.9);
-
-    box-shadow:
-        0 15px 40px rgba(100, 30, 50, 0.1);
+    background: rgba(255, 255, 255, 0.9);
 
     font-size: 40px;
 
-    animation:
-        flotarSuave 3s ease-in-out infinite;
+    box-shadow: 0 15px 40px rgba(100, 30, 50, 0.1);
+
+    animation: flotarSuave 3s ease-in-out infinite;
 }
 
 .futuro-contenido > h2 {
-    max-width: 850px;
-
     margin: 15px auto 20px;
 
-    font-size:
-        clamp(38px, 7vw, 60px);
-
-    line-height: 1.15;
+    font-size: clamp(38px, 7vw, 60px);
 
     color: #9e3152;
 }
@@ -1800,13 +1452,8 @@ button {
 
 .futuro-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
-
-    width: 100%;
 }
 
 .futuro-card {
@@ -1821,41 +1468,28 @@ button {
 
     padding: 42px 28px 35px;
 
-    overflow: hidden;
-
-    border:
-        1px solid rgba(184, 61, 97, 0.12);
-
     border-radius: 28px;
 
-    background:
-        rgba(255, 255, 255, 0.86);
+    background: rgba(255, 255, 255, 0.86);
 
-    box-shadow:
-        0 18px 45px rgba(100, 30, 50, 0.09);
+    border: 1px solid rgba(184, 61, 97, 0.12);
+
+    box-shadow: 0 18px 45px rgba(100, 30, 50, 0.09);
 
     cursor: pointer;
 
     transition:
         transform 0.4s ease,
-        box-shadow 0.4s ease,
-        border-color 0.4s ease;
+        box-shadow 0.4s ease;
 }
 
 .futuro-card:hover {
-    transform:
-        translateY(-10px);
-
-    border-color:
-        rgba(184, 61, 97, 0.28);
-
-    box-shadow:
-        0 28px 60px rgba(100, 30, 50, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 28px 60px rgba(100, 30, 50, 0.15);
 }
 
 .futuro-numero {
     position: absolute;
-
     top: 18px;
     left: 20px;
 
@@ -1866,34 +1500,7 @@ button {
     color: #c05b79;
 }
 
-.futuro-card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 120px;
-    height: 120px;
-
-    top: -65px;
-    right: -55px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255, 203, 220, 0.28);
-
-    transition:
-        transform 0.5s ease;
-}
-
-.futuro-card:hover::before {
-    transform:
-        scale(1.3);
-}
-
 .futuro-emoji {
-    position: relative;
-
     width: 75px;
     height: 75px;
 
@@ -1905,31 +1512,14 @@ button {
 
     border-radius: 50%;
 
-    background:
-        linear-gradient(
-            145deg,
-            #ffe6ee,
-            #ffffff
-        );
-
-    box-shadow:
-        0 10px 28px rgba(184, 61, 97, 0.12);
+    background: linear-gradient(145deg, #ffe6ee, #ffffff);
 
     font-size: 34px;
 
-    transition:
-        transform 0.4s ease;
-}
-
-.futuro-card:hover .futuro-emoji {
-    transform:
-        scale(1.12)
-        rotate(5deg);
+    box-shadow: 0 10px 28px rgba(184, 61, 97, 0.12);
 }
 
 .futuro-card h3 {
-    position: relative;
-
     margin-bottom: 13px;
 
     font-size: 23px;
@@ -1939,77 +1529,37 @@ button {
 }
 
 .futuro-card p {
-    position: relative;
-
     font-size: 15.5px;
     line-height: 1.75;
 
     color: #72505c;
 }
 
-
-/* =========================================================
-   MENSAJE FINAL DE FUTURO
-========================================================= */
-
 .futuro-final {
-    position: relative;
-
     width: calc(100% - 30px);
     max-width: 760px;
 
     margin: 75px auto 0;
     padding: 48px 35px;
 
-    overflow: hidden;
-
-    border:
-        1px solid rgba(184, 61, 97, 0.14);
-
     border-radius: 32px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.95),
-            rgba(255, 240, 245, 0.95)
-        );
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.95),
+        rgba(255, 240, 245, 0.95)
+    );
 
-    box-shadow:
-        0 22px 60px rgba(100, 30, 50, 0.11);
-}
-
-.futuro-final::before {
-    content: "";
-
-    position: absolute;
-
-    width: 170px;
-    height: 170px;
-
-    top: -100px;
-    right: -80px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255, 201, 219, 0.25);
+    box-shadow: 0 22px 60px rgba(100, 30, 50, 0.11);
 }
 
 .futuro-corazon {
-    position: relative;
-
     margin-bottom: 18px;
-
     font-size: 55px;
-
-    animation:
-        latido 1.5s infinite;
+    animation: latido 1.5s infinite;
 }
 
 .futuro-final p {
-    position: relative;
-
     margin-bottom: 10px;
 
     font-size: 17px;
@@ -2019,10 +1569,6 @@ button {
 }
 
 .futuro-final h3 {
-    position: relative;
-
-    max-width: 620px;
-
     margin: 0 auto 22px;
 
     font-size: 27px;
@@ -2032,183 +1578,726 @@ button {
 }
 
 .futuro-final span {
-    position: relative;
-
     display: inline-block;
 
     padding: 11px 22px;
 
     border-radius: 30px;
 
-    background:
-        rgba(184, 61, 97, 0.09);
+    background: rgba(184, 61, 97, 0.09);
 
     color: #b83d61;
 
-    font-size: 17px;
     font-weight: bold;
 }
 
 
 /* =========================================================
-   SORPRESA FINAL
+   NUEVA SORPRESA FINAL ❤️
 ========================================================= */
 
 .sorpresa-final {
+    position: relative;
+
     min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 100px 20px;
+    padding: 120px 20px;
+
+    overflow: hidden;
 
     text-align: center;
 
     background:
         radial-gradient(
-            circle at center,
-            #ffdce7,
-            transparent 55%
+            circle at 50% 20%,
+            rgba(255, 214, 228, 0.95),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 10% 85%,
+            rgba(255, 226, 235, 0.9),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(255, 204, 221, 0.55),
+            transparent 30%
         ),
         linear-gradient(
-            135deg,
-            #fff1f5,
-            #ffdce7
+            145deg,
+            #fff8fa,
+            #ffe5ee
         );
 }
 
+.sorpresa-final::before {
+    content: "♡";
+
+    position: absolute;
+    top: 30px;
+    left: 4%;
+
+    font-size: 200px;
+
+    color: rgba(184, 61, 97, 0.045);
+
+    transform: rotate(-15deg);
+
+    pointer-events: none;
+}
+
+.sorpresa-final::after {
+    content: "♡";
+
+    position: absolute;
+    right: 3%;
+    bottom: 20px;
+
+    font-size: 240px;
+
+    color: rgba(184, 61, 97, 0.045);
+
+    transform: rotate(15deg);
+
+    pointer-events: none;
+}
+
 .sorpresa-contenido {
+    position: relative;
+    z-index: 2;
+
     width: 100%;
-    max-width: 750px;
+    max-width: 850px;
+
+    margin: 0 auto;
 }
 
 .corazon-final {
-    margin-bottom: 20px;
+    width: 105px;
+    height: 105px;
 
-    font-size: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    animation: latido 1.4s infinite;
+    margin: 0 auto 25px;
+
+    border: 1px solid rgba(184, 61, 97, 0.12);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    box-shadow:
+        0 15px 45px rgba(184, 61, 97, 0.15),
+        0 0 45px rgba(255, 174, 200, 0.22);
+
+    font-size: 57px;
+
+    animation:
+        latidoFinal 1.7s ease-in-out infinite;
 }
 
-.sorpresa-contenido h2 {
-    margin: 20px 0;
+.sorpresa-contenido > h2 {
+    max-width: 700px;
 
-    font-size:
-        clamp(35px, 7vw, 60px);
+    margin: 17px auto;
+
+    font-size: clamp(40px, 7vw, 65px);
+    line-height: 1.15;
 
     color: #9e3152;
 }
 
-.sorpresa-contenido > p:not(.etiqueta) {
-    margin-bottom: 25px;
+.introduccion-final {
+    max-width: 620px;
 
-    font-size: 19px;
+    margin: 0 auto 35px;
+
+    font-size: 18px;
     line-height: 1.8;
 
-    color: #694450;
+    color: #72505c;
 }
 
 .boton-final {
-    padding: 17px 30px;
+    position: relative;
+
+    padding: 17px 32px;
+
+    overflow: hidden;
 
     border: none;
     border-radius: 50px;
 
-    background: #b83d61;
+    background: linear-gradient(
+        135deg,
+        #ad3458,
+        #d95f82
+    );
+
     color: white;
 
     font-size: 17px;
+    font-weight: bold;
 
     box-shadow:
-        0 10px 30px rgba(184, 61, 97, 0.25);
+        0 14px 35px rgba(184, 61, 97, 0.3);
 
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease;
+        box-shadow 0.3s ease,
+        opacity 0.4s ease;
+}
+
+.boton-final::after {
+    content: "";
+
+    position: absolute;
+
+    top: -60%;
+    left: -100%;
+
+    width: 50%;
+    height: 220%;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    transform: rotate(25deg);
+
+    transition: left 0.7s ease;
 }
 
 .boton-final:hover {
-    transform: scale(1.05);
+    transform: translateY(-4px) scale(1.04);
 
     box-shadow:
-        0 15px 38px rgba(184, 61, 97, 0.35);
+        0 20px 45px rgba(184, 61, 97, 0.4);
 }
 
-.mensaje-final {
-    display: none;
-
-    margin-top: 40px;
-    padding: 45px 25px;
-
-    border-radius: 30px;
-
-    background:
-        rgba(255, 255, 255, 0.8);
-
-    box-shadow:
-        0 20px 60px rgba(100, 30, 50, 0.15);
-
-    animation:
-        aparecer 1s ease;
+.boton-final:hover::after {
+    left: 150%;
 }
 
-.mensaje-final.mostrar {
-    display: block;
-}
-
-.lluvia-corazones {
-    margin-bottom: 25px;
-
-    font-size: 28px;
-    letter-spacing: 8px;
-
-    animation:
-        flotar 2s infinite;
-}
-
-.mensaje-final h2 {
-    margin-bottom: 20px;
-}
-
-.mensaje-final p {
-    margin-bottom: 15px;
-
-    font-size: 20px;
-}
-
-.mensaje-final .grande {
-    font-size: 32px;
-    font-weight: bold;
-
-    color: #b83d61;
-}
-
-.final-amor {
-    margin: 30px 0;
-
-    font-size: 45px;
-    font-weight: bold;
-
-    color: #b83d61;
-
-    animation:
-        latido 1.4s infinite;
-}
-
-.firma-final {
-    line-height: 1.7;
+.boton-final.abierto {
+    opacity: 0.65;
+    pointer-events: none;
 }
 
 
 /* =========================================================
-   MODAL DE RECUERDOS
+   TARJETA FINAL OCULTA
+========================================================= */
+
+.mensaje-final {
+    position: relative;
+
+    width: 100%;
+    max-width: 790px;
+
+    max-height: 0;
+
+    margin: 0 auto;
+    padding: 0 45px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    border: 1px solid transparent;
+    border-radius: 38px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.97),
+            rgba(255, 245, 248, 0.97)
+        );
+
+    transform: translateY(45px) scale(0.96);
+
+    transition:
+        max-height 1.3s ease,
+        margin 0.9s ease,
+        padding 0.9s ease,
+        opacity 0.8s ease,
+        transform 0.9s ease,
+        border-color 0.9s ease,
+        box-shadow 0.9s ease;
+}
+
+.mensaje-final.mostrar {
+    max-height: 2400px;
+
+    margin-top: 55px;
+    padding: 55px 45px;
+
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+
+    border-color: rgba(184, 61, 97, 0.15);
+
+    box-shadow:
+        0 30px 90px rgba(100, 30, 50, 0.16),
+        0 0 60px rgba(255, 193, 213, 0.16);
+}
+
+
+/* =========================================================
+   DECORACIÓN DE LA TARJETA FINAL
+========================================================= */
+
+.mensaje-final::before {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    top: -140px;
+    right: -110px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 204, 220, 0.25);
+
+    pointer-events: none;
+}
+
+.mensaje-final::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    left: -100px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 218, 229, 0.25);
+
+    pointer-events: none;
+}
+
+.lluvia-corazones {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 25px;
+
+    font-size: 26px;
+    letter-spacing: 7px;
+
+    opacity: 0;
+
+    transform: translateY(-15px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.mensaje-final.mostrar .lluvia-corazones {
+    opacity: 1;
+    transform: translateY(0);
+
+    animation:
+        flotar 2.5s ease-in-out infinite;
+}
+
+.final-sello {
+    position: relative;
+    z-index: 2;
+
+    display: inline-block;
+
+    margin-bottom: 28px;
+    padding: 8px 17px;
+
+    border: 1px solid rgba(184, 61, 97, 0.18);
+    border-radius: 30px;
+
+    background:
+        rgba(184, 61, 97, 0.07);
+
+    color: #ad3c5e;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   BLOQUES QUE SE REVELARÁN CON JAVASCRIPT
+========================================================= */
+
+.final-bloque {
+    position: relative;
+    z-index: 2;
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 0.85s ease,
+        transform 0.85s ease;
+}
+
+.final-bloque.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   NOMBRE
+========================================================= */
+
+.final-corazon-pequeno {
+    margin-bottom: 12px;
+
+    font-size: 38px;
+
+    animation:
+        latido 1.5s infinite;
+}
+
+.final-bloque-1 h2 {
+    margin: 0;
+
+    font-size:
+        clamp(45px, 9vw, 75px);
+
+    line-height: 1.1;
+
+    color: #9e3152;
+}
+
+.final-subtitulo {
+    margin-top: 14px;
+
+    font-size: 18px;
+    font-style: italic;
+
+    color: #8d6170;
+}
+
+
+/* =========================================================
+   LÍNEA CENTRAL
+========================================================= */
+
+.final-linea {
+    position: relative;
+    z-index: 2;
+
+    width: 0;
+    height: 2px;
+
+    margin: 30px auto;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d36b88,
+            transparent
+        );
+
+    transition:
+        width 1.2s ease;
+}
+
+.mensaje-final.mostrar .final-linea {
+    width: 160px;
+}
+
+
+/* =========================================================
+   PÁRRAFOS FINALES
+========================================================= */
+
+.final-bloque-2,
+.final-bloque-3 {
+    max-width: 610px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.final-bloque-2 p,
+.final-bloque-3 p {
+    font-size: 18px;
+    line-height: 1.9;
+
+    color: #68434f;
+}
+
+.final-bloque-3 {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   MENSAJE DESTACADO
+========================================================= */
+
+.final-mensaje-destacado {
+    max-width: 590px;
+
+    margin: 35px auto 0;
+    padding: 27px 28px;
+
+    border: 1px solid rgba(184, 61, 97, 0.1);
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff2f6,
+            #fff9fb
+        );
+
+    box-shadow:
+        0 12px 35px rgba(100, 30, 50, 0.07);
+}
+
+.final-mensaje-destacado span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 27px;
+}
+
+.final-mensaje-destacado p {
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #72505c;
+}
+
+
+/* =========================================================
+   FRASE PRINCIPAL
+========================================================= */
+
+.final-frase-principal {
+    position: relative;
+
+    max-width: 650px;
+
+    margin: 40px auto 0;
+    padding: 35px 35px;
+
+    border-radius: 28px;
+
+    background:
+        rgba(184, 61, 97, 0.055);
+}
+
+.final-frase-principal p {
+    position: relative;
+    z-index: 2;
+
+    font-size:
+        clamp(20px, 4vw, 27px);
+
+    line-height: 1.65;
+    font-weight: bold;
+
+    color: #9e3152;
+}
+
+.final-comillas {
+    position: absolute;
+
+    top: -13px;
+    left: 18px;
+
+    font-size: 70px;
+    line-height: 1;
+
+    color:
+        rgba(184, 61, 97, 0.15);
+}
+
+.final-comillas-derecha {
+    top: auto;
+    left: auto;
+
+    right: 18px;
+    bottom: -42px;
+}
+
+
+/* =========================================================
+   TRES CORAZONES
+========================================================= */
+
+.final-tres-corazones {
+    margin: 35px 0 10px;
+
+    font-size: 31px;
+    letter-spacing: 12px;
+
+    animation:
+        flotarSuave 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   TE AMO
+========================================================= */
+
+.final-te-amo {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin: 20px auto 15px;
+    padding: 25px 15px;
+}
+
+.final-te,
+.final-amo {
+    font-size:
+        clamp(45px, 10vw, 82px);
+
+    font-weight: bold;
+    line-height: 1;
+
+    color: #b83d61;
+
+    text-shadow:
+        0 7px 25px rgba(184, 61, 97, 0.14);
+}
+
+.final-amo {
+    color: #9e3152;
+}
+
+.final-corazon-grande {
+    display: inline-block;
+
+    margin-left: 5px;
+
+    font-size:
+        clamp(43px, 9vw, 70px);
+
+    animation:
+        latidoFinal 1.3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   FIRMA
+========================================================= */
+
+.final-despedida {
+    max-width: 540px;
+
+    margin: 15px auto 28px;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    color: #72505c;
+}
+
+.firma-final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.firma-final span {
+    font-size: 15px;
+    font-style: italic;
+
+    color: #8b6571;
+}
+
+.firma-final strong {
+    font-size: 27px;
+
+    color: #9e3152;
+}
+
+
+/* =========================================================
+   CIERRE DE LA PÁGINA
+========================================================= */
+
+.final-cierre {
+    max-width: 520px;
+
+    margin: 45px auto 0;
+    padding-top: 30px;
+
+    border-top:
+        1px solid rgba(184, 61, 97, 0.12);
+}
+
+.final-cierre > span {
+    display: block;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+
+    color: #b04c6b;
+}
+
+.final-cierre-linea {
+    width: 35px;
+    height: 2px;
+
+    margin: 15px auto;
+
+    background: #d36b88;
+}
+
+.final-cierre p {
+    font-size: 14px;
+    line-height: 1.7;
+    font-style: italic;
+
+    color: #956d79;
+}
+
+
+/* =========================================================
+   MODAL
 ========================================================= */
 
 .modal-foto {
     position: fixed;
     inset: 0;
-
     z-index: 11000;
 
     display: none;
@@ -2219,8 +2308,7 @@ button {
 
     overflow-y: auto;
 
-    background:
-        rgba(30, 10, 20, 0.92);
+    background: rgba(30, 10, 20, 0.92);
 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -2232,10 +2320,8 @@ button {
 
 .cerrar-foto {
     position: fixed;
-
     top: 20px;
     right: 30px;
-
     z-index: 11002;
 
     width: 50px;
@@ -2244,13 +2330,11 @@ button {
     border: none;
     border-radius: 50%;
 
-    background:
-        rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.14);
 
     color: white;
 
     font-size: 37px;
-    line-height: 1;
 
     transition:
         transform 0.3s ease,
@@ -2259,9 +2343,7 @@ button {
 
 .cerrar-foto:hover {
     transform: rotate(90deg);
-
-    background:
-        rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.22);
 }
 
 .modal-recuerdo-contenido {
@@ -2269,7 +2351,6 @@ button {
     max-width: 1050px;
 
     display: grid;
-
     grid-template-columns:
         minmax(0, 1.15fr)
         minmax(300px, 0.85fr);
@@ -2280,16 +2361,13 @@ button {
 
     background: white;
 
-    box-shadow:
-        0 25px 80px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
 
-    animation:
-        zoom 0.45s ease;
+    animation: zoom 0.45s ease;
 }
 
 .modal-imagen-contenedor {
     min-height: 550px;
-
     background: #1f1016;
 }
 
@@ -2298,6 +2376,7 @@ button {
 
     width: 100%;
     height: 100%;
+
     min-height: 550px;
     max-height: 80vh;
 
@@ -2313,12 +2392,7 @@ button {
 
     text-align: center;
 
-    background:
-        linear-gradient(
-            145deg,
-            #fffafb,
-            #ffeef4
-        );
+    background: linear-gradient(145deg, #fffafb, #ffeef4);
 }
 
 .modal-etiqueta {
@@ -2333,8 +2407,6 @@ button {
 
 .modal-texto-recuerdo h2 {
     font-size: 34px;
-    line-height: 1.3;
-
     color: #9e3152;
 }
 
@@ -2358,21 +2430,17 @@ button {
 
 .modal-corazon {
     margin-top: 25px;
-
     font-size: 45px;
-
-    animation:
-        latido 1.5s infinite;
+    animation: latido 1.5s infinite;
 }
 
 
 /* =========================================================
-   CORAZONES FLOTANTES CREADOS CON JAVASCRIPT
+   CORAZONES FLOTANTES
 ========================================================= */
 
 .corazon-flotante {
     position: fixed;
-
     bottom: -50px;
 
     z-index: 9998;
@@ -2400,6 +2468,26 @@ button {
     }
 }
 
+@keyframes latidoFinal {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.12);
+    }
+
+    55% {
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(1.14);
+    }
+}
+
 @keyframes aparecer {
 
     from {
@@ -2415,16 +2503,12 @@ button {
 
     from {
         opacity: 0;
-
-        transform:
-            translateY(30px);
+        transform: translateY(30px);
     }
 
     to {
         opacity: 1;
-
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 }
 
@@ -2432,13 +2516,11 @@ button {
 
     0%,
     100% {
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 
     50% {
-        transform:
-            translateY(10px);
+        transform: translateY(10px);
     }
 }
 
@@ -2446,13 +2528,11 @@ button {
 
     0%,
     100% {
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 
     50% {
-        transform:
-            translateY(-10px);
+        transform: translateY(-10px);
     }
 }
 
@@ -2461,12 +2541,14 @@ button {
     0%,
     100% {
         transform:
-            translateY(0) rotate(-2deg);
+            translateY(0)
+            rotate(-2deg);
     }
 
     50% {
         transform:
-            translateY(-8px) rotate(2deg);
+            translateY(-8px)
+            rotate(2deg);
     }
 }
 
@@ -2474,16 +2556,12 @@ button {
 
     from {
         opacity: 0;
-
-        transform:
-            scale(0.85);
+        transform: scale(0.85);
     }
 
     to {
         opacity: 1;
-
-        transform:
-            scale(1);
+        transform: scale(1);
     }
 }
 
@@ -2519,21 +2597,13 @@ button {
 
 @media (max-width: 900px) {
 
-    .razones-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
+    .razones-grid,
     .futuro-grid {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
     }
 }
 
-
-/* =========================================================
-   MODAL / GALERÍA TABLET
-========================================================= */
 
 @media (max-width: 850px) {
 
@@ -2543,7 +2613,6 @@ button {
 
     .modal-recuerdo-contenido {
         max-width: 650px;
-
         grid-template-columns: 1fr;
     }
 
@@ -2559,22 +2628,13 @@ button {
     .modal-texto-recuerdo {
         padding: 30px 25px;
     }
-
-    .modal-texto-recuerdo h2 {
-        font-size: 29px;
-    }
 }
 
-
-/* =========================================================
-   TABLET PEQUEÑA
-========================================================= */
 
 @media (max-width: 768px) {
 
     .linea-tiempo::before {
         left: 24px;
-
         transform: none;
     }
 
@@ -2585,8 +2645,7 @@ button {
 
         width: 100%;
 
-        padding:
-            15px 0 35px 75px;
+        padding: 15px 0 35px 75px;
 
         text-align: left;
     }
@@ -2595,20 +2654,15 @@ button {
     .momento:nth-child(even) .momento-punto {
         left: 0;
         right: auto;
-
         top: 20px;
-    }
-
-    .momento-contenido {
-        padding: 25px 20px;
-    }
-
-    .pregunta-seccion {
-        padding: 90px 18px;
     }
 
     .pregunta-tarjeta {
         padding: 45px 28px;
+    }
+
+    .mensaje-final.mostrar {
+        padding: 48px 30px;
     }
 }
 
@@ -2628,18 +2682,6 @@ button {
         font-size: 12px;
     }
 
-    .portada {
-        padding-top: 90px;
-    }
-
-    .corazones {
-        font-size: 22px;
-    }
-
-    .fecha {
-        font-size: 16px;
-    }
-
     .carta-seccion,
     .historia-seccion,
     .contador-seccion,
@@ -2648,33 +2690,11 @@ button {
     .pregunta-seccion,
     .futuro-seccion,
     .sorpresa-final {
-        padding:
-            75px 15px;
+        padding: 75px 15px;
     }
 
     .carta {
-        padding:
-            35px 20px;
-    }
-
-    .carta p:not(.etiqueta):not(.firma) {
-        font-size: 16px;
-    }
-
-    .historia-titulo {
-        margin-bottom: 50px;
-    }
-
-    .historia-titulo h2 {
-        font-size: 35px;
-    }
-
-    .momento-contenido h3 {
-        font-size: 22px;
-    }
-
-    .momento-contenido p {
-        font-size: 15px;
+        padding: 35px 20px;
     }
 
     .contador {
@@ -2682,8 +2702,7 @@ button {
     }
 
     .tiempo {
-        padding:
-            20px 8px;
+        padding: 20px 8px;
     }
 
     .tiempo span {
@@ -2697,82 +2716,40 @@ button {
 
     /* RAZONES */
 
-    .razones-contenido > h2 {
-        font-size: 35px;
-    }
-
-    .razones-intro {
-        margin-bottom: 40px;
-
-        font-size: 16px;
-    }
-
     .razones-grid {
         grid-template-columns: 1fr;
-
-        gap: 20px;
     }
 
     .razon-card {
         min-height: 0;
-
-        padding:
-            35px 22px;
+        padding: 35px 22px;
     }
 
 
-    /* RECUERDOS */
+    /* FOTOS */
 
     #recuerdos .galeria {
         grid-template-columns: 1fr;
-
-        gap: 25px;
     }
 
     .recuerdo img {
         height: 360px;
     }
 
-    .foto-info {
-        padding:
-            25px 20px 28px;
-    }
-
     #recuerdos .mensaje-recuerdos {
-        width:
-            calc(100% - 10px);
+        width: calc(100% - 10px);
 
         margin-top: 50px;
 
-        padding:
-            35px 20px;
-
-        border-radius: 25px;
+        padding: 35px 20px;
     }
 
-    #recuerdos
-    .mensaje-recuerdos
-    .mini-corazon {
-        font-size: 40px;
-    }
-
-    #recuerdos
-    .mensaje-recuerdos p {
-        font-size: 16px;
-    }
-
-    #recuerdos
-    .mensaje-recuerdos h3 {
+    #recuerdos .mensaje-recuerdos h3 {
         font-size: 22px;
     }
 
 
     /* PREGUNTA */
-
-    .pregunta-seccion::before,
-    .pregunta-seccion::after {
-        font-size: 100px;
-    }
 
     .pregunta-corazon {
         width: 75px;
@@ -2786,29 +2763,15 @@ button {
     }
 
     .pregunta-introduccion {
-        margin-bottom: 35px;
-
         font-size: 16px;
     }
 
     .pregunta-tarjeta {
-        padding:
-            38px 20px;
-
-        border-radius: 27px;
-    }
-
-    .pregunta-iconos {
-        font-size: 23px;
-        letter-spacing: 5px;
+        padding: 38px 20px;
     }
 
     .pregunta-tarjeta > h3 {
         font-size: 27px;
-    }
-
-    .pregunta-texto {
-        font-size: 15.5px;
     }
 
     .pregunta-botones {
@@ -2820,23 +2783,11 @@ button {
         max-width: 300px;
     }
 
-    .respuesta-pregunta.mostrar {
-        padding:
-            32px 18px;
-    }
-
-    .respuesta-pregunta h3 {
-        font-size: 23px;
-    }
-
 
     /* FUTURO */
 
-    .futuro-icono-principal {
-        width: 72px;
-        height: 72px;
-
-        font-size: 35px;
+    .futuro-grid {
+        grid-template-columns: 1fr;
     }
 
     .futuro-contenido > h2 {
@@ -2844,87 +2795,117 @@ button {
     }
 
     .futuro-introduccion {
-        margin-bottom: 40px;
-
         font-size: 16px;
-    }
-
-    .futuro-grid {
-        grid-template-columns: 1fr;
-
-        gap: 20px;
     }
 
     .futuro-card {
         min-height: 0;
-
-        padding:
-            38px 22px 32px;
-
-        border-radius: 24px;
-    }
-
-    .futuro-emoji {
-        width: 68px;
-        height: 68px;
-
-        font-size: 31px;
-    }
-
-    .futuro-card h3 {
-        font-size: 22px;
-    }
-
-    .futuro-card p {
-        font-size: 15px;
+        padding: 38px 22px 32px;
     }
 
     .futuro-final {
-        width:
-            calc(100% - 10px);
-
+        width: calc(100% - 10px);
         margin-top: 50px;
-
-        padding:
-            38px 20px;
-
-        border-radius: 27px;
+        padding: 38px 20px;
     }
 
-    .futuro-corazon {
+
+    /* NUEVA SORPRESA FINAL */
+
+    .sorpresa-final {
+        min-height: auto;
+    }
+
+    .sorpresa-final::before,
+    .sorpresa-final::after {
+        font-size: 120px;
+    }
+
+    .corazon-final {
+        width: 85px;
+        height: 85px;
+
         font-size: 47px;
     }
 
-    .futuro-final p {
+    .sorpresa-contenido > h2 {
+        font-size: 39px;
+    }
+
+    .introduccion-final {
         font-size: 16px;
     }
 
-    .futuro-final h3 {
-        font-size: 23px;
+    .boton-final {
+        width: 100%;
+        max-width: 320px;
+
+        padding: 16px 20px;
+
+        font-size: 15px;
     }
-
-
-    /* FINAL */
 
     .mensaje-final {
-        padding:
-            35px 18px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        border-radius: 28px;
     }
 
-    .mensaje-final .grande {
-        font-size: 27px;
+    .mensaje-final.mostrar {
+        margin-top: 42px;
+        padding: 42px 20px;
     }
 
-    .final-amor {
-        font-size: 35px;
+    .lluvia-corazones {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    .final-bloque-1 h2 {
+        font-size: 48px;
+    }
+
+    .final-subtitulo {
+        font-size: 16px;
+    }
+
+    .final-bloque-2 p,
+    .final-bloque-3 p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .final-mensaje-destacado {
+        padding: 24px 18px;
+    }
+
+    .final-frase-principal {
+        padding: 30px 20px;
+    }
+
+    .final-frase-principal p {
+        font-size: 20px;
+    }
+
+    .final-te,
+    .final-amo {
+        font-size: 48px;
+    }
+
+    .final-corazon-grande {
+        font-size: 45px;
+    }
+
+    .firma-final strong {
+        font-size: 24px;
     }
 
 
     /* MODAL */
 
     .modal-foto {
-        padding:
-            70px 12px 20px;
+        padding: 70px 12px 20px;
     }
 
     .cerrar-foto {
@@ -2939,19 +2920,6 @@ button {
     .modal-imagen-contenedor img {
         max-height: 50vh;
     }
-
-    .modal-texto-recuerdo {
-        padding:
-            28px 20px;
-    }
-
-    .modal-texto-recuerdo h2 {
-        font-size: 26px;
-    }
-
-    .modal-texto-recuerdo p {
-        font-size: 15px;
-    }
 }
 
 
@@ -2965,59 +2933,16 @@ button {
         font-size: 55px;
     }
 
-    .bienvenida p {
-        font-size: 17px;
-    }
-
     .portada h1 {
         font-size: 55px;
-    }
-
-    .portada h2 {
-        font-size: 25px;
-    }
-
-    .contador {
-        gap: 7px;
-    }
-
-    .tiempo {
-        padding:
-            15px 4px;
-    }
-
-    .tiempo span {
-        font-size: 27px;
-    }
-
-    .momento {
-        padding-left: 62px;
-    }
-
-    .momento-punto {
-        width: 42px;
-        height: 42px;
-
-        font-size: 18px;
-    }
-
-    .linea-tiempo::before {
-        left: 21px;
     }
 
     .recuerdo img {
         height: 300px;
     }
 
-    #recuerdos
-    .mensaje-recuerdos {
-        padding:
-            30px 16px;
-    }
-
-    #recuerdos
-    .mensaje-recuerdos h3 {
-        font-size: 20px;
+    #recuerdos .mensaje-recuerdos {
+        padding: 30px 16px;
     }
 
     .pregunta-contenido > h2 {
@@ -3025,43 +2950,38 @@ button {
     }
 
     .pregunta-tarjeta {
-        padding:
-            32px 15px;
-    }
-
-    .pregunta-tarjeta > h3 {
-        font-size: 24px;
-    }
-
-    .pregunta-corazon {
-        width: 68px;
-        height: 68px;
-
-        font-size: 34px;
+        padding: 32px 15px;
     }
 
     .futuro-contenido > h2 {
         font-size: 31px;
     }
 
-    .futuro-card {
-        padding:
-            35px 17px 28px;
+    .mensaje-final.mostrar {
+        padding: 38px 15px;
     }
 
-    .futuro-final {
-        padding:
-            32px 16px;
+    .final-frase-principal {
+        padding: 27px 15px;
     }
 
-    .futuro-final h3 {
-        font-size: 21px;
+    .final-te,
+    .final-amo {
+        font-size: 41px;
+    }
+
+    .final-corazon-grande {
+        font-size: 39px;
+    }
+
+    .final-tres-corazones {
+        letter-spacing: 7px;
     }
 }
 
 
 /* =========================================================
-   REDUCIR ANIMACIONES
+   ACCESIBILIDAD - REDUCIR ANIMACIONES
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -3073,13 +2993,8 @@ button {
     *,
     *::before,
     *::after {
-        animation-duration:
-            0.01ms !important;
-
-        animation-iteration-count:
-            1 !important;
-
-        transition-duration:
-            0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
